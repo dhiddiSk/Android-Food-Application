@@ -1,0 +1,166 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"-->
+<!--    xmlns:app="http://schemas.android.com/apk/res-auto"-->
+<!--    xmlns:tools="http://schemas.android.com/tools"-->
+<!--    android:layout_width="match_parent"-->
+<!--    android:layout_height="match_parent"-->
+<!--    tools:context=".newRegistration">-->
+
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        tools:context=".newRegistration"
+        app:layout_constraintTop_toBottomOf="parent">
+
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+    <LinearLayout
+                 android:orientation="vertical" android:layout_width="match_parent"
+                 android:layout_height="match_parent"
+                android:gravity="center">
+         <EditText
+                android:id="@+id/Register_EnterFirstName"
+                android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="24dp"
+        android:gravity="left"
+        android:imeActionLabel="Sign in"
+        android:imeOptions="actionDone"
+        android:hint="First Name"
+        android:inputType="text"
+        android:selectAllOnFocus="true"
+        android:textStyle="normal"
+        app:layout_constraintTop_toBottomOf="parent" />
+<!--        app:layout_constraintLeft_toLeftOf=""/>-->
+
+    <EditText
+        android:id="@+id/Register_EnterLastName"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="24dp"
+        android:hint="Last Name"
+        android:imeActionLabel="@string/action_sign_in_short"
+        android:imeOptions="actionDone"
+        android:inputType="text"
+        android:selectAllOnFocus="true"
+        app:layout_constraintTop_toBottomOf="@id/Register_EnterFirstName"/>
+
+    <!--            <TextView android:id="@+id/Email"-->
+    <!--                android:layout_width="wrap_content"-->
+    <!--                android:layout_height="wrap_content"-->
+    <!--                android:layout_marginTop="50dp"-->
+    <!--                android:text="Email:"-->
+    <!--                android:textSize="15dp"-->
+    <!--                android:textStyle="italic"-->
+    <!--                android:layout_gravity="left"/>-->
+
+
+    <RadioGroup
+        android:id="@+id/Register_radio_gender"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintTop_toBottomOf="@+id/Register_radio_gender" >
+        <RadioButton
+            android:id="@+id/radioButton_Male"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="male"/>
+        <!--                    android:onClick="OnClickRadioButton"-->
+        <!--                    />-->
+
+        <RadioButton
+            android:id="@+id/radioButton_Female"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="female" />
+        <!--                    android:onClick="OnClickRadioButton"-->
+        <!--                     />-->
+
+    </RadioGroup>
+
+    <EditText
+        android:id="@+id/Register_EmailAdress"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="24dp"
+        android:hint="Email Address"
+        android:imeActionLabel="@string/action_sign_in_short"
+        android:imeOptions="actionDone"
+        android:inputType="textEmailAddress"
+        android:selectAllOnFocus="true"
+        app:layout_constraintTop_toBottomOf="@id/Register_radio_gender"/>
+
+    <!--            <TextView android:id="@+id/passwordNew"-->
+    <!--                android:layout_width="wrap_content"-->
+    <!--                android:layout_height="wrap_content"-->
+    <!--                android:layout_marginTop="50dp"-->
+    <!--                android:text="New Password:"-->
+    <!--                android:textSize="15dp"-->
+    <!--                android:textStyle="italic"-->
+    <!--                android:layout_gravity="left"/>-->
+
+
+    <EditText
+        android:id="@+id/Register_password"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="24dp"
+        android:hint="New Password"
+        android:imeActionLabel="@string/action_sign_in_short"
+        android:imeOptions="actionDone"
+        android:inputType="textPassword"
+        android:selectAllOnFocus="true"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/Register_EmailAdress" />
+
+    <!--            <TextView android:id="@+id/Gender"-->
+    <!--                android:layout_width="wrap_content"-->
+    <!--                android:layout_height="wrap_content"-->
+    <!--                android:layout_marginTop="50dp"-->
+    <!--                android:text="Gender:"-->
+    <!--                android:textSize="15dp"-->
+    <!--                android:textStyle="italic"-->
+    <!--                android:layout_gravity="left"/>-->
+    <Button
+        android:id="@+id/Register"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginStart="48dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="48dp"
+        android:layout_marginBottom="64dp"
+        android:enabled="true"
+        android:text="Register"
+        android:clickable="true"
+        android:textStyle="bold"
+        android:textColor="#000000"
+        android:background="#D3D3D3"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/Register_password"
+        app:layout_constraintVertical_bias="0.055" />
+    <!--            android:onClick="AfterNewRegistration"-->
+            </LinearLayout>
+    </ScrollView>
+    </LinearLayout>
+
+<!--//androidx.constraintlayout.widget.ConstraintLayout>-->
