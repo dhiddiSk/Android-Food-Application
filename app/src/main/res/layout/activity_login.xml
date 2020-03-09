@@ -108,7 +108,9 @@
              android:layout_width="match_parent"
              android:layout_height="wrap_content"
              android:orientation="vertical"
+
              tools:context=".LoginScreenActivity"
+
              app:layout_constraintTop_toBottomOf="parent">
 <!--        app:layout_constraintTop_toBottomOf="@+id/textRegister"-->
 
@@ -122,11 +124,21 @@
              android:gravity="center">
 
             <ImageView
+                android:id="@+id/basketOnLoginScreen"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="top|center"
-                android:background="#FFFFFF"
+                android:background="@android:color/transparent"
                 android:src="@drawable/yourchoice_basket" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+                android:text="Great to see you again!"
+                android:textAllCaps="false"
+                app:layout_constraintTop_toTopOf = "@+id/basketOnLoginScreen"
+                android:gravity="center"
+                android:textSize="20dp"/>
 
             <EditText
                 android:id="@+id/login_username"
@@ -135,13 +147,14 @@
                 android:layout_marginStart="24dp"
                 android:layout_marginTop="96dp"
                 android:layout_marginEnd="24dp"
-
-                android:hint="Username/Email"
+                android:hint="email"
                 android:inputType="textEmailAddress"
                 android:selectAllOnFocus="true"
+                android:maxLines="1"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
+                app:layout_constraintTop_toTopOf="parent"
+                android:drawableLeft="@drawable/envelope"/>
 
             <EditText
                 android:id="@+id/login_password"
@@ -150,31 +163,32 @@
                 android:layout_marginStart="24dp"
                 android:layout_marginTop="8dp"
                 android:layout_marginEnd="24dp"
-
-                android:hint="@string/prompt_password"
+                android:maxLines="1"
+                android:hint="password"
                 android:imeActionLabel="@string/action_sign_in_short"
                 android:imeOptions="actionDone"
                 android:inputType="textPassword"
                 android:selectAllOnFocus="true"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/login_username" />
+                app:layout_constraintTop_toBottomOf="@+id/login_username"
+                android:drawableLeft="@drawable/lock"/>
 
             <Button
                 android:id="@+id/login_button"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_horizontal"
-                android:layout_marginStart="48dp"
-                android:layout_marginTop="16dp"
-                android:layout_marginEnd="48dp"
-                android:layout_marginBottom="64dp"
+                android:padding="10dp"
                 android:enabled="true"
                 android:clickable="true"
                 android:text="Login"
+                android:textAllCaps="false"
                 android:textStyle="bold"
+                android:textSize="18dp"
+                style="@style/Animation.Design.BottomSheetDialog"
                 android:textColor="#000000"
-                android:background="#D3D3D3"
+                android:background="@drawable/button_shape"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.497"
@@ -229,18 +243,20 @@
             android:id="@+id/Register_text"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="15dp"
-            android:gravity="left"
+            android:layout_marginTop="30dp"
+            android:gravity="start"
             android:text="New to YourChoice? Please register here"
+            android:textAllCaps="false"
             android:enabled="true"
             android:clickable="true"
             android:textColor="#808080"
-            android:textSize="15dp"
+            android:textSize="12sp"
             android:textStyle="normal"
+            android:background="@android:color/transparent"
             app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintTop_toBottomOf="@id/login_button" />
 
-<!--        <EditText-->
+        <!--        <EditText-->
 <!--            android:id="@+id/Register_EnterFirstName"-->
 <!--            android:layout_width="match_parent"-->
 <!--            android:layout_height="wrap_content"-->
@@ -378,5 +394,6 @@
 
         </LinearLayout>
     </ScrollView>
+
 </LinearLayout>
 <!--</androidx.constraintlayout.widget.ConstraintLayout>-->

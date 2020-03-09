@@ -28,6 +28,7 @@ public class AppInfoWhileStartup extends AppIntro {
         addSlide(AppIntroFragment.newInstance("Sustainability", "This is my first info page", R.drawable.sustainability, ContextCompat.getColor(getApplicationContext(), R.color.colorAccent)));
         addSlide(AppIntroFragment.newInstance("Social Foot print", "This is my Second info page", R.drawable.socialfootprint, ContextCompat.getColor(getApplicationContext(), R.color.colorPrimary)));
         addSlide(AppIntroFragment.newInstance("CO2 Foot print", "This is my third info page", R.drawable.co2footprint, ContextCompat.getColor(getApplicationContext(), R.color.colorPrimaryDark)));
+
     }
 
     @Override
