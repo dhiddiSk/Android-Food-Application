@@ -1,0 +1,203 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".SecondSeekBar">
+
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/textView1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:layout_gravity="center_horizontal"
+        android:drawableRight="@drawable/bio"
+        android:text="@string/bio"
+        android:textAllCaps="false"
+        android:textColor="#ACF41B"
+        android:textSize="20sp"
+        app:layout_constraintTop_toBottomOf="parent" />
+
+    <SeekBar
+        android:id="@+id/seekBar1"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="20dp"
+        android:max="100"
+        android:progressDrawable="@drawable/seek_bar"
+        android:thumb="@drawable/finger"
+        app:layout_constraintTop_toBottomOf="@id/textView1" />
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:layout_gravity="center_horizontal"
+        android:drawableRight="@drawable/trash"
+        android:text="@string/recycle"
+        android:textAllCaps="false"
+        android:textColor="#BADA55"
+        android:textSize="20sp"
+        app:layout_constraintTop_toBottomOf="@id/seekBar1" />
+
+    <SeekBar
+        android:id="@+id/seekBar2"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="20dp"
+        android:max="100"
+        android:progressDrawable="@drawable/seek_bar"
+        android:thumb="@drawable/finger"
+        app:layout_constraintTop_toBottomOf="@id/textView2" />
+
+    <TextView
+         android:id="@+id/textView3"
+         android:layout_width="wrap_content"
+         android:layout_height="wrap_content"
+         android:layout_marginTop="20dp"
+         android:layout_gravity="center_horizontal"
+         android:drawableRight="@drawable/germany"
+         android:text="@string/local"
+         android:textAllCaps="false"
+         android:textColor="#BADA55"
+         android:textSize="20sp"
+         app:layout_constraintTop_toBottomOf="@id/seekBar2" />
+
+            <SeekBar
+                android:id="@+id/seekBar3"
+                android:layout_width="300dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="20dp"
+                android:max="100"
+                android:progressDrawable="@drawable/seek_bar"
+                android:thumb="@drawable/finger"
+                app:layout_constraintTop_toBottomOf="@id/textView3" />
+
+            <TextView
+         android:id="@+id/textView4"
+         android:layout_width="wrap_content"
+         android:layout_height="wrap_content"
+         android:layout_marginTop="20dp"
+         android:layout_gravity="center_horizontal"
+         android:drawableRight="@drawable/moon"
+         android:text="@string/season"
+         android:textAllCaps="false"
+         android:textColor="#BADA55"
+         android:textSize="20sp"
+         app:layout_constraintTop_toBottomOf="@id/seekBar3" />
+
+      <SeekBar
+         android:id="@+id/seekBar4"
+         android:layout_width="300dp"
+         android:layout_height="wrap_content"
+         android:layout_marginLeft="20dp"
+         android:layout_marginTop="20dp"
+         android:max="100"
+         android:progressDrawable="@drawable/seek_bar"
+         android:thumb="@drawable/finger"
+         app:layout_constraintTop_toBottomOf="@id/textView4" />
+
+      <TextView
+                android:id="@+id/textView5"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:layout_gravity="center_horizontal"
+                android:drawableRight="@drawable/cow"
+                android:text="@string/animal"
+                android:textAllCaps="false"
+                android:textColor="#BADA55"
+                android:textSize="20sp"
+                app:layout_constraintTop_toBottomOf="@id/seekBar4" />
+
+            <SeekBar
+                android:id="@+id/seekBar5"
+                android:layout_width="300dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="20dp"
+                android:max="100"
+                android:progressDrawable="@drawable/seek_bar"
+                android:thumb="@drawable/finger"
+                app:layout_constraintTop_toBottomOf="@id/textView5" />
+            <TextView
+                android:id="@+id/textView6"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:layout_gravity="center_horizontal"
+                android:drawableRight="@drawable/co2"
+                android:text="@string/carbon"
+                android:textAllCaps="false"
+                android:textColor="#BADA55"
+                android:textSize="20sp"
+                app:layout_constraintTop_toBottomOf="@id/seekBar5" />
+
+            <SeekBar
+                android:id="@+id/seekBar6"
+                android:layout_width="300dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="20dp"
+                android:max="100"
+                android:progressDrawable="@drawable/seek_bar"
+                android:thumb="@drawable/finger"
+                app:layout_constraintTop_toBottomOf="@id/textView6" />
+            <TextView
+                android:id="@+id/textView7"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:layout_gravity="center_horizontal"
+                android:drawableRight="@drawable/tractor"
+                android:text="@string/tractor"
+                android:textAllCaps="false"
+                android:textColor="#BADA55"
+                android:textSize="20sp"
+                app:layout_constraintTop_toBottomOf="@id/seekBar6" />
+
+            <SeekBar
+                android:id="@+id/seekBar7"
+                android:layout_width="300dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="20dp"
+                android:max="100"
+                android:progressDrawable="@drawable/seek_bar"
+                android:thumb="@drawable/finger"
+                app:layout_constraintTop_toBottomOf="@id/textView7" />
+
+    <Button
+        android:id="@+id/saveAndContinueButton"
+        style="@style/Animation.Design.BottomSheetDialog"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/button_shape"
+        android:layout_marginTop="20dp"
+        android:layout_marginLeft="125dp"
+        android:clickable="true"
+        android:enabled="true"
+        android:padding="10dp"
+        android:text="@string/continueToshop"
+        android:textAllCaps="false"
+        android:textColor="#000000"
+        android:textSize="18dp"
+        android:textStyle="bold" />
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>
