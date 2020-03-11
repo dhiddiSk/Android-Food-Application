@@ -3,7 +3,7 @@
         xmlns:app="http://schemas.android.com/apk/res-auto"
         xmlns:tools="http://schemas.android.com/tools"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="match_parent"
         android:orientation="vertical"
         tools:context=".ActivityAfterAuthentication"
         app:layout_constraintTop_toBottomOf="parent">
@@ -204,8 +204,8 @@
 
     <TextView
         android:id="@+id/textView2"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:text="User Profile"
         android:textAllCaps="false"
         android:textStyle="bold"
@@ -250,15 +250,12 @@
         android:id="@+id/footPrintButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:gravity="bottom"
-        android:padding="10dp"
-        android:clickable="true"
         android:background="@android:color/transparent"
+        android:clickable="true"
         android:focusable="true"
-        android:layout_gravity="bottom"
-        android:src="@drawable/footprint"
-        />
-
+        android:padding="10dp"
+        android:src="@drawable/footprint" />
+    <!--    android:layout_gravity="bottom"-->
 
 <!--    <Button-->
 <!--        android:id="@+id/footPrintButton"-->

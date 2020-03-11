@@ -56,36 +56,36 @@ public class LoginScreenActivity extends AppCompatActivity {
                         login_password = findViewById(R.id.login_password);
                         login_password_value = login_password.getText().toString();
 
-                        databaseconnectivity databaseconnectivityObject = new databaseconnectivity(null, "fooddb", null, 1);
-
-
-                        if (login_Username_value.isEmpty() || login_password_value.isEmpty()) {
-                            Toast.makeText(LoginScreenActivity.this, "Enter your Email and Password to login", Toast.LENGTH_SHORT).show();
-                        } else {
-
-                   /*
-                   Now verify if the user is real or anonymous by verifying the details from the shared preferences file, if the user is found real then call the next page activity else pop up some other message.
-                    */
-
-                            boolean validUser;
-                            validUser = databaseconnectivityObject.verifyTheUser(login_Username_value, login_password_value);
-                            if (validUser) {
-                            /*
-                            if the user is found true then pop up a message
-                             */
+//                        databaseconnectivity databaseconnectivityObject = new databaseconnectivity(null, "fooddb", null, 1);
+//
+//
+//                        if (login_Username_value.isEmpty() || login_password_value.isEmpty()) {
+//                            Toast.makeText(LoginScreenActivity.this, "Enter your Email and Password to login", Toast.LENGTH_SHORT).show();
+//                        } else {
+//
+//                   /*
+//                   Now verify if the user is real or anonymous by verifying the details from the shared preferences file, if the user is found real then call the next page activity else pop up some other message.
+//                    */
+//
+//                            boolean validUser;
+//                            validUser = databaseconnectivityObject.verifyTheUser(login_Username_value, login_password_value);
+//                            if (validUser) {
+//                            /*
+//                            if the user is found true then pop up a message
+//                             */
                                 startActivity(new Intent(LoginScreenActivity.this, ActivityAfterAuthentication.class));
-
-                            } else {
-                            /*
-                            if teh user is found false.
-                             */
-                                Toast.makeText(LoginScreenActivity.this, "Please enter valid credentials", Toast.LENGTH_SHORT).show();
+//
+//                            } else {
+//                            /*
+//                            if teh user is found false.
+//                             */
+//                                Toast.makeText(LoginScreenActivity.this, "Please enter valid credentials", Toast.LENGTH_SHORT).show();
                             }
 
-                        }
+                        });
 
-                    }
-                });
+//                    }
+//                });
 
 
                 registerClick = findViewById(R.id.Register_text);
