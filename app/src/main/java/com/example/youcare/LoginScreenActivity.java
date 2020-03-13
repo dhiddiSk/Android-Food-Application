@@ -3,18 +3,12 @@ package com.example.youcare;
 import androidx.appcompat.app.AppCompatActivity;
 
 //import android.annotation.SuppressLint;
-import android.content.Context;
 import android.content.Intent;
-import android.content.SharedPreferences;
 import android.graphics.Paint;
 import android.os.Bundle;
-import android.preference.PreferenceManager;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.RadioButton;
-import android.widget.Toast;
-import com.example.youcare.databaseconnectivity;
 
 public class LoginScreenActivity extends AppCompatActivity {
 
@@ -56,7 +50,7 @@ public class LoginScreenActivity extends AppCompatActivity {
                         login_password = findViewById(R.id.login_password);
                         login_password_value = login_password.getText().toString();
 
-//                        databaseconnectivity databaseconnectivityObject = new databaseconnectivity(null, "fooddb", null, 1);
+//                        Databaseconnectivity databaseconnectivityObject = new Databaseconnectivity(null, "fooddb", null, 1);
 //
 //
 //                        if (login_Username_value.isEmpty() || login_password_value.isEmpty()) {
@@ -94,7 +88,7 @@ public class LoginScreenActivity extends AppCompatActivity {
                     @Override
                     public void onClick(View v) {
 
-                        startActivity(new Intent(LoginScreenActivity.this, newRegistration.class));
+                        startActivity(new Intent(LoginScreenActivity.this, NewRegistration.class));
 
 
                     }

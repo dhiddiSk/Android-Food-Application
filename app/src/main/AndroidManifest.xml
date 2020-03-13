@@ -11,11 +11,21 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".shoppingSearchBar"></activity>
-        <activity android:name=".SecondSeekBar" />
-        <activity android:name=".seekBar" />
-        <activity android:name=".newRegistration" />
-        <activity android:name=".AppInfoWhileStartup" />
+        <activity
+            android:name=".ShoppingSearchBar"
+            android:label="Shop" />
+        <activity
+            android:name=".SecondSeekBar"
+            android:label="Filter" />
+        <activity
+            android:name=".eatinghabits"
+            android:label="Filter" />
+        <activity
+            android:name=".NewRegistration"
+            android:label="Registration" />
+        <activity
+            android:name=".AppInfoWhileStartup"
+            android:label="Info" />
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -25,7 +35,7 @@
         </activity>
         <activity
             android:name=".LoginScreenActivity"
-            android:label="@string/title_activity_login" />
+            android:label="Login" />
         <activity android:name=".ActivityAfterAuthentication" />
     </application>
 

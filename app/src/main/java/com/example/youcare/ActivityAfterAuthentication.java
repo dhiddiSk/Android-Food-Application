@@ -8,11 +8,7 @@ import android.net.Uri;
 import android.os.Bundle;
 import android.provider.MediaStore;
 import android.view.View;
-import android.widget.Button;
 import android.widget.ImageButton;
-import android.widget.TextView;
-
-
 
 
 public class ActivityAfterAuthentication extends AppCompatActivity {
@@ -21,7 +17,7 @@ public class ActivityAfterAuthentication extends AppCompatActivity {
 
 
     public ImageButton imagebutton;
-    newRegistration newRegistrationObject = new newRegistration();
+    NewRegistration newRegistrationObject = new NewRegistration();
     public String userFullName = newRegistrationObject.Register_FirstName_value + newRegistrationObject.Register_LastName_value;
 
 

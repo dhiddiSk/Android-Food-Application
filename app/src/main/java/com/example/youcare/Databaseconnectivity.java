@@ -15,7 +15,7 @@ to carry any computation regarding the customer journey etc.
 
 
 
-public class databaseconnectivity extends SQLiteOpenHelper {
+public class Databaseconnectivity extends SQLiteOpenHelper {
      private static  String DatabaseName = "fooddb";
       private static String tableName = "userDetails";
       private static int dbversion =1;
@@ -27,11 +27,11 @@ public class databaseconnectivity extends SQLiteOpenHelper {
       private static String gender = "UserGender";
       private static String password = "UserPassword";
 
-    public databaseconnectivity(@Nullable Context context, @Nullable String name, @Nullable SQLiteDatabase.CursorFactory factory, int version) {
+    public Databaseconnectivity(@Nullable Context context, @Nullable String name, @Nullable SQLiteDatabase.CursorFactory factory, int version) {
         super(context, DatabaseName, factory, dbversion);
     }
 
-    //      public databaseconnectivity(Context context) {
+    //      public Databaseconnectivity(Context context) {
 //        super(context, DatabaseName, null, dbversion);
 //    }
 
