@@ -21,7 +21,7 @@
             android:name=".eatinghabits"
             android:label="Filter" />
         <activity
-            android:name=".NewRegistration"
+            android:name=".NewRegistrationTwo"
             android:label="Registration" />
         <activity
             android:name=".AppInfoWhileStartup"
@@ -34,9 +34,9 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".LoginScreenActivity"
+            android:name=".LoginScreenActivityTwo"
             android:label="Login" />
-        <activity android:name=".ActivityAfterAuthentication" />
+<!--        <activity android:name=".ActivityAfterAuthentication" />-->
     </application>
 
 </manifest>

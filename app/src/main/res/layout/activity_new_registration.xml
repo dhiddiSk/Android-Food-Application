@@ -12,7 +12,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        tools:context=".NewRegistration"
+        tools:context=".NewRegistrationTwo"
         app:layout_constraintTop_toBottomOf="parent">
 
 
@@ -119,7 +119,7 @@
             app:layout_constraintTop_toBottomOf="@id/Register_radio_gender"/>
 
     <EditText
-        android:id="@+id/Register_EmailAdress"
+        android:id="@+id/Register_EmailAddress"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="24dp"
@@ -158,7 +158,7 @@
         android:selectAllOnFocus="true"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/Register_EmailAdress" />
+        app:layout_constraintTop_toBottomOf="@+id/Register_EmailAddress" />
 
     <!--            <TextView android:id="@+id/Gender"-->
     <!--                android:layout_width="wrap_content"-->

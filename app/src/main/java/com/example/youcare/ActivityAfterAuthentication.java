@@ -17,8 +17,8 @@ public class ActivityAfterAuthentication extends AppCompatActivity {
 
 
     public ImageButton imagebutton;
-    NewRegistration newRegistrationObject = new NewRegistration();
-    public String userFullName = newRegistrationObject.Register_FirstName_value + newRegistrationObject.Register_LastName_value;
+    NewRegistrationTwo newRegistrationObject = new NewRegistrationTwo();
+    public String profileName = newRegistrationObject.UserFullName;
 
 
 
@@ -45,17 +45,7 @@ public class ActivityAfterAuthentication extends AppCompatActivity {
 
                 Intent exteranlIntent = new Intent(Intent.ACTION_PICK, MediaStore.Images.Media.EXTERNAL_CONTENT_URI);
                 startActivityForResult(exteranlIntent, imageUpload_code);
-
-
-
-
-
             }
-
-
-
-
-
         });
 
 

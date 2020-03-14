@@ -103,14 +103,13 @@
 
 
  <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-              xmlns:app="http://schemas.android.com/apk/res-auto"
-              xmlns:tools="http://schemas.android.com/tools"
-             android:layout_width="match_parent"
-             android:layout_height="wrap_content"
-             android:orientation="vertical"
-             tools:context=".LoginScreenActivity"
-
-             app:layout_constraintTop_toBottomOf="parent">
+               xmlns:app="http://schemas.android.com/apk/res-auto"
+               xmlns:tools="http://schemas.android.com/tools"
+               android:layout_width="match_parent"
+               android:layout_height="wrap_content"
+               android:orientation="vertical"
+               tools:context=".LoginScreenActivityTwo"
+               app:layout_constraintTop_toBottomOf="parent">
 <!--        app:layout_constraintTop_toBottomOf="@+id/textRegister"-->
 
     <ScrollView
@@ -118,9 +117,10 @@
         android:layout_height="match_parent">
 
     <LinearLayout
-            android:orientation="vertical" android:layout_width="match_parent"
+            android:orientation="vertical"
+            android:layout_width="match_parent"
             android:layout_height="match_parent"
-             android:gravity="center">
+            android:gravity="center">
 
             <ImageView
                 android:id="@+id/basketOnLoginScreen"
@@ -128,6 +128,7 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="top|center"
                 android:background="@android:color/transparent"
+
                 android:src="@drawable/yourchoice_basket" />
             <TextView
                 android:layout_width="wrap_content"
