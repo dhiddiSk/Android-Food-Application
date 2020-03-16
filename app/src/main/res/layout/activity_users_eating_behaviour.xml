@@ -26,171 +26,423 @@
         android:textColor="#808080"
         android:textSize="20sp"
         android:textStyle="bold"
-        app:layout_constraintBottom_toTopOf="@id/VeganTextView1"
+        app:layout_constraintBottom_toTopOf="@id/quetiontext1"
         tools:layout_editor_absoluteX="72dp" />
 
-    <TextView
-        android:id="@+id/VeganTextView1"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="60dp"
-        android:drawableRight="@drawable/vegan"
-        android:text="@string/vegan"
-        android:textAllCaps="false"
-        android:textColor="#ACF41B"
-        android:textSize="30sp"
-        android:layout_marginLeft="140dp"
-        app:layout_constraintTop_toBottomOf="@id/habitsText"
-        tools:layout_editor_absoluteX="155dp" />
+      <TextView
+          android:id="@+id/quetiontext1"
+          android:layout_width="wrap_content"
+          android:layout_height="match_parent"
+          android:text="@string/quetion2Regional"
+          android:textAllCaps="false"
+          android:textColor="#A9A9A9"
+          android:textSize="20sp"
+          android:layout_marginLeft="0dp"
+          android:layout_marginTop="30dp"/>
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:layout_marginTop="25dp">
 
-        <Switch
-            android:id="@+id/switch1"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:checked="true"
-            android:switchMinWidth="40dp"
-            android:layout_marginLeft="0dp"
-            android:text="Yes:"
-            android:textOff="OFF"
-            android:textOn="ON"
-            />
+       <ImageView
+           android:id="@+id/regionalImage"
+           android:layout_width="wrap_content"
+           android:layout_height="wrap_content"
+           android:layout_gravity="center_horizontal"
+           android:src="@drawable/germany"
+           android:layout_marginTop="30dp"/>
 
-        <Switch
-            android:id="@+id/switch2"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:checked="true"
-            android:layout_marginLeft="60dp"
-            android:switchMinWidth="50dp"
-            android:text="Try:"
-            android:textOff="OFF"
-            android:textOn="ON" />
+       <LinearLayout
+           android:layout_width="match_parent"
+           android:layout_height="wrap_content"
+           android:orientation="horizontal"
+           android:layout_marginTop="25dp">
 
-        <Switch
-            android:id="@+id/switch3"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="60dp"
-            android:checked="true"
-            android:switchMinWidth="50dp"
-            android:text="No:"
-            android:textOff="OFF"
-            android:textOn="ON" />
+           <Switch
+               android:id="@+id/RegionalSwitch1"
+               android:layout_width="wrap_content"
+               android:layout_height="wrap_content"
+               android:checked="false"
+               android:switchMinWidth="40dp"
+               android:layout_marginLeft="0dp"
+               android:text="Yes:"
+               android:textOff="OFF"
+               android:textOn="ON"
+               />
 
-    </LinearLayout>
+           <Switch
+               android:id="@+id/RegionalSwitch2"
+               android:layout_width="wrap_content"
+               android:layout_height="wrap_content"
+               android:checked="false"
+               android:layout_marginLeft="60dp"
+               android:switchMinWidth="50dp"
+               android:text="Try:"
+               android:textOff="OFF"
+               android:textOn="ON" />
 
-    <TextView
-        android:id="@+id/VegTextView2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="60dp"
-        android:drawableRight="@drawable/diet"
-        android:text="@string/veg"
-        android:textAllCaps="false"
-        android:textColor="#ACF41B"
-        android:textSize="30sp"
-        android:layout_marginLeft="125dp"
-        tools:layout_editor_absoluteX="155dp" />
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:layout_marginTop="25dp">
+           <Switch
+               android:id="@+id/RegionalSwitch3"
+               android:layout_width="wrap_content"
+               android:layout_height="wrap_content"
+               android:layout_marginLeft="60dp"
+               android:checked="false"
+               android:switchMinWidth="50dp"
+               android:text="No:"
+               android:textOff="OFF"
+               android:textOn="ON" />
 
-        <Switch
-            android:id="@+id/switch4"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:checked="true"
-            android:switchMinWidth="40dp"
-            android:layout_marginLeft="0dp"
-            android:text="Yes:"
-            android:textOff="OFF"
-            android:textOn="ON"
-            />
+       </LinearLayout>
 
-        <Switch
-            android:id="@+id/switch5"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:checked="true"
-            android:layout_marginLeft="60dp"
-            android:switchMinWidth="50dp"
-            android:text="Try:"
-            android:textOff="OFF"
-            android:textOn="ON" />
+       <TextView
+           android:id="@+id/quetiontext2"
+           android:layout_width="wrap_content"
+           android:layout_height="match_parent"
+           android:text="@string/quetion2seasonal"
+           android:textAllCaps="false"
+           android:textColor="#A9A9A9"
+           android:textSize="20sp"
+           android:layout_marginLeft="0dp"
+           android:layout_marginTop="40dp"/>
 
-        <Switch
-            android:id="@+id/switch6"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="60dp"
-            android:checked="true"
-            android:switchMinWidth="50dp"
-            android:text="No:"
-            android:textOff="OFF"
-            android:textOn="ON" />
 
-    </LinearLayout>
-    <TextView
-        android:id="@+id/Non_VegTextView3"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="60dp"
-        android:drawableRight="@drawable/meat"
-        android:text="@string/meat"
-        android:textAllCaps="false"
-        android:textColor="#ACF41B"
-        android:textSize="30sp"
-        android:layout_marginLeft="80dp"
-        tools:layout_editor_absoluteX="155dp" />
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:layout_marginTop="25dp">
+       <ImageView
+           android:id="@+id/seasonalImage"
+           android:layout_width="wrap_content"
+           android:layout_height="wrap_content"
+           android:layout_gravity="center_horizontal"
+           android:src="@drawable/moon"
+           android:layout_marginTop="30dp"/>
 
-        <Switch
-            android:id="@+id/switch7"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:checked="true"
-            android:switchMinWidth="40dp"
-            android:layout_marginLeft="0dp"
-            android:text="Yes:"
-            android:textOff="OFF"
-            android:textOn="ON"
-            />
+       <LinearLayout
+           android:layout_width="match_parent"
+           android:layout_height="wrap_content"
+           android:orientation="horizontal"
+           android:layout_marginTop="25dp">
 
-        <Switch
-            android:id="@+id/switch8"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:checked="true"
-            android:layout_marginLeft="60dp"
-            android:switchMinWidth="50dp"
-            android:text="Try:"
-            android:textOff="OFF"
-            android:textOn="ON" />
+           <Switch
+               android:id="@+id/seasonalSwitch1"
+               android:layout_width="wrap_content"
+               android:layout_height="wrap_content"
+               android:checked="false"
+               android:switchMinWidth="40dp"
+               android:layout_marginLeft="0dp"
+               android:text="Yes:"
+               android:textOff="OFF"
+               android:textOn="ON"
+               />
 
-        <Switch
-            android:id="@+id/switch9"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="60dp"
-            android:checked="true"
-            android:switchMinWidth="50dp"
-            android:text="No:"
-            android:textOff="OFF"
-            android:textOn="ON" />
+           <Switch
+               android:id="@+id/seasonalSwitch2"
+               android:layout_width="wrap_content"
+               android:layout_height="wrap_content"
+               android:checked="false"
+               android:layout_marginLeft="60dp"
+               android:switchMinWidth="50dp"
+               android:text="Try:"
+               android:textOff="OFF"
+               android:textOn="ON" />
 
-    </LinearLayout>
+           <Switch
+               android:id="@+id/seasonalswitch3"
+               android:layout_width="wrap_content"
+               android:layout_height="wrap_content"
+               android:layout_marginLeft="60dp"
+               android:checked="false"
+               android:switchMinWidth="50dp"
+               android:text="No:"
+               android:textOff="OFF"
+               android:textOn="ON" />
+
+       </LinearLayout>
+
+       <TextView
+           android:id="@+id/quetiontext3"
+           android:layout_width="wrap_content"
+           android:layout_height="match_parent"
+           android:text="@string/quetion2Vegan"
+           android:textAllCaps="false"
+           android:textColor="#A9A9A9"
+           android:textSize="20sp"
+           android:layout_marginLeft="0dp"
+           android:layout_marginTop="40dp"/>
+
+
+       <ImageView
+           android:id="@+id/veganImage"
+           android:layout_width="wrap_content"
+           android:layout_height="wrap_content"
+           android:layout_gravity="center_horizontal"
+           android:src="@drawable/vegan"
+           android:layout_marginTop="30dp"/>
+
+       <LinearLayout
+           android:layout_width="match_parent"
+           android:layout_height="wrap_content"
+           android:orientation="horizontal"
+           android:layout_marginTop="25dp">
+
+           <Switch
+               android:id="@+id/veganSwitch1"
+               android:layout_width="wrap_content"
+               android:layout_height="wrap_content"
+               android:checked="false"
+               android:switchMinWidth="40dp"
+               android:layout_marginLeft="0dp"
+               android:text="Yes:"
+               android:textOff="OFF"
+               android:textOn="ON"
+               />
+
+           <Switch
+               android:id="@+id/veganSwitch2"
+               android:layout_width="wrap_content"
+               android:layout_height="wrap_content"
+               android:checked="false"
+               android:layout_marginLeft="60dp"
+               android:switchMinWidth="50dp"
+               android:text="Try:"
+               android:textOff="OFF"
+               android:textOn="ON" />
+
+           <Switch
+               android:id="@+id/veganSwitch3"
+               android:layout_width="wrap_content"
+               android:layout_height="wrap_content"
+               android:layout_marginLeft="60dp"
+               android:checked="false"
+               android:switchMinWidth="50dp"
+               android:text="No:"
+               android:textOff="OFF"
+               android:textOn="ON" />
+
+       </LinearLayout>
+
+       <TextView
+           android:id="@+id/quetiontext4"
+           android:layout_width="wrap_content"
+           android:layout_height="match_parent"
+           android:text="@string/quetion2Vegetarian"
+           android:textAllCaps="false"
+           android:textColor="#A9A9A9"
+           android:textSize="20sp"
+           android:layout_marginLeft="0dp"
+           android:layout_marginTop="40dp"/>
+
+
+       <ImageView
+           android:id="@+id/vegImage"
+           android:layout_width="wrap_content"
+           android:layout_height="wrap_content"
+           android:layout_gravity="center_horizontal"
+           android:src="@drawable/diet"
+           android:layout_marginTop="30dp"/>
+
+       <LinearLayout
+           android:layout_width="match_parent"
+           android:layout_height="wrap_content"
+           android:orientation="horizontal"
+           android:layout_marginTop="25dp">
+
+           <Switch
+               android:id="@+id/vegetarianSwitch1"
+               android:layout_width="wrap_content"
+               android:layout_height="wrap_content"
+               android:checked="false"
+               android:switchMinWidth="40dp"
+               android:layout_marginLeft="0dp"
+               android:text="Yes:"
+               android:textOff="OFF"
+               android:textOn="ON"
+               />
+
+           <Switch
+               android:id="@+id/vegetarianSwitch2"
+               android:layout_width="wrap_content"
+               android:layout_height="wrap_content"
+               android:checked="false"
+               android:layout_marginLeft="60dp"
+               android:switchMinWidth="50dp"
+               android:text="Try:"
+               android:textOff="OFF"
+               android:textOn="ON" />
+
+           <Switch
+               android:id="@+id/vegetarianSwitch3"
+               android:layout_width="wrap_content"
+               android:layout_height="wrap_content"
+               android:layout_marginLeft="60dp"
+               android:checked="false"
+               android:switchMinWidth="50dp"
+               android:text="No:"
+               android:textOff="OFF"
+               android:textOn="ON" />
+
+       </LinearLayout>
+
+
+
+
+
+<!--       <TextView-->
+<!--        android:id="@+id/VeganTextView1"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:layout_marginTop="60dp"-->
+<!--        android:drawableRight="@drawable/vegan"-->
+<!--        android:text="@string/vegan"-->
+<!--        android:textAllCaps="false"-->
+<!--        android:textColor="#ACF41B"-->
+<!--        android:textSize="30sp"-->
+<!--        android:layout_marginLeft="140dp"-->
+<!--        app:layout_constraintTop_toBottomOf="@id/habitsText"-->
+<!--        tools:layout_editor_absoluteX="155dp" />-->
+
+<!--    <LinearLayout-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:orientation="horizontal"-->
+<!--        android:layout_marginTop="25dp">-->
+
+<!--        <Switch-->
+<!--            android:id="@+id/switch1"-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:checked="false"-->
+<!--            android:switchMinWidth="40dp"-->
+<!--            android:layout_marginLeft="0dp"-->
+<!--            android:text="Yes:"-->
+<!--            android:textOff="OFF"-->
+<!--            android:textOn="ON"-->
+<!--            />-->
+
+<!--        <Switch-->
+<!--            android:id="@+id/switch2"-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:checked="false"-->
+<!--            android:layout_marginLeft="60dp"-->
+<!--            android:switchMinWidth="50dp"-->
+<!--            android:text="Try:"-->
+<!--            android:textOff="OFF"-->
+<!--            android:textOn="ON" />-->
+
+<!--        <Switch-->
+<!--            android:id="@+id/switch3"-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_marginLeft="60dp"-->
+<!--            android:checked="false"-->
+<!--            android:switchMinWidth="50dp"-->
+<!--            android:text="No:"-->
+<!--            android:textOff="OFF"-->
+<!--            android:textOn="ON" />-->
+
+<!--    </LinearLayout>-->
+
+<!--    <TextView-->
+<!--        android:id="@+id/VegTextView2"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:layout_marginTop="60dp"-->
+<!--        android:drawableRight="@drawable/diet"-->
+<!--        android:text="@string/veg"-->
+<!--        android:textAllCaps="false"-->
+<!--        android:textColor="#ACF41B"-->
+<!--        android:textSize="30sp"-->
+<!--        android:layout_marginLeft="125dp"-->
+<!--        tools:layout_editor_absoluteX="155dp" />-->
+<!--    <LinearLayout-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:orientation="horizontal"-->
+<!--        android:layout_marginTop="25dp">-->
+
+<!--        <Switch-->
+<!--            android:id="@+id/switch4"-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:checked="false"-->
+<!--            android:switchMinWidth="40dp"-->
+<!--            android:layout_marginLeft="0dp"-->
+<!--            android:text="Yes:"-->
+<!--            android:textOff="OFF"-->
+<!--            android:textOn="ON"-->
+<!--            />-->
+
+<!--        <Switch-->
+<!--            android:id="@+id/switch5"-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:checked="false"-->
+<!--            android:layout_marginLeft="60dp"-->
+<!--            android:switchMinWidth="50dp"-->
+<!--            android:text="Try:"-->
+<!--            android:textOff="OFF"-->
+<!--            android:textOn="ON" />-->
+
+<!--        <Switch-->
+<!--            android:id="@+id/switch6"-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_marginLeft="60dp"-->
+<!--            android:checked="false"-->
+<!--            android:switchMinWidth="50dp"-->
+<!--            android:text="No:"-->
+<!--            android:textOff="OFF"-->
+<!--            android:textOn="ON" />-->
+
+<!--    </LinearLayout>-->
+<!--    <TextView-->
+<!--        android:id="@+id/Non_VegTextView3"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:layout_marginTop="60dp"-->
+<!--        android:drawableRight="@drawable/meat"-->
+<!--        android:text="@string/meat"-->
+<!--        android:textAllCaps="false"-->
+<!--        android:textColor="#ACF41B"-->
+<!--        android:textSize="30sp"-->
+<!--        android:layout_marginLeft="80dp"-->
+<!--        tools:layout_editor_absoluteX="155dp" />-->
+<!--    <LinearLayout-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:orientation="horizontal"-->
+<!--        android:layout_marginTop="25dp">-->
+
+<!--        <Switch-->
+<!--            android:id="@+id/switch7"-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:checked="false"-->
+<!--            android:switchMinWidth="40dp"-->
+<!--            android:layout_marginLeft="0dp"-->
+<!--            android:text="Yes:"-->
+<!--            android:textOff="OFF"-->
+<!--            android:textOn="ON"-->
+<!--            />-->
+
+<!--        <Switch-->
+<!--            android:id="@+id/switch8"-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:checked="false"-->
+<!--            android:layout_marginLeft="60dp"-->
+<!--            android:switchMinWidth="50dp"-->
+<!--            android:text="Try:"-->
+<!--            android:textOff="OFF"-->
+<!--            android:textOn="ON" />-->
+
+<!--        <Switch-->
+<!--            android:id="@+id/switch9"-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_marginLeft="60dp"-->
+<!--            android:checked="false"-->
+<!--            android:switchMinWidth="50dp"-->
+<!--            android:text="No:"-->
+<!--            android:textOff="OFF"-->
+<!--            android:textOn="ON" />-->
+
+<!--    </LinearLayout>-->
     <Button
         android:id="@+id/applyFilters"
         android:layout_width="wrap_content"

@@ -15,7 +15,7 @@
             android:name=".ShoppingSearchBar"
             android:label="Shop" />
         <activity
-            android:name=".SecondSeekBar"
+            android:name=".SeekBar"
             android:label="Filter" />
         <activity
             android:name=".eatinghabits"

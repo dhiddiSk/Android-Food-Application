@@ -9,11 +9,6 @@ import android.widget.EditText;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
-
-
-
-
-
 public class LoginScreenActivityTwo extends AppCompatActivity {
       EditText login_Username, login_password;
         DatabaseConnectivityTwo database;

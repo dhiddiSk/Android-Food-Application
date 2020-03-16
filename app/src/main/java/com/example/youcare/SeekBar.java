@@ -8,7 +8,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
-public class SecondSeekBar extends AppCompatActivity {
+public class SeekBar extends AppCompatActivity {
 
     public Button shopping;
     public Button applyFilters;
@@ -177,7 +177,7 @@ public class SecondSeekBar extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-                startActivity(new Intent(SecondSeekBar.this, ShoppingSearchBar.class));
+                startActivity(new Intent(SeekBar.this, ShoppingSearchBar.class));
                 }
 
         });

@@ -10,7 +10,7 @@
     <string name="veg">"Vegetarian"</string>
     <string name="savefilters">"Apply Filters"</string>
     <string name="invalid_username">Not a valid username</string>
-    <string name="eating_page_heading">"Please match your eating habits"</string>
+    <string name="eating_page_heading">"Please match your preferences"</string>
     <string name="bio">"Bio"</string>
     <string name="search">"Your Search"</string>
     <string name="meat">"Non-Vegetarian"</string>
@@ -24,6 +24,12 @@
     <string name="invalid_password">Password must be >5 characters</string>
     <string name="login_failed">"Login failed"</string>
     <string name="title_activity_scrolling_login">ScrollingLoginActivity</string>
+    <string name="quetion2Regional">"Do you prefer regional food ?"</string>
+    <string name="quetion2seasonal">"Do you prefer seasonal food ?"</string>
+    <string name="quetion2Vegan">"Do you prefer vegan food ?"</string>
+    <string name="quetion2Vegetarian">"Do you prefer vegetarian food ?"</string>
+    <string name="valuesRatingHeading">"Please give the ratings!"</string>
+    <string name="labelHeading">"Labels"</string>
     <string name="large_text">
         "Material is the metaphor.\n\n"
 
