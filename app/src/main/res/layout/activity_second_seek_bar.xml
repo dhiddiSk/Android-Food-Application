@@ -1,248 +1,157 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    tools:context=".SeekBar">
-
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="horizontal">
-
-    <TextView
-        android:id="@+id/textViewHeadingw1"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="20dp"
-        android:layout_marginTop="20dp"
-        android:text="@string/labelHeading"
-        android:textAllCaps="false"
-        android:textColor="#808080"
-        android:textSize="15sp"/>
+    tools:context=".SeekBar"
+    android:paddingLeft="15sp"
+    android:paddingRight="15sp">
 
     <TextView
         android:id="@+id/textViewHeadingw2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
-        android:layout_marginLeft="180dp"
+        android:gravity="center_horizontal"
         android:text="@string/valuesRatingHeading"
         android:textAllCaps="false"
+        android:textStyle="bold"
         android:textColor="#808080"
-        android:textSize="15sp" />
-    </LinearLayout>
+        android:textSize="22sp" />
+
+    <TextView
+        android:id="@+id/category1textAndImage"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="90dp"
+        android:layout_marginLeft="20dp"
+        android:drawableTop="@drawable/bio"
+        android:text="@string/bio"
+        android:textAllCaps="false"
+        android:textColor="#ACF41B"
+        android:textSize="30sp"
+        android:textStyle="bold"
+        />
+
+    <RatingBar
+        android:id="@+id/bioratingbar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/textViewHeadingw2"
+        android:layout_marginLeft="169dp"
+        android:layout_marginTop="46dp"
+        android:layout_toRightOf="@+id/category1textAndImage"
+        android:numStars="3"
+        android:stepSize="1" />
+
+    <TextView
+        android:id="@+id/category2textAndImage"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/category1textAndImage"
+        android:layout_marginTop="36dp"
+        android:drawableTop="@drawable/cow"
+        android:singleLine="false"
+        android:text="@string/animal"
+        android:textAllCaps="false"
+        android:textColor="#008080"
+        android:textSize="30sp"
+        android:textStyle="bold"
+        app:layout_constraintTop_toBottomOf="parent" />
+
+    <RatingBar
+        android:id="@+id/animaltreatmentRating"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/bioratingbar"
+        android:layout_marginLeft="94dp"
+        android:layout_marginTop="44dp"
+        android:layout_toRightOf="@+id/category2textAndImage"
+        android:numStars="3"
+        android:stepSize="1" />
+
+    <TextView
+        android:id="@+id/category3textAndImage"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/category2textAndImage"
+        android:layout_marginTop="49dp"
+        android:drawableTop="@drawable/trash"
+        android:text="@string/recycle"
+        android:textAllCaps="false"
+        android:textColor="#8B4513"
+        android:textSize="30sp"
+        android:textStyle="bold" />
+
+    <RatingBar
+        android:id="@+id/recyclbleId"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/animaltreatmentRating"
+        android:layout_marginLeft="89dp"
+        android:layout_marginTop="42dp"
+        android:layout_toRightOf="@+id/category3textAndImage"
+        android:numStars="3"
+        android:stepSize="1" />
+
+    <TextView
+        android:id="@+id/category4textAndImage"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/category2textAndImage"
+        android:layout_marginTop="153dp"
+        android:drawableTop="@drawable/tractor"
+        android:text="@string/tractor"
+        android:textAllCaps="false"
+        android:textColor="#6f4e37"
+        android:textSize="30sp"
+        android:textStyle="bold"
+        app:layout_constraintTop_toBottomOf="parent" />
+
+
+    <RatingBar
+        android:id="@+id/FairTrade"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/animaltreatmentRating"
+        android:layout_marginLeft="107dp"
+        android:layout_marginTop="156dp"
+        android:layout_toRightOf="@+id/category4textAndImage"
+        android:numStars="3"
+        android:stepSize="1" />
+
+    <SeekBar
+        android:id="@+id/PriceSeekbar"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/FairTrade"
+        android:layout_centerHorizontal="true"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="100dp"
+        android:max="100"
+        android:progressDrawable="@drawable/seek_bar"/>
+
+    <TextView
+        android:id="@+id/textView4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/PriceSeekbar"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="-70dp"
+        android:text="Price:"
+        android:textAllCaps="false"
+        android:textSize="25sp" />
 
     <ImageView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:
+        android:layout_below="@id/PriceSeekbar"
+        android:layout_marginTop="14dp"
+        android:src="@drawable/euro"
+        android:layout_marginLeft="35dp"/>
 
 
 
-
-    <TextView
-        android:id="@+id/textViewHeading2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
-        android:layout_gravity="center_horizontal"
-        android:drawableRight="@drawable/bio"
-        android:textAllCaps="false"
-        android:textColor="#ACF41B"
-        android:textSize="20sp"
-        app:layout_constraintTop_toBottomOf="parent" />
-
-
-
-
-
-    <ScrollView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent">
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:orientation="vertical">
-
-    <TextView
-        android:id="@+id/textView1"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
-        android:layout_gravity="center_horizontal"
-        android:drawableRight="@drawable/bio"
-        android:textAllCaps="false"
-        android:textColor="#ACF41B"
-        android:textSize="20sp"
-        app:layout_constraintTop_toBottomOf="parent" />
-
-    <SeekBar
-        android:id="@+id/seekBar1"
-        android:layout_width="300dp"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="20dp"
-        android:layout_marginTop="20dp"
-        android:max="100"
-        android:progressDrawable="@drawable/seek_bar"
-        android:thumb="@drawable/finger"
-        app:layout_constraintTop_toBottomOf="@id/textView1" />
-
-    <TextView
-        android:id="@+id/textView2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
-        android:layout_gravity="center_horizontal"
-        android:drawableRight="@drawable/trash"
-        android:textAllCaps="false"
-        android:textColor="#BADA55"
-        android:textSize="20sp"
-        app:layout_constraintTop_toBottomOf="@id/seekBar1" />
-
-    <SeekBar
-        android:id="@+id/seekBar2"
-        android:layout_width="300dp"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="20dp"
-        android:layout_marginTop="20dp"
-        android:max="100"
-        android:progressDrawable="@drawable/seek_bar"
-        android:thumb="@drawable/finger"
-        app:layout_constraintTop_toBottomOf="@id/textView2" />
-
-    <TextView
-         android:id="@+id/textView3"
-         android:layout_width="wrap_content"
-         android:layout_height="wrap_content"
-         android:layout_marginTop="20dp"
-         android:layout_gravity="center_horizontal"
-         android:drawableRight="@drawable/germany"
-         android:textAllCaps="false"
-         android:textColor="#BADA55"
-         android:textSize="20sp"
-         app:layout_constraintTop_toBottomOf="@id/seekBar2" />
-
-            <SeekBar
-                android:id="@+id/seekBar3"
-                android:layout_width="300dp"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="20dp"
-                android:layout_marginTop="20dp"
-                android:max="100"
-                android:progressDrawable="@drawable/seek_bar"
-                android:thumb="@drawable/finger"
-                app:layout_constraintTop_toBottomOf="@id/textView3" />
-
-            <TextView
-         android:id="@+id/textView4"
-         android:layout_width="wrap_content"
-         android:layout_height="wrap_content"
-         android:layout_marginTop="20dp"
-         android:layout_gravity="center_horizontal"
-         android:drawableRight="@drawable/moon"
-         android:textAllCaps="false"
-         android:textColor="#BADA55"
-         android:textSize="20sp"
-         app:layout_constraintTop_toBottomOf="@id/seekBar3" />
-
-      <SeekBar
-         android:id="@+id/seekBar4"
-         android:layout_width="300dp"
-         android:layout_height="wrap_content"
-         android:layout_marginLeft="20dp"
-         android:layout_marginTop="20dp"
-         android:max="100"
-         android:progressDrawable="@drawable/seek_bar"
-         android:thumb="@drawable/finger"
-         app:layout_constraintTop_toBottomOf="@id/textView4" />
-
-      <TextView
-                android:id="@+id/textView5"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="20dp"
-                android:layout_gravity="center_horizontal"
-                android:drawableRight="@drawable/cow"
-                android:textAllCaps="false"
-                android:textColor="#BADA55"
-                android:textSize="20sp"
-                app:layout_constraintTop_toBottomOf="@id/seekBar4" />
-
-            <SeekBar
-                android:id="@+id/seekBar5"
-                android:layout_width="300dp"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="20dp"
-                android:layout_marginTop="20dp"
-                android:max="100"
-                android:progressDrawable="@drawable/seek_bar"
-                android:thumb="@drawable/finger"
-                app:layout_constraintTop_toBottomOf="@id/textView5" />
-            <TextView
-                android:id="@+id/textView6"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="20dp"
-                android:layout_gravity="center_horizontal"
-                android:drawableRight="@drawable/co2"
-                android:textAllCaps="false"
-                android:textColor="#BADA55"
-                android:textSize="20sp"
-                app:layout_constraintTop_toBottomOf="@id/seekBar5" />
-
-            <SeekBar
-                android:id="@+id/seekBar6"
-                android:layout_width="300dp"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="20dp"
-                android:layout_marginTop="20dp"
-                android:max="100"
-                android:progressDrawable="@drawable/seek_bar"
-                android:thumb="@drawable/finger"
-                app:layout_constraintTop_toBottomOf="@id/textView6" />
-            <TextView
-                android:id="@+id/textView7"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="20dp"
-                android:layout_gravity="center_horizontal"
-                android:drawableRight="@drawable/tractor"
-                android:textAllCaps="false"
-                android:textColor="#BADA55"
-                android:textSize="20sp"
-                app:layout_constraintTop_toBottomOf="@id/seekBar6" />
-
-            <SeekBar
-                android:id="@+id/seekBar7"
-                android:layout_width="300dp"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="20dp"
-                android:layout_marginTop="20dp"
-                android:max="100"
-                android:progressDrawable="@drawable/seek_bar"
-                android:thumb="@drawable/finger"
-                app:layout_constraintTop_toBottomOf="@id/textView7" />
-
-    <Button
-        android:id="@+id/saveAndContinueButton"
-        style="@style/Animation.Design.BottomSheetDialog"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:background="@drawable/button_shape"
-        android:layout_marginTop="20dp"
-        android:layout_marginLeft="100dp"
-        android:clickable="true"
-        android:enabled="true"
-        android:padding="10dp"
-        android:text="@string/continueToshop"
-        android:textAllCaps="false"
-        android:textColor="#000000"
-        android:textSize="18dp"
-        android:textStyle="bold" />
-        </LinearLayout>
-    </ScrollView>
-</LinearLayout>
+</RelativeLayout>

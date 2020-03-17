@@ -121,13 +121,12 @@
                android:id="@+id/seasonalSwitch1"
                android:layout_width="wrap_content"
                android:layout_height="wrap_content"
+               android:layout_marginLeft="0dp"
                android:checked="false"
                android:switchMinWidth="40dp"
-               android:layout_marginLeft="0dp"
                android:text="Yes:"
                android:textOff="OFF"
-               android:textOn="ON"
-               />
+               android:textOn="ON" />
 
            <Switch
                android:id="@+id/seasonalSwitch2"

@@ -16,7 +16,7 @@
     <string name="meat">"Non-Vegetarian"</string>
     <string name="local">"Regional"</string>
     <string name="season">"Seasonal"</string>
-    <string name="animal">"Animal Treatment"</string>
+    <string name="animal">"Treatment"</string>
     <string name="carbon">"Co2 footPrint"</string>
     <string name="continueToshop">"Continue to shopping"</string>
     <string name="tractor">"Fair trade"</string>
@@ -28,8 +28,8 @@
     <string name="quetion2seasonal">"Do you prefer seasonal food ?"</string>
     <string name="quetion2Vegan">"Do you prefer vegan food ?"</string>
     <string name="quetion2Vegetarian">"Do you prefer vegetarian food ?"</string>
-    <string name="valuesRatingHeading">"Please give the ratings!"</string>
-    <string name="labelHeading">"Labels"</string>
+    <string name="valuesRatingHeading">"Your preferences on below categories!"</string>
+    <string name="labelHeading">"Categories"</string>
     <string name="large_text">
         "Material is the metaphor.\n\n"
 
