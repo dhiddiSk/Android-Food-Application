@@ -6,20 +6,72 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.RatingBar;
 import android.widget.TextView;
 
 public class SeekBar extends AppCompatActivity {
 
-    public Button shopping;
-    public Button applyFilters;
-    public String[] categories = {"Bio: ", "Recyclable: ", "Regional: ", "Seasonal: ", "Animal Treatment: ", "Co2 FootPrint: ", "Fair Trade: " };
-    public android.widget.SeekBar seekBar1, seekBar2, seekBar3, seekBar4, seekBar5, seekBar6, seekBar7;
-    public TextView textView1, textView2, textView3, textView4, textView5, textView6, textView7;
+//    public Button shopping;
+//    public Button applyFilters;
+//    public String[] categories = {"Bio: ", "Recyclable: ", "Regional: ", "Seasonal: ", "Animal Treatment: ", "Co2 FootPrint: ", "Fair Trade: " };
+//    public android.widget.SeekBar seekBar1, seekBar2, seekBar3, seekBar4, seekBar5, seekBar6, seekBar7;
+//    public TextView textView1, textView2, textView3, textView4, textView5, textView6, textView7;
+
+    public RatingBar bio, animalTreatment, recyclable, fairtrade;
+    public android.widget.SeekBar price;
+    public int userPriceInput;
+    public Button toshop;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_second_seek_bar);
+
+        bio = findViewById(R.id.bioratingbar);
+        animalTreatment = findViewById(R.id.animaltreatmentRating);
+        recyclable = findViewById(R.id.recyclbleId);
+        fairtrade = findViewById(R.id.FairTrade);
+        price = findViewById(R.id.PriceSeekbar);
+        toshop = findViewById(R.id.shoppingButton);
+        price.setOnSeekBarChangeListener(new android.widget.SeekBar.OnSeekBarChangeListener() {
+            @Override
+            public void onProgressChanged(android.widget.SeekBar seekBar, int progress, boolean fromUser) {
+                userPriceInput = progress;
+            }
+
+            @Override
+            public void onStartTrackingTouch(android.widget.SeekBar seekBar) {
+
+            }
+
+            @Override
+            public void onStopTrackingTouch(android.widget.SeekBar seekBar) {
+
+
+            }
+       });
+
+        //To be able to interact and give rating with Android RatingBar
+        bio.setOnRatingBarChangeListener(new RatingBar.OnRatingBarChangeListener() {
+            @Override
+            public void onRatingChanged(RatingBar ratingBar, float rating, boolean fromUser) {
+                // here the value rating is reflected from the user input
+
+
+
+            }
+        });
+        toshop.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent searchbar = new Intent(SeekBar.this, ShoppingSearchBar.class);
+                startActivity(searchbar);
+            }
+        });
+
+
+
 //        seekBar1 = findViewById(R.id.seekBar1); seekBar2 = findViewById(R.id.seekBar2);seekBar3 = findViewById(R.id.seekBar3);
 //        seekBar4 = findViewById(R.id.seekBar4);seekBar5 = findViewById(R.id.seekBar5);seekBar6 = findViewById(R.id.seekBar6);
 //        seekBar7 = findViewById(R.id.seekBar7);textView1 = findViewById(R.id.textView1);textView2 = findViewById(R.id.textView2);

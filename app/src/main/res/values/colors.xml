@@ -6,4 +6,9 @@
     <color name="seek_bar_background">#ababab</color>
     <color name="seek_bar_progress">#ACF41B</color>
     <color name="seek_bar_secondary_progress">#3399CC</color>
+    <color name="duskYellow">#ffc922</color>
+    <color name="lightGrey">#D3D3D3</color>
+
+
+
 </resources>

@@ -1,13 +1,24 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".SeekBar"
-    android:paddingLeft="15sp"
-    android:paddingRight="15sp">
+    android:paddingLeft="5sp"
+    android:paddingRight="5sp"
+    android:fillViewport="true"
+    android:scrollbars="none">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
 
     <TextView
         android:id="@+id/textViewHeadingw2"
@@ -24,39 +35,40 @@
         android:id="@+id/category1textAndImage"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="90dp"
+        android:layout_below="@id/textViewHeadingw2"
         android:layout_marginLeft="20dp"
+        android:layout_marginTop="35dp"
         android:drawableTop="@drawable/bio"
         android:text="@string/bio"
         android:textAllCaps="false"
         android:textColor="#ACF41B"
-        android:textSize="30sp"
-        android:textStyle="bold"
-        />
+        android:textSize="20sp"
+        android:textStyle="bold" />
 
     <RatingBar
         android:id="@+id/bioratingbar"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@+id/textViewHeadingw2"
-        android:layout_marginLeft="169dp"
-        android:layout_marginTop="46dp"
+        android:layout_marginLeft="150dp"
+        android:layout_marginTop="35dp"
         android:layout_toRightOf="@+id/category1textAndImage"
         android:numStars="3"
-        android:stepSize="1" />
+        android:stepSize="1"
+        android:layout_marginRight="10dp"/>
 
     <TextView
         android:id="@+id/category2textAndImage"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@+id/category1textAndImage"
-        android:layout_marginTop="36dp"
+        android:layout_marginTop="25dp"
         android:drawableTop="@drawable/cow"
         android:singleLine="false"
         android:text="@string/animal"
         android:textAllCaps="false"
         android:textColor="#008080"
-        android:textSize="30sp"
+        android:textSize="20sp"
         android:textStyle="bold"
         app:layout_constraintTop_toBottomOf="parent" />
 
@@ -65,10 +77,11 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@+id/bioratingbar"
-        android:layout_marginLeft="94dp"
-        android:layout_marginTop="44dp"
+        android:layout_marginLeft="102dp"
+        android:layout_marginTop="25dp"
         android:layout_toRightOf="@+id/category2textAndImage"
         android:numStars="3"
+        android:layout_marginRight="10dp"
         android:stepSize="1" />
 
     <TextView
@@ -76,50 +89,51 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@+id/category2textAndImage"
-        android:layout_marginTop="49dp"
+        android:layout_marginTop="25dp"
         android:drawableTop="@drawable/trash"
         android:text="@string/recycle"
         android:textAllCaps="false"
         android:textColor="#8B4513"
-        android:textSize="30sp"
+        android:textSize="20sp"
         android:textStyle="bold" />
+
 
     <RatingBar
         android:id="@+id/recyclbleId"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@+id/animaltreatmentRating"
-        android:layout_marginLeft="89dp"
-        android:layout_marginTop="42dp"
+        android:layout_marginLeft="93dp"
+        android:layout_marginTop="25dp"
         android:layout_toRightOf="@+id/category3textAndImage"
         android:numStars="3"
+        android:layout_marginRight="10dp"
         android:stepSize="1" />
 
     <TextView
         android:id="@+id/category4textAndImage"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/category2textAndImage"
-        android:layout_marginTop="153dp"
+        android:layout_below="@+id/category3textAndImage"
+        android:layout_marginTop="25dp"
         android:drawableTop="@drawable/tractor"
         android:text="@string/tractor"
         android:textAllCaps="false"
         android:textColor="#6f4e37"
-        android:textSize="30sp"
-        android:textStyle="bold"
-        app:layout_constraintTop_toBottomOf="parent" />
-
+        android:textSize="20sp"
+        android:textStyle="bold" />
 
     <RatingBar
         android:id="@+id/FairTrade"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/animaltreatmentRating"
-        android:layout_marginLeft="107dp"
-        android:layout_marginTop="156dp"
+        android:layout_below="@+id/recyclbleId"
+        android:layout_marginLeft="105dp"
+        android:layout_marginTop="25dp"
         android:layout_toRightOf="@+id/category4textAndImage"
         android:numStars="3"
-        android:stepSize="1" />
+        android:stepSize="1"
+        android:layout_marginRight="10dp"/>
 
     <SeekBar
         android:id="@+id/PriceSeekbar"
@@ -145,13 +159,65 @@
         android:textSize="25sp" />
 
     <ImageView
+        android:id="@+id/euro1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@id/PriceSeekbar"
         android:layout_marginTop="14dp"
         android:src="@drawable/euro"
         android:layout_marginLeft="35dp"/>
+    <ImageView
+        android:id="@+id/euro2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/PriceSeekbar"
+        android:layout_marginTop="14dp"
+        android:layout_alignParentRight="true"
+        android:src="@drawable/euro"
+        android:layout_marginRight="35dp"/>
+    <ImageView
+        android:id="@+id/euro3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/PriceSeekbar"
+        android:layout_marginTop="14dp"
+        android:layout_alignParentRight="true"
+        android:src="@drawable/euro"
+        android:layout_marginRight="45dp"/>
+    <ImageView
+        android:id="@+id/euro4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/PriceSeekbar"
+        android:layout_marginTop="14dp"
+        android:src="@drawable/euro"
+        android:layout_alignParentRight="true"
+        android:layout_marginRight="25dp"/>
+
+        <Button
+            android:id="@+id/shoppingButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:padding="10dp"
+            android:enabled="true"
+            android:clickable="true"
+            android:text="Proceed to shop"
+            android:textAllCaps="false"
+            android:textStyle="bold"
+            android:textSize="18dp"
+            style="@style/Animation.Design.BottomSheetDialog"
+            android:textColor="#000000"
+            android:background="@drawable/button_shape"
+            android:layout_below="@id/euro1"
+            android:layout_marginTop="20dp"
+            android:layout_centerHorizontal="true"
+            />
 
 
 
-</RelativeLayout>
+    </RelativeLayout>
+
+    </LinearLayout>
+</ScrollView>
+
