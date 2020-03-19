@@ -31,111 +31,119 @@
         android:textColor="#808080"
         android:textSize="22sp" />
 
-    <TextView
-        android:id="@+id/category1textAndImage"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/textViewHeadingw2"
-        android:layout_marginLeft="20dp"
-        android:layout_marginTop="35dp"
-        android:drawableTop="@drawable/bio"
-        android:text="@string/bio"
-        android:textAllCaps="false"
-        android:textColor="#ACF41B"
-        android:textSize="20sp"
-        android:textStyle="bold" />
-
-    <RatingBar
-        android:id="@+id/bioratingbar"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/textViewHeadingw2"
-        android:layout_marginLeft="150dp"
-        android:layout_marginTop="35dp"
-        android:layout_toRightOf="@+id/category1textAndImage"
-        android:numStars="3"
-        android:stepSize="1"
-        android:layout_marginRight="10dp"/>
-
-    <TextView
-        android:id="@+id/category2textAndImage"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/category1textAndImage"
-        android:layout_marginTop="25dp"
-        android:drawableTop="@drawable/cow"
-        android:singleLine="false"
-        android:text="@string/animal"
-        android:textAllCaps="false"
-        android:textColor="#008080"
-        android:textSize="20sp"
-        android:textStyle="bold"
-        app:layout_constraintTop_toBottomOf="parent" />
-
-    <RatingBar
-        android:id="@+id/animaltreatmentRating"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/bioratingbar"
-        android:layout_marginLeft="102dp"
-        android:layout_marginTop="25dp"
-        android:layout_toRightOf="@+id/category2textAndImage"
-        android:numStars="3"
-        android:layout_marginRight="10dp"
-        android:stepSize="1" />
-
-    <TextView
-        android:id="@+id/category3textAndImage"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/category2textAndImage"
-        android:layout_marginTop="25dp"
-        android:drawableTop="@drawable/trash"
-        android:text="@string/recycle"
-        android:textAllCaps="false"
-        android:textColor="#8B4513"
-        android:textSize="20sp"
-        android:textStyle="bold" />
+        <TextView
+            android:id="@+id/category1textAndImage"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/textViewHeadingw2"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="42dp"
+            android:drawableTop="@drawable/world"
+            android:text="@string/env"
+            android:textAllCaps="false"
+            android:textColor="#ACF41B"
+            android:textSize="15sp"
+            android:textStyle="bold" />
 
 
-    <RatingBar
-        android:id="@+id/recyclbleId"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/animaltreatmentRating"
-        android:layout_marginLeft="93dp"
-        android:layout_marginTop="25dp"
-        android:layout_toRightOf="@+id/category3textAndImage"
-        android:numStars="3"
-        android:layout_marginRight="10dp"
-        android:stepSize="1" />
+        <RatingBar
+            android:id="@+id/bioratingbar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/textViewHeadingw2"
+            android:layout_marginLeft="78dp"
+            android:layout_marginTop="52dp"
+            android:layout_marginRight="15dp"
+            android:layout_toRightOf="@+id/category1textAndImage"
+            android:numStars="3"
+            android:stepSize="1"
+            android:progressTint="@color/duskYellow"
+            />
 
-    <TextView
-        android:id="@+id/category4textAndImage"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/category3textAndImage"
-        android:layout_marginTop="25dp"
-        android:drawableTop="@drawable/tractor"
-        android:text="@string/tractor"
-        android:textAllCaps="false"
-        android:textColor="#6f4e37"
-        android:textSize="20sp"
-        android:textStyle="bold" />
+        <TextView
+            android:id="@+id/category2textAndImage"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/category1textAndImage"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="21dp"
+            android:drawableTop="@drawable/cow2"
+            android:singleLine="false"
+            android:text="@string/animal"
+            android:textAllCaps="false"
+            android:textColor="#008080"
+            android:textSize="15sp"
+            android:textStyle="bold"
+            app:layout_constraintTop_toBottomOf="parent" />
 
-    <RatingBar
-        android:id="@+id/FairTrade"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/recyclbleId"
-        android:layout_marginLeft="105dp"
-        android:layout_marginTop="25dp"
-        android:layout_toRightOf="@+id/category4textAndImage"
-        android:numStars="3"
-        android:stepSize="1"
-        android:layout_marginRight="10dp"/>
+        <RatingBar
+            android:id="@+id/animaltreatmentRating"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/bioratingbar"
+            android:layout_marginLeft="62dp"
+            android:layout_marginTop="47dp"
+            android:layout_marginRight="20dp"
+            android:layout_toRightOf="@+id/category2textAndImage"
+            android:numStars="3"
+            android:stepSize="1"
+            android:progressTint="@color/duskYellow"/>
 
-    <SeekBar
+        <TextView
+            android:id="@+id/category3textAndImage"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/category2textAndImage"
+            android:layout_marginLeft="33dp"
+            android:layout_marginTop="28dp"
+            android:drawableTop="@drawable/fruit"
+            android:text="@string/health"
+            android:textAllCaps="false"
+            android:textColor="#8B4513"
+            android:textSize="15sp"
+            android:textStyle="bold" />
+
+        <RatingBar
+            android:id="@+id/recyclbleId"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/animaltreatmentRating"
+            android:layout_marginLeft="86dp"
+            android:layout_marginTop="44dp"
+            android:layout_marginRight="20dp"
+            android:layout_toRightOf="@+id/category3textAndImage"
+            android:numStars="3"
+            android:stepSize="1"
+            android:progressTint="@color/duskYellow"/>
+
+        <TextView
+            android:id="@+id/category4textAndImage"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/category3textAndImage"
+            android:layout_marginLeft="24dp"
+            android:layout_marginTop="24dp"
+            android:drawableTop="@drawable/agreement"
+            android:text="@string/tractor"
+            android:textAllCaps="false"
+            android:textColor="#6f4e37"
+            android:textSize="15sp"
+            android:textStyle="bold" />
+
+        <RatingBar
+            android:id="@+id/FairTrade"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/recyclbleId"
+            android:layout_marginLeft="76dp"
+            android:layout_marginTop="60dp"
+            android:layout_marginRight="20dp"
+            android:layout_toRightOf="@+id/category4textAndImage"
+            android:numStars="3"
+            android:stepSize="1"
+            android:progressTint="@color/duskYellow"/>
+
+        <SeekBar
         android:id="@+id/PriceSeekbar"
         android:layout_width="300dp"
         android:layout_height="wrap_content"
@@ -158,7 +166,25 @@
         android:textAllCaps="false"
         android:textSize="25sp" />
 
-    <ImageView
+        <TextView
+            android:id="@+id/priceView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/PriceSeekbar"
+            android:layout_marginLeft="12dp"
+            android:layout_marginTop="-70dp"
+            android:layout_toRightOf="@+id/textView4"
+            android:textColor="#A9A9A9"
+            android:textSize="25sp" />
+        <ImageView
+            android:id="@+id/euro5"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/PriceSeekbar"
+            android:layout_marginLeft="115dp"
+            android:layout_marginTop="-64dp"
+            android:src="@drawable/euro" />
+        <ImageView
         android:id="@+id/euro1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"

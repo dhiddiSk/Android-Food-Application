@@ -19,8 +19,9 @@ public class SeekBar extends AppCompatActivity {
 
     public RatingBar bio, animalTreatment, recyclable, fairtrade;
     public android.widget.SeekBar price;
-    public int userPriceInput;
+
     public Button toshop;
+    public TextView priceOfpurchase;
 
 
     @Override
@@ -32,12 +33,20 @@ public class SeekBar extends AppCompatActivity {
         animalTreatment = findViewById(R.id.animaltreatmentRating);
         recyclable = findViewById(R.id.recyclbleId);
         fairtrade = findViewById(R.id.FairTrade);
-        price = findViewById(R.id.PriceSeekbar);
+        price = (android.widget.SeekBar) findViewById(R.id.PriceSeekbar);
         toshop = findViewById(R.id.shoppingButton);
+
+        priceOfpurchase = findViewById(R.id.priceView);
+
+        //priceOfpurchase.setText(userPriceInput);
+
         price.setOnSeekBarChangeListener(new android.widget.SeekBar.OnSeekBarChangeListener() {
+            public int userPriceInput=0;
+
             @Override
             public void onProgressChanged(android.widget.SeekBar seekBar, int progress, boolean fromUser) {
                 userPriceInput = progress;
+
             }
 
             @Override
@@ -47,10 +56,12 @@ public class SeekBar extends AppCompatActivity {
 
             @Override
             public void onStopTrackingTouch(android.widget.SeekBar seekBar) {
-
+                String temp = Integer.toString(userPriceInput);
+                priceOfpurchase.setText(temp);
 
             }
        });
+
 
         //To be able to interact and give rating with Android RatingBar
         bio.setOnRatingBarChangeListener(new RatingBar.OnRatingBarChangeListener() {

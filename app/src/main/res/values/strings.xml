@@ -16,10 +16,12 @@
     <string name="meat">"Non-Vegetarian"</string>
     <string name="local">"Regional"</string>
     <string name="season">"Seasonal"</string>
-    <string name="animal">"Treatment"</string>
+    <string name="animal">"Animal Welfare"</string>
     <string name="carbon">"Co2 footPrint"</string>
     <string name="continueToshop">"Continue to shopping"</string>
-    <string name="tractor">"Fair trade"</string>
+    <string name="tractor">"Fair &amp; Social"</string>
+    <string name="env">"Environment"</string>
+    <string name="additives">Additivies</string>
     <string name="recycle">"Recyclable"</string>
     <string name="invalid_password">Password must be >5 characters</string>
     <string name="login_failed">"Login failed"</string>
@@ -30,6 +32,7 @@
     <string name="quetion2Vegetarian">"Do you prefer vegetarian food ?"</string>
     <string name="valuesRatingHeading">"Your preferences on below categories!"</string>
     <string name="labelHeading">"Categories"</string>
+    <string name="health">"Health"</string>
     <string name="large_text">
         "Material is the metaphor.\n\n"
 
