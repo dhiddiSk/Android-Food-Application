@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".UserLocation">
+
+    <SearchView
+        android:id="@+id/City"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:iconifiedByDefault="false"
+        android:queryHint="Enter city"
+        android:gravity="center"
+        android:layout_marginTop="160dp"
+        android:layout_marginLeft="60dp">
+
+        <requestFocus />
+    </SearchView>
+
+    <ListView
+        android:id="@+id/listview"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_below="@+id/City"
+        android:layout_marginLeft="90dp"
+        android:divider="@null"
+        />
+
+
+<!--    <SearchView-->
+<!--        android:id="@+id/postalcode"-->
+<!--        android:layout_width="200dp"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:iconifiedByDefault="false"-->
+<!--        android:queryHint="Enter postalcode"-->
+<!--        android:layout_below="@+id/City"-->
+<!--        android:layout_marginTop="80dp"-->
+<!--        android:layout_marginLeft="60dp">-->
+
+<!--        <requestFocus />-->
+<!--    </SearchView>-->
+
+<!--    <ListView-->
+<!--        android:id="@+id/listview2"-->
+<!--        android:layout_width="fill_parent"-->
+<!--        android:layout_height="fill_parent"-->
+<!--        android:layout_below="@+id/postalcode"-->
+<!--        android:layout_marginLeft="90dp"-->
+<!--        android:divider="@null"-->
+<!--        />-->
+
+</RelativeLayout>
