@@ -108,7 +108,7 @@
                android:layout_width="match_parent"
                android:layout_height="wrap_content"
                android:orientation="vertical"
-               tools:context=".LoginScreenActivityTwo"
+               tools:context=".UserLogin"
                app:layout_constraintTop_toBottomOf="parent">
 <!--        app:layout_constraintTop_toBottomOf="@+id/textRegister"-->
 

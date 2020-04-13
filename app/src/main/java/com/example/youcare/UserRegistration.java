@@ -7,13 +7,12 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.RadioButton;
-import android.widget.RadioGroup;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-public class NewRegistrationTwo extends AppCompatActivity {
-    DatabaseConnectivityTwo database;
+public class UserRegistration extends AppCompatActivity {
+    DatabaseConnectivity database;
     protected  EditText Register_FirstName;
     protected  EditText Register_LastName;
     protected  RadioButton Register_gender_male;
@@ -28,6 +27,7 @@ public class NewRegistrationTwo extends AppCompatActivity {
     public String UserFullName;
     //public int Reigister_mobile_value;
     public Button registration;
+    String usertable = "user";
 
         @Override
         protected void onCreate(Bundle savedInstanceState) {
@@ -39,7 +39,7 @@ public class NewRegistrationTwo extends AppCompatActivity {
             Register_Email = findViewById(R.id.Register_EmailAddress);
             registration = findViewById(R.id.Register);
             mobileNumber = R.id.phone_number;
-            database = new DatabaseConnectivityTwo(this);
+            database = new DatabaseConnectivity(this);
 
 
             registration.setOnClickListener(new View.OnClickListener() {
@@ -52,7 +52,7 @@ public class NewRegistrationTwo extends AppCompatActivity {
                     String emailValue = Register_Email.getText().toString();
                     int Reigister_mobile_value = mobileNumber;
 
-                    if (UserFullName.length() > 1) {
+                    if (UserFullName.length() > 1 && userlastname.length() >1 && passwordValue.length() >1 && emailValue.length() > 1 && Reigister_mobile_value>99999) {
                         ContentValues contentValues = new ContentValues();
                         contentValues.put("userFirstName",usernamefirstname);
                         contentValues.put("userLastName", userlastname);
@@ -60,14 +60,20 @@ public class NewRegistrationTwo extends AppCompatActivity {
                         contentValues.put("password", passwordValue);
                         contentValues.put("MobileNumber", Reigister_mobile_value);
 
-                        database.insertUser(contentValues);
-                        Toast.makeText(NewRegistrationTwo.this, "User registered!", Toast.LENGTH_SHORT).show();
-                        startActivity(new Intent(NewRegistrationTwo.this,LoginScreenActivityTwo.class));
+                       boolean insertdescision = database.insertvalues(contentValues,usertable);
+                          if(insertdescision){
+                              Toast.makeText(UserRegistration.this, "User registered!", Toast.LENGTH_SHORT).show();
+                              startActivity(new Intent(UserRegistration.this, UserLogin.class));
 
+                          }
 
+                          else {
+                              Toast.makeText(UserRegistration.this, "User registration failed", Toast.LENGTH_SHORT).show();
+
+                          }
                     }
                     else {
-                        Toast.makeText(NewRegistrationTwo.this, "Enter the values!", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(UserRegistration.this, "Please complete the details!", Toast.LENGTH_SHORT).show();
                     }
 
 

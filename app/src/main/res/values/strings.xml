@@ -26,13 +26,13 @@
     <string name="invalid_password">Password must be >5 characters</string>
     <string name="login_failed">"Login failed"</string>
     <string name="title_activity_scrolling_login">ScrollingLoginActivity</string>
-    <string name="quetion2Regional">"Do you prefer regional food ?"</string>
-    <string name="quetion2seasonal">"Do you prefer seasonal food ?"</string>
-    <string name="quetion2Vegan">"Do you prefer vegan food ?"</string>
-    <string name="quetion2Vegetarian">"Do you prefer vegetarian food ?"</string>
-    <string name="valuesRatingHeading">"Your preferences on below categories!"</string>
+    <string name="quetion2Regional">"Regional food ?"</string>
+    <string name="quetion2seasonal">"Seasonal food ?"</string>
+    <string name="quetion2Vegan">"Vegan ?"</string>
+    <string name="quetion2Vegetarian">"Vegetarian ?"</string>
+    <string name="valuesRatingHeading">"Provide your values on below categories!"</string>
     <string name="labelHeading">"Categories"</string>
-    <string name="health">"Health"</string>
+    <string name="health">"  Health"</string>
     <string name="large_text">
         "Material is the metaphor.\n\n"
 
@@ -124,4 +124,14 @@
     </string>
     <string name="action_settings">Settings</string>
     <string name="title_activity_login_scrolling">LoginScrollingActivity</string>
+
+    <string-array name="food_values">
+        <item>Milk</item>
+        <item>Tomatoes</item>
+        <item>bananen</item>
+        <item>Wine</item>
+        <item>Choclate cream</item>
+    </string-array>
+
+
 </resources>

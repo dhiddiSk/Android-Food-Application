@@ -27,7 +27,7 @@ public class MainActivity extends AppCompatActivity {
         new Handler().postDelayed(new Runnable() {
             @Override
             public void run() {
-                Intent ApplicationIntroIntent = new Intent(MainActivity.this, AppInfoWhileStartup.class);
+                Intent ApplicationIntroIntent = new Intent(MainActivity.this, AppInfo.class);
                 startActivity(ApplicationIntroIntent);
 //            @method finish() is used to exit the applicaiton when back button is pressed after the launch screen is done, which means the launch screen is fired when the application is
                 //newly opened

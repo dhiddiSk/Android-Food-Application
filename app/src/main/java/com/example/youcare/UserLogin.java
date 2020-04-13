@@ -9,9 +9,10 @@ import android.widget.EditText;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
-public class LoginScreenActivityTwo extends AppCompatActivity {
-      EditText login_Username, login_password;
-        DatabaseConnectivityTwo database;
+public class UserLogin extends AppCompatActivity {
+
+    EditText login_Username, login_password;
+    DatabaseConnectivity database;
     public String login_Username_value;
     public String login_password_value;
     public Button loginButton;
@@ -24,7 +25,7 @@ public class LoginScreenActivityTwo extends AppCompatActivity {
             login_Username = findViewById(R.id.login_username);
             login_password = findViewById(R.id.login_password);
             loginButton= findViewById(R.id.login_button);
-            database = new DatabaseConnectivityTwo(this);
+            database = new DatabaseConnectivity(this);
 
 
             loginButton.setOnClickListener(new View.OnClickListener() {
@@ -35,13 +36,13 @@ public class LoginScreenActivityTwo extends AppCompatActivity {
 
 
                     if (database.isLoginValid(usernameValue, passwordValue)) {
-                        Toast.makeText(LoginScreenActivityTwo.this, "Login Successful!", Toast.LENGTH_SHORT).show();
-                        Intent intent = new Intent(LoginScreenActivityTwo.this, eatinghabits.class);
+                        Toast.makeText(UserLogin.this, "Login Successful!", Toast.LENGTH_SHORT).show();
+                        Intent intent = new Intent(UserLogin.this, EatingPreferences.class);
                         startActivity(intent);
                         finish();
 
                     } else {
-                        Toast.makeText(LoginScreenActivityTwo.this, "Invalid Username or Password!", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(UserLogin.this, "Invalid Username or Password!", Toast.LENGTH_SHORT).show();
                     }
 
 
@@ -53,7 +54,7 @@ public class LoginScreenActivityTwo extends AppCompatActivity {
             registerClick.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    Intent intent = new Intent(LoginScreenActivityTwo.this, NewRegistrationTwo.class);
+                    Intent intent = new Intent(UserLogin.this, UserRegistration.class);
                     startActivity(intent);
 
 

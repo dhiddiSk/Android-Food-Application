@@ -11,21 +11,21 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+        <activity android:name=".UserLocation"></activity>
+        <activity android:name=".displayProducts" /> <!-- <activity android:name=".list_view_items" /> -->
+        <activity android:name=".searchproducts" />
         <activity
-            android:name=".ShoppingSearchBar"
-            android:label="Shop" />
+            android:name=".UserValues"
+            android:label="User values" />
         <activity
-            android:name=".SeekBar"
-            android:label="Filter" />
+            android:name=".EatingPreferences"
+            android:label="Preferences" />
         <activity
-            android:name=".eatinghabits"
-            android:label="Filter" />
+            android:name=".UserRegistration"
+            android:label="New registration" />
         <activity
-            android:name=".NewRegistrationTwo"
-            android:label="Registration" />
-        <activity
-            android:name=".AppInfoWhileStartup"
-            android:label="Info" />
+            android:name=".AppInfo"
+            android:label="App Info" />
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -34,9 +34,8 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".LoginScreenActivityTwo"
-            android:label="Login" />
-<!--        <activity android:name=".ActivityAfterAuthentication" />-->
+            android:name=".UserLogin"
+            android:label="User login" />
     </application>
 
 </manifest>
