@@ -126,11 +126,42 @@
         "For example, position the FAB to one side of stream of a cards so the FAB won’t interfere "
         "when a user tries to pick up one of cards.\n\n"
     </string>
+    <string name="register">
+        "Register at Your Choice"
+    </string>
+
+    <string name="signup">"Sign Up Now"</string>
+    <string name="introSearch">
+        "Easy and fast shopping experience\n\n"
+        "Discover a pre selected sustainable\n"
+        "product portfolio and enjoy your\n"
+        "new shopping experience."
+
+
+    </string>
+    <string name="introbasket">
+        " Fill your sustainable baseket.\n\n"
+        "We provide you the most sustainable,\n"
+        "healthiest and best priced alternative\n"
+        "while guaranteeing you complpete\n"
+        "transparency."
+
+
+    </string>
+    <string name="introdeal">
+       "  Enjoy personal benefits\n\n"
+       "Here you find all Eco-Social coupons.\n"
+       "Simply activate and redeem in the\n"
+       "cooperating markets and online shops."
+
+    </string>
 
     <string name="introPreference">
      "Personalized recommendations\n\n"
 
-     "Get individualized recommendations according to your eating habits and sustainability values."
+     "Get individualized recommendations\n"
+     "according to your eating habits and\n"
+     "sustainability values."
 
     </string>
 

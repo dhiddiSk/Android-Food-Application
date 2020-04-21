@@ -35,7 +35,7 @@ public class IntroNavigationMainActivity extends AppCompatActivity {
                     switch (item.getItemId()) {
                         case R.id.navigation_favorites:
                         openFragment(new IntroNavigationPreferenceFragment());
-                            break;
+                            return true;
                         case R.id.navigation_search:
                           openFragment(new IntroNavigationSearchFragment());
                           return true;

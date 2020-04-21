@@ -8,10 +8,14 @@
         android:allowBackup="true"
         android:icon="@mipmap/yourchoice"
         android:label="Your Choice"
+
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".appBodyNavigation.AppBodyNavigationDealFragment"></activity>
+        <activity android:name=".appBodyNavigation.appBodyPreferenceFragments.PreferenceSubfrgmentThree"></activity>
+        <activity android:name=".appBodyNavigation.appBodyPreferenceFragments.PreferenceSubfragmentTwo" />
+        <activity android:name=".appBodyNavigation.appBodyPreferenceFragments.PrefrenceSubfragmentOne" />
+        <activity android:name=".appBodyNavigation.AppBodyNavigationDealFragment" />
         <activity android:name=".appBodyNavigation.AppBodyNavigationBasketFragment" />
         <activity android:name=".appBodyNavigation.AppBodyNavigationSearchFragment" />
         <activity android:name=".appBodyNavigation.AppBodyNavigationpreferenceFragment" />
@@ -33,9 +37,9 @@
         <activity
             android:name=".userAuthentication.UserRegistration"
             android:label="New registration" />
-        <activity
-            android:name=".AppInfo"
-            android:label="App Info" />
+<!--        <activity-->
+<!--            android:name=".AppInfo"-->
+<!--            android:label="App Info" />-->
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

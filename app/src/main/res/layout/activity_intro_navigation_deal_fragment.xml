@@ -6,40 +6,40 @@
     android:layout_height="match_parent"
     tools:context=".appIntroNavigation.IntroNavigationDealFragment">
 
+
+
     <ImageView
-        android:id="@+id/search"
+        android:id="@+id/IntroPreference"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:maxWidth="15dp"
-        android:maxHeight="20dp"
-        android:layout_marginLeft="25dp"
-        android:layout_marginTop="20dp"
-        android:src="@drawable/fruitscropped" />
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="40dp"
+        android:src="@drawable/usertemp" />
 
-    <!--    <TextView-->
-    <!--        android:id="@+id/IntropreferenceText"-->
-    <!--        android:layout_width="wrap_content"-->
-    <!--        android:layout_height="wrap_content"-->
-    <!--        android:layout_below="@id/IntroPreference"-->
-    <!--        android:layout_marginLeft="60dp"-->
-    <!--        android:layout_marginTop="44dp"-->
-    <!--        android:text="@string/introPreference"-->
-    <!--        android:textSize="20sp"-->
-    <!--        app:layout_constraintBottom_toTopOf="parent"-->
-    <!--        app:layout_constraintLeft_toRightOf="parent" />-->
+    <TextView
+        android:id="@+id/IntropreferenceText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/IntroPreference"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="44dp"
+        android:text="@string/introdeal"
+        android:textSize="20sp"
+        />
 
     <Button
         android:id="@+id/signUpLoginButton"
         style="@style/Animation.Design.BottomSheetDialog"
         android:layout_width="150dp"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/search"
+        android:layout_below="@+id/IntropreferenceText"
         android:layout_marginTop="69dp"
         android:layout_marginLeft="120dp"
+        android:layout_centerHorizontal="true"
         android:background="@drawable/introbuttonshape"
         android:clickable="true"
         android:enabled="true"
-        android:text="Sign Up Now"
+        android:text="@string/signup"
         android:textColor="#FFFFFF"
         android:textAllCaps="false"
         android:textSize="18dp"
