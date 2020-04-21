@@ -1,4 +1,4 @@
-package com.example.youcare;
+package com.example.youcare.userAuthentication;
 
 import android.content.ContentValues;
 import android.content.Intent;
@@ -10,6 +10,9 @@ import android.widget.RadioButton;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
+
+import com.example.youcare.DatabaseConnectivity;
+import com.example.youcare.R;
 
 public class UserRegistration extends AppCompatActivity {
     DatabaseConnectivity database;
@@ -27,6 +30,7 @@ public class UserRegistration extends AppCompatActivity {
     public String UserFullName;
     //public int Reigister_mobile_value;
     public Button registration;
+
     String usertable = "user";
 
         @Override

@@ -10,6 +10,8 @@ import android.provider.MediaStore;
 import android.view.View;
 import android.widget.ImageButton;
 
+import com.example.youcare.userAuthentication.UserRegistration;
+
 
 public class UserProfile extends AppCompatActivity {
    public int Image_Capture_Code = 1;

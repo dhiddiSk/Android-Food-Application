@@ -1,4 +1,4 @@
-package com.example.youcare;
+package com.example.youcare.userAuthentication;
 
 import android.content.Intent;
 import android.graphics.Paint;
@@ -9,6 +9,12 @@ import android.widget.EditText;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
+
+import com.example.youcare.DatabaseConnectivity;
+import com.example.youcare.EatingPreferences;
+import com.example.youcare.R;
+import com.example.youcare.appBodyNavigation.AppBodyNavigationMainActivity;
+
 public class UserLogin extends AppCompatActivity {
 
     EditText login_Username, login_password;
@@ -17,6 +23,7 @@ public class UserLogin extends AppCompatActivity {
     public String login_password_value;
     public Button loginButton;
     public Button registerClick;
+    public Button forgotPassword;
 
         @Override
         protected void onCreate(Bundle savedInstanceState) {
@@ -37,7 +44,7 @@ public class UserLogin extends AppCompatActivity {
 
                     if (database.isLoginValid(usernameValue, passwordValue)) {
                         Toast.makeText(UserLogin.this, "Login Successful!", Toast.LENGTH_SHORT).show();
-                        Intent intent = new Intent(UserLogin.this, EatingPreferences.class);
+                        Intent intent = new Intent(UserLogin.this, AppBodyNavigationMainActivity.class);
                         startActivity(intent);
                         finish();
 
@@ -48,9 +55,12 @@ public class UserLogin extends AppCompatActivity {
 
                 }
             });
+            forgotPassword = findViewById(R.id.forgotPassword);
+            forgotPassword.setPaintFlags(forgotPassword.getPaintFlags() | Paint.UNDERLINE_TEXT_FLAG);
+
 
             registerClick = findViewById(R.id.Register_text);
-            registerClick.setPaintFlags(registerClick.getPaintFlags() | Paint.UNDERLINE_TEXT_FLAG);
+           // registerClick.setPaintFlags(registerClick.getPaintFlags() | Paint.UNDERLINE_TEXT_FLAG);
             registerClick.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {

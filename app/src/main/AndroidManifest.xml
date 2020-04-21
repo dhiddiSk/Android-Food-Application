@@ -11,7 +11,17 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".UserLocation"></activity>
+        <activity android:name=".appBodyNavigation.AppBodyNavigationDealFragment"></activity>
+        <activity android:name=".appBodyNavigation.AppBodyNavigationBasketFragment" />
+        <activity android:name=".appBodyNavigation.AppBodyNavigationSearchFragment" />
+        <activity android:name=".appBodyNavigation.AppBodyNavigationpreferenceFragment" />
+        <activity android:name=".appBodyNavigation.AppBodyNavigationMainActivity" />
+        <activity android:name=".appIntroNavigation.IntroNavigationBasketFragment" />
+        <activity android:name=".appIntroNavigation.IntroNavigationDealFragment" />
+        <activity android:name=".appIntroNavigation.IntroNavigationSearchFragment" />
+        <activity android:name=".appIntroNavigation.IntroNavigationPreferenceFragment" />
+        <activity android:name=".appIntroNavigation.IntroNavigationMainActivity" />
+        <activity android:name=".UserLocation" />
         <activity android:name=".displayProducts" /> <!-- <activity android:name=".list_view_items" /> -->
         <activity android:name=".searchproducts" />
         <activity
@@ -21,7 +31,7 @@
             android:name=".EatingPreferences"
             android:label="Preferences" />
         <activity
-            android:name=".UserRegistration"
+            android:name=".userAuthentication.UserRegistration"
             android:label="New registration" />
         <activity
             android:name=".AppInfo"
@@ -34,7 +44,7 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".UserLogin"
+            android:name=".userAuthentication.UserLogin"
             android:label="User login" />
     </application>
 
