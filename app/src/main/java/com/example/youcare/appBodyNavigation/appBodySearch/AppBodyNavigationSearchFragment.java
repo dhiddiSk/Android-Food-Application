@@ -1,4 +1,4 @@
-package com.example.youcare.appBodyNavigation;
+package com.example.youcare.appBodyNavigation.appBodySearch;
 
 import androidx.annotation.Nullable;
 

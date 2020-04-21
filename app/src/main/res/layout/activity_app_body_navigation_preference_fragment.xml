@@ -4,8 +4,10 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/plate"
-    tools:context=".appBodyNavigation.AppBodyNavigationpreferenceFragment">
+    tools:context=".appBodyNavigation.appBodyPreference.AppBodyNavigationpreferenceFragment">
+
+
+
 
     <androidx.appcompat.widget.AppCompatImageButton
         android:id="@+id/userProfile"
@@ -19,19 +21,12 @@
         android:gravity="start"
         android:src="@drawable/user" />
 
-    <FrameLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:id="@+id/preferenceSubfragmentOneContainer">
-
-
-
     <TextView
         android:id="@+id/preferenceText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@id/userProfile"
-        android:text="What are your eating habits?"
+        android:text="@string/eatingHabits"
         android:textColor="#b2beb5"
         android:textAllCaps="false"
         android:textSize="30sp"
@@ -54,8 +49,8 @@
         android:text="Vegetarian"
         android:textAllCaps="false"
         android:textColor="#000000"
-        android:textSize="18sp"
-        android:textStyle="normal" />
+        android:textSize="18dp"
+        android:textStyle="bold" />
 
     <Button
         android:id="@+id/Vegean"
@@ -73,8 +68,8 @@
         android:text="Vegan"
         android:textAllCaps="false"
         android:textColor="#000000"
-        android:textSize="18sp"
-        android:textStyle="normal" />
+        android:textSize="18dp"
+        android:textStyle="bold" />
     <Button
         android:id="@+id/GlutenFree"
         android:layout_below="@id/Vegean"
@@ -91,27 +86,29 @@
         android:text="Gluten-free"
         android:textAllCaps="false"
         android:textColor="#000000"
-        android:textSize="18sp"
-        android:textStyle="normal" />
-    <Button
-        android:id="@+id/LacktoseFree"
-        android:layout_below="@id/GlutenFree"
-        style="@style/Animation.Design.BottomSheetDialog"
-        android:layout_width="150dp"
-        android:layout_height="40dp"
-        android:layout_gravity="center_horizontal"
-        android:layout_marginLeft="20dp"
-        android:layout_marginTop="20dp"
-        android:background="@drawable/preference_button_shape"
-        android:clickable="true"
-        android:enabled="true"
-        android:padding="5dp"
-        android:text="Lakto-free"
-        android:textAllCaps="false"
-        android:textColor="#000000"
-        android:textSize="18sp"
-        android:textStyle="normal" />
-    <Button
+        android:textSize="18dp"
+        android:textStyle="bold" />
+
+        <Button
+            android:id="@+id/LacktoseFree"
+            style="@style/Animation.Design.BottomSheetDialog"
+            android:layout_width="150dp"
+            android:layout_height="40dp"
+            android:layout_below="@id/GlutenFree"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="20dp"
+            android:background="@drawable/preference_button_shape"
+            android:clickable="true"
+            android:enabled="true"
+            android:padding="5dp"
+            android:text="Lakto-free"
+            android:textAllCaps="false"
+            android:textColor="#000000"
+            android:textSize="18dp"
+            android:textStyle="bold" />
+
+        <Button
         android:id="@+id/Norestrictions"
         android:layout_below="@id/LacktoseFree"
         style="@style/Animation.Design.BottomSheetDialog"
@@ -127,20 +124,18 @@
         android:text="no restrictions"
         android:textAllCaps="false"
         android:textColor="#000000"
-        android:textSize="18sp"
-        android:textStyle="normal" />
+        android:textSize="18dp"
+        android:textStyle="bold" />
     <ImageButton
         android:id="@+id/nextPage"
         android:layout_below="@id/Norestrictions"
         android:src="@drawable/ic_arrow_forward_black_24dp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
+        android:layout_marginTop="8dp"
         android:layout_marginLeft="300dp"
         android:clickable="true"
         android:enabled="true"
-        android:padding="10dp" />
-    </FrameLayout>
-
+        android:padding="5dp" />
 
 </RelativeLayout>

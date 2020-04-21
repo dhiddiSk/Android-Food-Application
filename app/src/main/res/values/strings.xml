@@ -126,8 +126,20 @@
         "For example, position the FAB to one side of stream of a cards so the FAB won’t interfere "
         "when a user tries to pick up one of cards.\n\n"
     </string>
+    <string name="saveandcontinue">
+        "Save &amp; Continue"
+    </string>
     <string name="register">
         "Register at Your Choice"
+    </string>
+    <string name="eatingHabits">
+        "What are your eating habits?"
+    </string>
+    <string name="wheretoShop">
+        "Where do you want to shop?"
+    </string>
+    <string name="valueImportance">
+        "How important are these categories for you?"
     </string>
 
     <string name="signup">"Sign Up Now"</string>

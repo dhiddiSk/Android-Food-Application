@@ -1,21 +1,17 @@
-package com.example.youcare.appBodyNavigation;
+package com.example.youcare.appBodyNavigation.appBodyPreference;
 
 import androidx.annotation.Nullable;
 
 import android.app.Fragment;
-import android.app.FragmentManager;
-import android.app.FragmentTransaction;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Button;
 import android.widget.ImageButton;
 
 import com.example.youcare.R;
-import com.example.youcare.appBodyNavigation.appBodyPreferenceFragments.PrefrenceSubfragmentOne;
-import com.example.youcare.userAuthentication.UserLogin;
+import com.example.youcare.appBodyNavigation.appBodyPreference.PrefrenceChildActivityOne;
 
 public class AppBodyNavigationpreferenceFragment extends Fragment {
 
@@ -29,6 +25,7 @@ public class AppBodyNavigationpreferenceFragment extends Fragment {
 
         return view;
     }
+
 
     @Override
     public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
@@ -46,10 +43,13 @@ public class AppBodyNavigationpreferenceFragment extends Fragment {
             @Override
             public void onClick(View v) {
 
-                FragmentManager fm = getFragmentManager();
-                FragmentTransaction ft = fm.beginTransaction();
-                ft.replace(R.id.preferenceSubfragmentOneContainer, new PrefrenceSubfragmentOne());
-                ft.commit();
+                Intent it = new Intent(getActivity(), PrefrenceChildActivityOne.class);
+                  startActivity(it);
+
+//                FragmentManager fm = getChildFragmentManager();
+//                FragmentTransaction ft = fm.beginTransaction();
+//                ft.replace(R.id.preferenceSubfragmentOneContainer, new PrefrenceChildActivityOne());
+//                ft.commit();
 
             }
         });

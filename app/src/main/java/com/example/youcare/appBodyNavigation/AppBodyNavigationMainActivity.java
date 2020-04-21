@@ -9,6 +9,8 @@ import android.os.Bundle;
 import android.view.MenuItem;
 
 import com.example.youcare.R;
+import com.example.youcare.appBodyNavigation.appBodyPreference.AppBodyNavigationpreferenceFragment;
+import com.example.youcare.appBodyNavigation.appBodySearch.AppBodyNavigationSearchFragment;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 public class AppBodyNavigationMainActivity extends AppCompatActivity {
@@ -19,6 +21,7 @@ public class AppBodyNavigationMainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_app_body_navigation_main);
         bottomNavigation = findViewById(R.id.body_bottom_navigation);
         bottomNavigation.setOnNavigationItemSelectedListener(navigationItemSelectedListener);
+        openFragment(new AppBodyNavigationpreferenceFragment());
     }
 
 
@@ -37,7 +40,7 @@ public class AppBodyNavigationMainActivity extends AppCompatActivity {
                     switch (item.getItemId()) {
                         case R.id.navigation_favorites:
                             openFragment(new AppBodyNavigationpreferenceFragment());
-                            break;
+                            return true;
                         case R.id.navigation_search:
                             openFragment(new AppBodyNavigationSearchFragment());
                             return true;
