@@ -53,7 +53,7 @@
         android:textStyle="bold" />
 
     <Button
-        android:id="@+id/Vegean"
+        android:id="@+id/Vegan"
         android:layout_below="@id/Vegetarian"
         style="@style/Animation.Design.BottomSheetDialog"
         android:layout_width="150dp"
@@ -72,7 +72,7 @@
         android:textStyle="bold" />
     <Button
         android:id="@+id/GlutenFree"
-        android:layout_below="@id/Vegean"
+        android:layout_below="@id/Vegan"
         style="@style/Animation.Design.BottomSheetDialog"
         android:layout_width="150dp"
         android:layout_height="40dp"

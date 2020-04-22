@@ -12,7 +12,6 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".appBodyNavigation.appBodyPreference.PreferencechildThree"></activity>
         <activity android:name=".appBodyNavigation.appBodyPreference.PreferenceChildActivityTwo" />
         <activity android:name=".appBodyNavigation.appBodyPreference.PrefrenceChildActivityOne" />
         <activity android:name=".appBodyNavigation.AppBodyNavigationDealFragment" />
@@ -20,10 +19,14 @@
         <activity android:name=".appBodyNavigation.appBodySearch.AppBodyNavigationSearchFragment" />
         <activity android:name=".appBodyNavigation.appBodyPreference.AppBodyNavigationpreferenceFragment" />
         <activity android:name=".appBodyNavigation.AppBodyNavigationMainActivity" />
-        <activity android:name=".appIntroNavigation.IntroNavigationBasketFragment" />
-        <activity android:name=".appIntroNavigation.IntroNavigationDealFragment" />
-        <activity android:name=".appIntroNavigation.IntroNavigationSearchFragment" />
-        <activity android:name=".appIntroNavigation.IntroNavigationPreferenceFragment" />
+        <activity android:name=".appIntroNavigation.IntroNavigationBasketFragment"
+            android:label="Shopping basket"/>
+        <activity android:name=".appIntroNavigation.IntroNavigationDealFragment"
+            android:label="Loyality program"/>
+        <activity android:name=".appIntroNavigation.IntroNavigationSearchFragment"
+            android:label="Product selection"/>
+        <activity android:name=".appIntroNavigation.IntroNavigationPreferenceFragment"
+            android:label="Preference"/>
         <activity android:name=".appIntroNavigation.IntroNavigationMainActivity" />
         <activity android:name=".UserLocation" />
         <activity android:name=".displayProducts" /> <!-- <activity android:name=".list_view_items" /> -->
