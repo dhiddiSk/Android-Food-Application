@@ -61,7 +61,7 @@
         android:clickable="true"
         android:enabled="true"
         android:padding="5dp"
-        android:text="Online"
+        android:text="Online stores"
         android:textAllCaps="false"
         android:textColor="#000000"
         android:textSize="18sp"

@@ -6,128 +6,282 @@
 <!--    android:layout_height="match_parent"-->
 <!--    tools:context=".NewRegistration">-->
 
-    <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
         xmlns:app="http://schemas.android.com/apk/res-auto"
         xmlns:tools="http://schemas.android.com/tools"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
          android:gravity="center"
         android:orientation="vertical"
+        android:id="@+id/rootlayout"
         tools:context=".authentication.UserRegistration"
         app:layout_constraintTop_toBottomOf="parent"
         >
 
-    <LinearLayout
+    <ScrollView
+                 android:layout_width="match_parent"
+                 android:layout_height="match_parent">
+
+        <LinearLayout
                   android:layout_width="match_parent"
-                 android:layout_height="match_parent"
-                 android:gravity="center"
-                 android:layout_centerInParent="true"
-                 android:orientation="vertical"
-                 android:paddingStart="20dp"
+                  android:layout_height="match_parent"
+                  android:gravity="center"
+                  android:layout_centerInParent="true"
+                  android:orientation="vertical"
+                  android:paddingStart="20dp"
                   android:paddingEnd="20dp">
-        <ImageView
-            android:id="@+id/basketOnLoginScreen"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_margin="20dp"
-            android:src="@drawable/yourchoicelogo" />
+                     <ImageView
+                        android:id="@+id/basketOnLoginScreen"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="20dp"
+                        android:src="@drawable/yourchoicelogo" />
+
+                           <TextView
+                                android:id="@+id/smallText"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="@string/register"
+                                android:textSize="25sp"
+                                android:textAllCaps="false"
+                                android:gravity="center"/>
+
+                             <TextView android:id="@+id/Titel"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_margin="20dp"
+                                android:text="Gender"
+                                android:textSize="15sp"
+                                android:layout_gravity="left"/>
 
 
-        <TextView
-            android:id="@+id/smallText"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/register"
-            android:textSize="25sp"
-            android:textAllCaps="false"
-            android:gravity="center"/>
+                                    <RadioGroup
+                                        android:id="@+id/Register_radio_gender"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:orientation="horizontal"
+                                        app:layout_constraintTop_toBottomOf="@+id/Register_radio_gender" >
+                                        <RadioButton
+                                            android:id="@+id/radioButton_Male"
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:text="male"/>
+                                        <!--                    android:onClick="OnClickRadioButton"-->
+                                        <!--                    />-->
+
+                                        <RadioButton
+                                            android:id="@+id/radioButton_Female"
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:text="female" />
+                                        <!--                    android:onClick="OnClickRadioButton"-->
+                                        <!--                     />-->
+
+                                    </RadioGroup>
 
 
-
-
-        <TextView android:id="@+id/Titel"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_margin="20dp"
-            android:text="Gender*"
-            android:textSize="15sp"
-            android:layout_gravity="left"/>
-
-
-        <RadioGroup
-            android:id="@+id/Register_radio_gender"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            app:layout_constraintTop_toBottomOf="@+id/Register_radio_gender" >
-            <RadioButton
-                android:id="@+id/radioButton_Male"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="male"/>
-            <!--                    android:onClick="OnClickRadioButton"-->
-            <!--                    />-->
-
-            <RadioButton
-                android:id="@+id/radioButton_Female"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="female" />
-            <!--                    android:onClick="OnClickRadioButton"-->
-            <!--                     />-->
-
-        </RadioGroup>
-
-
-
-
-        <EditText
-                android:id="@+id/Register_EnterFirstName"
+            <com.google.android.material.textfield.TextInputLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_centerHorizontal="true"
-                android:paddingTop="15dp"
-                android:maxLines="1"
-                android:hint="first name*"
-                android:inputType="textPersonName"
-                android:textStyle="normal"
-                android:drawableLeft="@drawable/name"
-            />
-<!--        app:layout_constraintLeft_toLeftOf=""/>-->
+                android:minHeight="?android:listPreferredItemHeightSmall">
 
-    <EditText
-        android:id="@+id/Register_EnterLastName"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="last name*"
-        android:layout_centerHorizontal="true"
-        android:paddingTop="15dp"
-        android:maxLines="1"
-        android:inputType="textPersonName"
-        android:drawableLeft="@drawable/name"
-        />
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/txtip_firstname"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:minHeight="?android:listPreferredItemHeightSmall">
 
-        <EditText
-            android:id="@+id/phone_number"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_centerHorizontal="true"
-            android:paddingTop="15dp"
-            android:hint="mobile*"
-            android:drawableLeft="@drawable/android"
-            android:inputType="phone"
-           />
+                    <androidx.appcompat.widget.AppCompatEditText
+                        android:id="@+id/register_firstname"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_centerHorizontal="true"
+                        android:hint="First name*"
+                        android:drawableLeft="@drawable/name"
+                        android:inputType="textEmailAddress"
+                        android:maxLines="1"
+                        android:minHeight="?android:listPreferredItemHeightSmall" />
 
-    <EditText
-        android:id="@+id/Register_EmailAddress"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_centerHorizontal="true"
-        android:paddingTop="15dp"
-        android:hint="email address*"
-        android:drawableLeft="@drawable/mail"
-        android:inputType="textEmailAddress"
-        />
+                </com.google.android.material.textfield.TextInputLayout>
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:minHeight="?android:listPreferredItemHeightSmall">
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/txtip_lastname"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:minHeight="?android:listPreferredItemHeightSmall">
+
+                    <androidx.appcompat.widget.AppCompatEditText
+                        android:id="@+id/register_lastname"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_centerHorizontal="true"
+                        android:hint="Last name*"
+                        android:drawableLeft="@drawable/name"
+                        android:inputType="textEmailAddress"
+                        android:maxLines="1"
+                        android:minHeight="?android:listPreferredItemHeightSmall" />
+
+                </com.google.android.material.textfield.TextInputLayout>
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:minHeight="?android:listPreferredItemHeightSmall">
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/txtip_mobile"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:minHeight="?android:listPreferredItemHeightSmall">
+
+                    <androidx.appcompat.widget.AppCompatEditText
+                        android:id="@+id/register_mobile"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_centerHorizontal="true"
+                        android:hint="Mobile*"
+                        android:drawableLeft="@drawable/android"
+                        android:inputType="textEmailAddress"
+                        android:maxLines="1"
+                        android:minHeight="?android:listPreferredItemHeightSmall" />
+
+                </com.google.android.material.textfield.TextInputLayout>
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:minHeight="?android:listPreferredItemHeightSmall">
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/txtip_email"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:minHeight="?android:listPreferredItemHeightSmall">
+
+                    <androidx.appcompat.widget.AppCompatEditText
+                        android:id="@+id/register_emailid"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_centerHorizontal="true"
+                        android:hint="Email*"
+                        android:drawableLeft="@drawable/mail"
+                        android:inputType="textEmailAddress"
+                        android:maxLines="1"
+                        android:minHeight="?android:listPreferredItemHeightSmall" />
+
+                </com.google.android.material.textfield.TextInputLayout>
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:minHeight="?android:listPreferredItemHeightSmall">
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/txtip_password"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:minHeight="?android:listPreferredItemHeightSmall">
+
+                    <androidx.appcompat.widget.AppCompatEditText
+                        android:id="@+id/register_password"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_centerHorizontal="true"
+                        android:hint="Password*"
+                        android:inputType="textEmailAddress"
+                        android:drawableLeft="@drawable/lock"
+                        android:maxLines="1"
+                        android:minHeight="?android:listPreferredItemHeightSmall" />
+
+                </com.google.android.material.textfield.TextInputLayout>
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!--        <EditText-->
+<!--                android:id="@+id/Register_EnterFirstName"-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:layout_centerHorizontal="true"-->
+<!--                android:paddingTop="15dp"-->
+<!--                android:maxLines="1"-->
+<!--                android:hint="first name*"-->
+<!--                android:inputType="textPersonName"-->
+<!--                android:textStyle="normal"-->
+<!--                android:drawableLeft="@drawable/name"-->
+<!--            />-->
+<!--&lt;!&ndash;        app:layout_constraintLeft_toLeftOf=""/>&ndash;&gt;-->
+
+<!--    <EditText-->
+<!--        android:id="@+id/Register_EnterLastName"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:hint="last name*"-->
+<!--        android:layout_centerHorizontal="true"-->
+<!--        android:paddingTop="15dp"-->
+<!--        android:maxLines="1"-->
+<!--        android:inputType="textPersonName"-->
+<!--        android:drawableLeft="@drawable/name"-->
+<!--        />-->
+
+<!--        <EditText-->
+<!--            android:id="@+id/phone_number"-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_centerHorizontal="true"-->
+<!--            android:paddingTop="15dp"-->
+<!--            android:hint="mobile*"-->
+<!--            android:drawableLeft="@drawable/android"-->
+<!--            android:inputType="phone"-->
+<!--           />-->
+
+<!--    <EditText-->
+<!--        android:id="@+id/Register_EmailAddress"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:layout_centerHorizontal="true"-->
+<!--        android:paddingTop="15dp"-->
+<!--        android:hint="email address*"-->
+<!--        android:drawableLeft="@drawable/mail"-->
+<!--        android:inputType="textEmailAddress"-->
+<!--        />-->
 
     <!--            <TextView android:id="@+id/passwordNew"-->
     <!--                android:layout_width="wrap_content"-->
@@ -139,15 +293,15 @@
     <!--                android:layout_gravity="left"/>-->
 
 
-    <EditText
-        android:id="@+id/Register_password"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_centerHorizontal="true"
-        android:paddingTop="15dp"
-        android:hint="new password*"
-        android:drawableLeft="@drawable/lock"
-        android:inputType="textPassword" />
+<!--    <EditText-->
+<!--        android:id="@+id/Register_password"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:layout_centerHorizontal="true"-->
+<!--        android:paddingTop="15dp"-->
+<!--        android:hint="new password*"-->
+<!--        android:drawableLeft="@drawable/lock"-->
+<!--        android:inputType="textPassword" />-->
 
     <!--            <TextView android:id="@+id/Gender"-->
     <!--                android:layout_width="wrap_content"-->
@@ -157,19 +311,45 @@
     <!--                android:textSize="15dp"-->
     <!--                android:textStyle="italic"-->
     <!--                android:layout_gravity="left"/>-->
-    <Button
-        android:id="@+id/Register"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:enabled="true"
-        android:text="Register"
-        android:padding="10dp"
-        android:textAllCaps="false"
-        android:textSize="18dp"
-        android:layout_margin="20dp"
-        android:textStyle="bold"
-        android:textColor="#FFFFFF"
-        android:background="@drawable/introbuttonshape" />
+
+        <LinearLayout
+            android:id="@+id/user_register_button"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:background="@drawable/shape_rectangle"
+            android:gravity="center"
+            android:orientation="horizontal"
+            android:layout_margin="25dp"
+            android:padding="10dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:text="Register"
+                android:textColor="@color/colorPrimary"
+                android:textSize="16sp"
+                android:textStyle="bold" />
+        </LinearLayout>
+
+
+
+
+
+<!--        <Button-->
+<!--        android:id="@+id/Register"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:enabled="true"-->
+<!--        android:text="Register"-->
+<!--        android:padding="10dp"-->
+<!--        android:textAllCaps="false"-->
+<!--        android:textSize="18dp"-->
+<!--        android:layout_margin="20dp"-->
+<!--        android:textStyle="bold"-->
+<!--        android:textColor="#FFFFFF"-->
+<!--        android:background="@drawable/introbuttonshape" />-->
 
         <CheckBox
             android:id="@+id/checkBox"
@@ -179,7 +359,9 @@
             />
         <!--            android:onClick="AfterNewRegistration"-->
 
-     </LinearLayout>
-</ScrollView>
+
+        </LinearLayout>
+    </ScrollView>
+</RelativeLayout>
 
 <!--//androidx.constraintlayout.widget.ConstraintLayout>-->

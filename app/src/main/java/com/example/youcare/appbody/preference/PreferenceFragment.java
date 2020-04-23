@@ -53,7 +53,9 @@ public class PreferenceFragment extends Fragment implements View.OnClickListener
 
             switch (v.getId()){
 
-              // case R.id.Vegetarian : vegetarian.setBackgroundColor(ContextCompat.getColor(v.getContext(),R.color.colorPrimaryDark));
+              //case R.id.Vegetarian : vegetarian.setBackgroundColor(ContextCompat.getColor(v.getContext());
+                //
+                // color.colorPrimaryDark));
 
                 //case R.id.Vegetarian : vegetarian.setBackground();
 
