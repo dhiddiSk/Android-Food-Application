@@ -10,7 +10,7 @@ import android.provider.MediaStore;
 import android.view.View;
 import android.widget.ImageButton;
 
-import com.example.youcare.userAuthentication.UserRegistration;
+import com.example.youcare.authentication.UserRegistration;
 
 
 public class UserProfile extends AppCompatActivity {

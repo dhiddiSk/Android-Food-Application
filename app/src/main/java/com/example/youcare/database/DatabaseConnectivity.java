@@ -1,4 +1,4 @@
-package com.example.youcare;
+package com.example.youcare.database;
 
 import android.content.ContentValues;
 import android.content.Context;
@@ -6,12 +6,12 @@ import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 import android.database.sqlite.SQLiteStatement;
-import android.nfc.Tag;
-import android.util.Log;
 
-import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
+import com.example.youcare.authentication.UserRegistration;
+
 public class DatabaseConnectivity extends SQLiteOpenHelper{
+
+    UserRegistration ur = new UserRegistration();
 
         static String name = "database";
         static int version = 2;
@@ -50,19 +50,23 @@ public class DatabaseConnectivity extends SQLiteOpenHelper{
 
 
     //@methods insertUser inserts the data into the user database
-    public boolean insertvalues(ContentValues contentValues, String tableName) {
-           SQLiteDatabase db =this.getWritableDatabase();
-           long result = db.insert(tableName, "", contentValues);
-           db.close();
+    public boolean insertvalues(ContentValues contentValues, String usertable, String usernamefirstname, String userlastname, String emailvalue, Context userRegistrationContext) {
+        String recordValidation =  "Select * from '" + usertable + "' where userFirstName = '" + usernamefirstname + "' AND userLastName = '" + userlastname+"' AND email = '" + emailvalue +"'";
+        SQLiteDatabase dbreader = this.getReadableDatabase();
+        SQLiteDatabase dbwriter =this.getWritableDatabase();
 
-           if(result == -1){
-               return false;
-
-           }
-           return true;
+        Cursor cursor = dbreader.rawQuery(recordValidation, null);
+        if(cursor.getCount() <= 0){
+            cursor.close();
+            long result = dbwriter.insert(usertable, "", contentValues);
+             if(result==-1){
+                 return false;
+             }
+            return true;
         }
-
-
+        else
+        return false;
+        }
 
     public boolean isLoginValid(String emailID, String password) {
             String sql = "Select count(*) from user where email='" + emailID + "' and password='" + password + "'";

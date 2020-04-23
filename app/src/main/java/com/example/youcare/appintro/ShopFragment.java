@@ -1,7 +1,6 @@
-package com.example.youcare.appIntroNavigation;
+package com.example.youcare.appintro;
 
 import androidx.annotation.Nullable;
-import androidx.appcompat.app.AppCompatActivity;
 
 import android.app.Fragment;
 import android.content.Intent;
@@ -12,19 +11,19 @@ import android.view.ViewGroup;
 import android.widget.Button;
 
 import com.example.youcare.R;
-import com.example.youcare.userAuthentication.UserLogin;
+import com.example.youcare.authentication.UserLogin;
 
-public class IntroNavigationPreferenceFragment extends Fragment {
-    public Button signUpOrLogin;
+public class ShopFragment extends Fragment {
+
+   public Button signUpOrLogin;
+   View rootView;
 
 
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, Bundle savedInstanceState) {
-
-        View view = inflater.inflate(R.layout.activity_intro_navigation_preference_fragment, container, false);
-
-        return view;
+         View view= inflater.inflate(R.layout.activity_intro_navigation_basket_fragment, container, false);
+         return view;
     }
 
 
@@ -40,7 +39,7 @@ public class IntroNavigationPreferenceFragment extends Fragment {
         super.onResume();
 
 
-        signUpOrLogin.setOnClickListener(new View.OnClickListener() {
+       signUpOrLogin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
@@ -50,5 +49,8 @@ public class IntroNavigationPreferenceFragment extends Fragment {
         });
 
 
+
+
     }
+
 }

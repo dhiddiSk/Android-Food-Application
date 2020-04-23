@@ -2,20 +2,12 @@ package com.example.youcare;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import android.content.Intent;
 import android.os.Bundle;
-import android.view.Menu;
-import android.view.MenuInflater;
-import android.view.MenuItem;
-import android.widget.ArrayAdapter;
-import android.widget.ListAdapter;
 import android.widget.ListView;
 import android.widget.SearchView;
 //import  android.support.*;
 
 import java.util.ArrayList;
-import com.example.youcare.DatabaseConnectivity;
-import java.util.Arrays;
 
 public class searchproducts extends AppCompatActivity implements SearchView.OnQueryTextListener{
     // Here different variables are declared. such as list, adapater, editsearch...
@@ -73,20 +65,20 @@ public class searchproducts extends AppCompatActivity implements SearchView.OnQu
 
 
     public void setEatingHabits(boolean regionalUserInput, boolean veganUserInput){
-        this.regionalUserInput = regionalUserInput; this.veganUserInput = veganUserInput;
+//        this.regionalUserInput = regionalUserInput; this.veganUserInput = veganUserInput;
     }
     public void setUserValues(int environmentUserRating, int healthUserRating, int fairAndSocialUserRating, int animalTreatmentUserRating){
-        this.environmentUserRating = environmentUserRating;
-        this.animalTreatmentUserRating = animalTreatmentUserRating;
-        this.healthUserRating = healthUserRating;
-        this.fairAndSocialUserRating = fairAndSocialUserRating;
+//        this.environmentUserRating = environmentUserRating;
+//        this.animalTreatmentUserRating = animalTreatmentUserRating;
+//        this.healthUserRating = healthUserRating;
+//        this.fairAndSocialUserRating = fairAndSocialUserRating;
 
     }
 
     @Override
     public boolean onQueryTextSubmit(String query) {
         // call the activity to show the information of the products.
-        queryDbForProduct();
+        //queryDbForProduct();
             UserchosenProduct = query;
             return true;
         }
@@ -96,12 +88,12 @@ public class searchproducts extends AppCompatActivity implements SearchView.OnQu
 
 
     public void queryDbForProduct(){
-        DatabaseConnectivity dbconnectiDatabaseConnectivity = new DatabaseConnectivity(this);
-
-            String displayProduct = dbconnectiDatabaseConnectivity.query(regionalUserInput, veganUserInput,environmentUserRating,healthUserRating,fairAndSocialUserRating,animalTreatmentUserRating);
-            dp = new displayProducts(); dp.getdisplayProducts(displayProduct);
-            Intent displayProducts = new Intent(this, displayProducts.class);
-            startActivity(displayProducts);
+//        DatabaseConnectivity dbconnectiDatabaseConnectivity = new DatabaseConnectivity(this);
+//
+//            String displayProduct = dbconnectiDatabaseConnectivity.query(regionalUserInput, veganUserInput,environmentUserRating,healthUserRating,fairAndSocialUserRating,animalTreatmentUserRating);
+//            dp = new displayProducts(); dp.getdisplayProducts(displayProduct);
+//            Intent displayProducts = new Intent(this, displayProducts.class);
+//            startActivity(displayProducts);
 
     }
 

@@ -127,7 +127,7 @@
         "when a user tries to pick up one of cards.\n\n"
     </string>
     <string name="saveandcontinue">
-        "Save &amp; Continue"
+        "Save &amp; Shop"
     </string>
     <string name="register">
         "Register at Your Choice"
@@ -143,37 +143,35 @@
     </string>
 
     <string name="signup">"Sign Up Now"</string>
-    <string name="introSearch">
-        "Easy and fast shopping experience\n\n"
-        "Discover a pre selected sustainable\n"
-        "product portfolio and enjoy your\n"
-        "new shopping experience."
+    <string name="introsearchheading">
+        "Easy and fast shopping experience"
+    </string>
+    <string name="introsearchtext">
+
+        "Discover a pre selected sustainable product portfolio and enjoy your new shopping experience."
 
 
     </string>
-    <string name="introbasket">
-        " Fill your sustainable baseket.\n\n"
-        "We provide you the most sustainable,\n"
-        "healthiest and best priced alternative\n"
-        "while guaranteeing you complpete\n"
-        "transparency."
+    <string name="introshopheading">
+        "Fill your sustainable baseket."</string>
+    <string name="introshoptext">
+        "We provide you the most sustainable, healthiest and best priced alternative while guaranteeing you complpete transparency."
 
 
+    </string>
+    <string name="introdealheading">
+        "Enjoy personal benefits"
     </string>
     <string name="introdeal">
-       "  Enjoy personal benefits\n\n"
-       "Here you find all Eco-Social coupons.\n"
-       "Simply activate and redeem in the\n"
-       "cooperating markets and online shops."
+        "Here you find all Eco-Social coupons simply activate and redeem in the cooperating markets and online shops."
 
     </string>
 
-    <string name="introPreference">
-     "Personalized recommendations\n\n"
+    <string name="intropreference_head">
+        "Personalized recommendations"</string>
+    <string name="intro_prefernce">
 
-     "Get individualized recommendations\n"
-     "according to your eating habits and\n"
-     "sustainability values."
+     "Get individualized recommendations according to your eating habits and sustainability values."
 
     </string>
 

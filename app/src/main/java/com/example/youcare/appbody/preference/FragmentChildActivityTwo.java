@@ -1,4 +1,4 @@
-package com.example.youcare.appBodyNavigation.appBodyPreference;
+package com.example.youcare.appbody.preference;
 
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
@@ -9,9 +9,9 @@ import android.view.View;
 import android.widget.Button;
 
 import com.example.youcare.R;
-import com.example.youcare.appBodyNavigation.AppBodyNavigationMainActivity;
+import com.example.youcare.appbody.MainActivity;
 
-public class PreferenceChildActivityTwo extends AppCompatActivity {
+public class FragmentChildActivityTwo extends AppCompatActivity {
    Button Save;
 
     @Override
@@ -28,7 +28,7 @@ public class PreferenceChildActivityTwo extends AppCompatActivity {
         Save.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent i = new Intent(PreferenceChildActivityTwo.this, AppBodyNavigationMainActivity.class);
+                Intent i = new Intent(FragmentChildActivityTwo.this, MainActivity.class);
                 startActivity(i);
             }
         });

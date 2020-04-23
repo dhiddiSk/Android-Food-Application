@@ -1,4 +1,4 @@
-package com.example.youcare.appBodyNavigation;
+package com.example.youcare.appbody;
 
 import androidx.annotation.Nullable;
 
@@ -10,7 +10,7 @@ import android.view.ViewGroup;
 
 import com.example.youcare.R;
 
-public class AppBodyNavigationDealFragment extends Fragment {
+public class DealFragment extends Fragment {
 
     @Nullable
     @Override

@@ -1,4 +1,4 @@
-package com.example.youcare.userAuthentication;
+package com.example.youcare.authentication;
 
 import android.content.Intent;
 import android.graphics.Paint;
@@ -10,10 +10,9 @@ import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import com.example.youcare.DatabaseConnectivity;
-import com.example.youcare.EatingPreferences;
+import com.example.youcare.database.DatabaseConnectivity;
 import com.example.youcare.R;
-import com.example.youcare.appBodyNavigation.AppBodyNavigationMainActivity;
+import com.example.youcare.appbody.MainActivity;
 
 public class UserLogin extends AppCompatActivity {
 
@@ -44,7 +43,7 @@ public class UserLogin extends AppCompatActivity {
 
                     if (database.isLoginValid(usernameValue, passwordValue)) {
                         Toast.makeText(UserLogin.this, "Login Successful!", Toast.LENGTH_SHORT).show();
-                        Intent intent = new Intent(UserLogin.this, AppBodyNavigationMainActivity.class);
+                        Intent intent = new Intent(UserLogin.this, MainActivity.class);
                         startActivity(intent);
                         finish();
 

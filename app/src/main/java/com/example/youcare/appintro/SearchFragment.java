@@ -1,7 +1,6 @@
-package com.example.youcare.appIntroNavigation;
+package com.example.youcare.appintro;
 
 import androidx.annotation.Nullable;
-import androidx.appcompat.app.AppCompatActivity;
 
 import android.app.Fragment;
 import android.content.Intent;
@@ -12,9 +11,9 @@ import android.view.ViewGroup;
 import android.widget.Button;
 
 import com.example.youcare.R;
-import com.example.youcare.userAuthentication.UserLogin;
+import com.example.youcare.authentication.UserLogin;
 
-public class IntroNavigationSearchFragment extends Fragment {
+public class SearchFragment extends Fragment {
    Button signUpOrLogin;
     @Nullable
     @Override
