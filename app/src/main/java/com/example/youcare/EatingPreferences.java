@@ -10,6 +10,8 @@ import android.widget.CompoundButton;
 import android.widget.Switch;
 import android.widget.Toast;
 
+import com.example.youcare.database.DatabaseConnectivity;
+
 /*
 This class refers to the eating habits of the user like vegan and vegetarian.
  */
@@ -33,8 +35,6 @@ public class EatingPreferences extends AppCompatActivity {
     DatabaseConnectivity database;
 
     searchproducts searchObj = new searchproducts();
-    DataBaseInsertingValues insertingValues = new DataBaseInsertingValues();
-
     String milktable = "milk";
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -56,20 +56,6 @@ public class EatingPreferences extends AppCompatActivity {
         applyFilters = findViewById(R.id.applyFilters);
 
         database=new DatabaseConnectivity(this);
-
-        //** Using this between just to insert the products data, just I was testing it//
-        boolean notifyInsertion = insertingValues.insertingData(database);
-         if(!notifyInsertion){
-             Toast.makeText(EatingPreferences.this, "insertion failed", Toast.LENGTH_SHORT).show();
-
-         }
-         else {
-             Toast.makeText(EatingPreferences.this, "insertion succeed", Toast.LENGTH_SHORT).show();
-
-         }
-
-        //***************************************************************//
-
 
         veganOne.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {

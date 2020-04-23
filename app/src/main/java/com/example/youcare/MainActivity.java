@@ -6,8 +6,6 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
 
-import com.example.youcare.appIntroNavigation.IntroNavigationMainActivity;
-
 public class MainActivity extends AppCompatActivity {
 
     protected int LaunchScreenTime = 2500;
@@ -29,7 +27,7 @@ public class MainActivity extends AppCompatActivity {
         new Handler().postDelayed(new Runnable() {
             @Override
             public void run() {
-                Intent ApplicationIntroIntent = new Intent(MainActivity.this, IntroNavigationMainActivity.class);
+                Intent ApplicationIntroIntent = new Intent(MainActivity.this, com.example.youcare.appintro.MainActivity.class);
                 startActivity(ApplicationIntroIntent);
 //            @method finish() is used to exit the applicaiton when back button is pressed after the launch screen is done, which means the launch screen is fired when the application is
                 //newly opened

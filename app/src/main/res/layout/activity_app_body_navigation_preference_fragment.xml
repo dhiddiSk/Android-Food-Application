@@ -4,18 +4,20 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".appBodyNavigation.appBodyPreference.AppBodyNavigationpreferenceFragment">
+    android:paddingLeft="20dp"
+    android:paddingRight="20dp"
+    tools:context=".appbody.preference.PreferenceFragment">
 
 
 
 
-    <androidx.appcompat.widget.AppCompatImageButton
+    <ImageButton
         android:id="@+id/userProfile"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="320dp"
-        android:layout_marginTop="20dp"
+        android:layout_alignParentRight="true"
         android:background="@android:color/transparent"
+        android:paddingTop="10dp"
         android:clickable="true"
         android:enabled="true"
         android:gravity="start"
@@ -27,101 +29,93 @@
         android:layout_height="wrap_content"
         android:layout_below="@id/userProfile"
         android:text="@string/eatingHabits"
-        android:textColor="#b2beb5"
+        android:textColor="#808080"
+        android:gravity="center"
+        android:layout_margin="20dp"
+        android:textStyle="bold"
         android:textAllCaps="false"
         android:textSize="30sp"
-        android:layout_marginLeft="30dp"
-        android:layout_marginTop="20dp"/>
+        />
 
     <Button
         android:id="@+id/Vegetarian"
         android:layout_below="@id/preferenceText"
-        style="@style/Animation.Design.BottomSheetDialog"
-        android:layout_width="150dp"
-        android:layout_height="40dp"
-        android:layout_gravity="center_horizontal"
-        android:layout_marginTop="25dp"
-        android:layout_marginLeft="20dp"
+        android:layout_width="120dp"
+        android:layout_height="wrap_content"
         android:background="@drawable/preference_button_shape"
         android:clickable="true"
+        android:layout_alignParentLeft="true"
         android:enabled="true"
-        android:padding="5dp"
+        android:padding="10dp"
         android:text="Vegetarian"
         android:textAllCaps="false"
         android:textColor="#000000"
         android:textSize="18dp"
-        android:textStyle="bold" />
+        android:textStyle="normal" />
 
     <Button
         android:id="@+id/Vegan"
         android:layout_below="@id/Vegetarian"
-        style="@style/Animation.Design.BottomSheetDialog"
-        android:layout_width="150dp"
-        android:layout_height="40dp"
-        android:layout_gravity="center_horizontal"
-        android:layout_marginTop="20dp"
-        android:layout_marginLeft="20dp"
+        android:layout_width="120dp"
+        android:layout_height="wrap_content"
         android:background="@drawable/preference_button_shape"
         android:clickable="true"
+        android:layout_alignParentLeft="true"
+        android:layout_marginTop="10dp"
         android:enabled="true"
-        android:padding="5dp"
+        android:padding="10dp"
         android:text="Vegan"
         android:textAllCaps="false"
         android:textColor="#000000"
         android:textSize="18dp"
-        android:textStyle="bold" />
+        android:textStyle="normal" />
+
     <Button
         android:id="@+id/GlutenFree"
         android:layout_below="@id/Vegan"
-        style="@style/Animation.Design.BottomSheetDialog"
-        android:layout_width="150dp"
-        android:layout_height="40dp"
-        android:layout_marginLeft="20dp"
-        android:layout_gravity="center_horizontal"
-        android:layout_marginTop="20dp"
+        android:layout_width="120dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
         android:background="@drawable/preference_button_shape"
         android:clickable="true"
+        android:layout_alignParentLeft="true"
         android:enabled="true"
-        android:padding="5dp"
+        android:padding="10dp"
         android:text="Gluten-free"
         android:textAllCaps="false"
         android:textColor="#000000"
         android:textSize="18dp"
-        android:textStyle="bold" />
+        android:textStyle="normal" />
 
         <Button
             android:id="@+id/LacktoseFree"
-            style="@style/Animation.Design.BottomSheetDialog"
-            android:layout_width="150dp"
-            android:layout_height="40dp"
+            android:layout_width="120dp"
+            android:layout_height="wrap_content"
             android:layout_below="@id/GlutenFree"
-            android:layout_gravity="center_horizontal"
-            android:layout_marginLeft="20dp"
-            android:layout_marginTop="20dp"
             android:background="@drawable/preference_button_shape"
             android:clickable="true"
+            android:layout_alignParentLeft="true"
             android:enabled="true"
-            android:padding="5dp"
+            android:layout_marginTop="10dp"
+            android:padding="10dp"
             android:text="Lakto-free"
             android:textAllCaps="false"
             android:textColor="#000000"
             android:textSize="18dp"
-            android:textStyle="bold" />
+            android:textStyle="normal" />
 
         <Button
         android:id="@+id/Norestrictions"
         android:layout_below="@id/LacktoseFree"
-        style="@style/Animation.Design.BottomSheetDialog"
-        android:layout_width="150dp"
-        android:layout_height="40dp"
-        android:layout_marginLeft="120dp"
-        android:layout_gravity="center_horizontal"
-        android:layout_marginTop="30dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:background="@drawable/preference_button_shape"
         android:clickable="true"
+            android:layout_centerHorizontal="true"
         android:enabled="true"
-        android:padding="5dp"
-        android:text="no restrictions"
+        android:padding="10dp"
+        android:text="No restrictions"
+            android:layout_marginTop="15dp"
         android:textAllCaps="false"
         android:textColor="#000000"
         android:textSize="18dp"
@@ -132,10 +126,8 @@
         android:src="@drawable/ic_arrow_forward_black_24dp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
-        android:layout_marginLeft="300dp"
+       android:layout_alignParentRight="true"
         android:clickable="true"
-        android:enabled="true"
-        android:padding="5dp" />
+        android:enabled="true" />
 
 </RelativeLayout>

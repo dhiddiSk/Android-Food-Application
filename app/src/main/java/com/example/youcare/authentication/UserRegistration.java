@@ -1,6 +1,7 @@
-package com.example.youcare.userAuthentication;
+package com.example.youcare.authentication;
 
 import android.content.ContentValues;
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
@@ -11,7 +12,7 @@ import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import com.example.youcare.DatabaseConnectivity;
+import com.example.youcare.database.DatabaseConnectivity;
 import com.example.youcare.R;
 
 public class UserRegistration extends AppCompatActivity {
@@ -32,6 +33,7 @@ public class UserRegistration extends AppCompatActivity {
     public Button registration;
 
     String usertable = "user";
+    Context userRegistrationContext = this;
 
         @Override
         protected void onCreate(Bundle savedInstanceState) {
@@ -64,10 +66,13 @@ public class UserRegistration extends AppCompatActivity {
                         contentValues.put("password", passwordValue);
                         contentValues.put("MobileNumber", Reigister_mobile_value);
 
-                       boolean insertdescision = database.insertvalues(contentValues,usertable);
+
+
+
+                       boolean insertdescision = database.insertvalues(contentValues,usertable,usernamefirstname,userlastname,emailValue,userRegistrationContext);
                           if(insertdescision){
                               Toast.makeText(UserRegistration.this, "User registered!", Toast.LENGTH_SHORT).show();
-                              startActivity(new Intent(UserRegistration.this, LoginActivity.class));
+                              startActivity(new Intent(UserRegistration.this, UserLogin.class));
                               finish();
                           } else {
                               Toast.makeText(UserRegistration.this, "User registration failed", Toast.LENGTH_SHORT).show();
@@ -83,4 +88,12 @@ public class UserRegistration extends AppCompatActivity {
 
 
         }
+
+
+    @Override
+    protected void onStop() {
+        super.onStop();
+        finish();
+
     }
+}

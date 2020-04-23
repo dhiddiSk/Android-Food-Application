@@ -12,22 +12,22 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".appBodyNavigation.appBodyPreference.PreferenceChildActivityTwo" />
-        <activity android:name=".appBodyNavigation.appBodyPreference.PrefrenceChildActivityOne" />
-        <activity android:name=".appBodyNavigation.AppBodyNavigationDealFragment" />
-        <activity android:name=".appBodyNavigation.AppBodyNavigationBasketFragment" />
-        <activity android:name=".appBodyNavigation.appBodySearch.AppBodyNavigationSearchFragment" />
-        <activity android:name=".appBodyNavigation.appBodyPreference.AppBodyNavigationpreferenceFragment" />
-        <activity android:name=".appBodyNavigation.AppBodyNavigationMainActivity" />
-        <activity android:name=".appIntroNavigation.IntroNavigationBasketFragment"
+        <activity android:name=".appbody.preference.FragmentChildActivityTwo" />
+        <activity android:name=".appbody.preference.FragmentChildActivityOne" />
+        <activity android:name=".appbody.DealFragment" />
+        <activity android:name=".appbody.ShopFragment" />
+        <activity android:name=".appbody.search.SearchFragment" />
+        <activity android:name=".appbody.preference.PreferenceFragment" />
+        <activity android:name=".appbody.MainActivity" />
+        <activity android:name=".appintro.ShopFragment"
             android:label="Shopping basket"/>
-        <activity android:name=".appIntroNavigation.IntroNavigationDealFragment"
+        <activity android:name=".appintro.DealFragment"
             android:label="Loyality program"/>
-        <activity android:name=".appIntroNavigation.IntroNavigationSearchFragment"
+        <activity android:name=".appintro.SearchFragment"
             android:label="Product selection"/>
-        <activity android:name=".appIntroNavigation.IntroNavigationPreferenceFragment"
+        <activity android:name=".appintro.PreferenceFragment"
             android:label="Preference"/>
-        <activity android:name=".appIntroNavigation.IntroNavigationMainActivity" />
+        <activity android:name=".appintro.MainActivity" />
         <activity android:name=".UserLocation" />
         <activity android:name=".displayProducts" /> <!-- <activity android:name=".list_view_items" /> -->
         <activity android:name=".searchproducts" />
@@ -38,7 +38,7 @@
             android:name=".EatingPreferences"
             android:label="Preferences" />
         <activity
-            android:name=".userAuthentication.UserRegistration"
+            android:name=".authentication.UserRegistration"
             android:label="New registration" />
 <!--        <activity-->
 <!--            android:name=".AppInfo"-->
@@ -51,7 +51,7 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".userAuthentication.LoginActivity"
+            android:name=".authentication.UserLogin"
             android:label="User login" />
     </application>
 

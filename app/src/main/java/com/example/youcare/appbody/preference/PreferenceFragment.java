@@ -1,7 +1,7 @@
-package com.example.youcare.appBodyNavigation.appBodyPreference;
+package com.example.youcare.appbody.preference;
 
-import androidx.annotation.ColorInt;
 import androidx.annotation.Nullable;
+import androidx.core.content.ContextCompat;
 
 import android.app.Fragment;
 import android.content.Intent;
@@ -13,9 +13,8 @@ import android.widget.Button;
 import android.widget.ImageButton;
 
 import com.example.youcare.R;
-import com.example.youcare.appBodyNavigation.appBodyPreference.PrefrenceChildActivityOne;
 
-public class AppBodyNavigationpreferenceFragment extends Fragment implements View.OnClickListener {
+public class PreferenceFragment extends Fragment implements View.OnClickListener {
 
     ImageButton nextpage;
     Button vegetarian;
@@ -37,7 +36,7 @@ public class AppBodyNavigationpreferenceFragment extends Fragment implements Vie
         glutenfree = view.findViewById(R.id.GlutenFree);
         lacktosefree = view.findViewById(R.id.LacktoseFree);
         norestrictions = view.findViewById(R.id.Norestrictions);
-        nextpage.setOnClickListener(this);
+       // nextpage.setOnClickListener(this);
         vegetarian.setOnClickListener(this);
         vegan.setOnClickListener(this);
         glutenfree.setOnClickListener(this);
@@ -54,7 +53,7 @@ public class AppBodyNavigationpreferenceFragment extends Fragment implements Vie
 
             switch (v.getId()){
 
-               // case R.id.Vegetarian : vegetarian.setBackgroundColor("@colors/");
+               case R.id.Vegetarian : vegetarian.setBackgroundColor(ContextCompat.getColor(v.getContext(),R.color.colorPrimaryDark));
 
 
 
@@ -88,12 +87,12 @@ public class AppBodyNavigationpreferenceFragment extends Fragment implements Vie
             @Override
             public void onClick(View v) {
 
-                Intent it = new Intent(getActivity(), PrefrenceChildActivityOne.class);
+                Intent it = new Intent(getActivity(), FragmentChildActivityOne.class);
                   startActivity(it);
 
 //                FragmentManager fm = getChildFragmentManager();
 //                FragmentTransaction ft = fm.beginTransaction();
-//                ft.replace(R.id.preferenceSubfragmentOneContainer, new PrefrenceChildActivityOne());
+//                ft.replace(R.id.preferenceSubfragmentOneContainer, new FragmentChildActivityOne());
 //                ft.commit();
 
             }
@@ -101,7 +100,5 @@ public class AppBodyNavigationpreferenceFragment extends Fragment implements Vie
 
 
     }
-
-
 
 }

@@ -1,4 +1,4 @@
-package com.example.youcare.appIntroNavigation;
+package com.example.youcare.appintro;
 
 import androidx.annotation.Nullable;
 
@@ -11,9 +11,9 @@ import android.view.ViewGroup;
 import android.widget.Button;
 
 import com.example.youcare.R;
-import com.example.youcare.userAuthentication.LoginActivity;
+import com.example.youcare.authentication.UserLogin;
 
-public class IntroNavigationBasketFragment extends Fragment {
+public class ShopFragment extends Fragment {
 
    public Button signUpOrLogin;
    View rootView;
@@ -43,7 +43,7 @@ public class IntroNavigationBasketFragment extends Fragment {
             @Override
             public void onClick(View v) {
 
-                Intent i = new Intent(getActivity(), LoginActivity.class);
+                Intent i = new Intent(getActivity(), UserLogin.class);
                 startActivity(i);
             }
         });
