@@ -62,4 +62,8 @@ public class MainActivity extends AppCompatActivity {
             bottomNavigation.setSelectedItemId(R.id.navigation_favorites);
         }
     }
+<<<<<<< Updated upstream
+=======
+    
+>>>>>>> Stashed changes
 }

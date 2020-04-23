@@ -57,6 +57,7 @@ public class MainActivity extends AppCompatActivity {
                 }
             };
 
+<<<<<<< Updated upstream
     @Override
     public void onBackPressed() {
         if (bottomNavigation.getSelectedItemId() == R.id.navigation_favorites) {
@@ -65,4 +66,19 @@ public class MainActivity extends AppCompatActivity {
             bottomNavigation.setSelectedItemId(R.id.navigation_favorites);
         }
     }
+=======
+
+    @Override
+    public void onBackPressed() {
+        if(bottomNavigation.getSelectedItemId() == R.id.navigation_favorites){
+            finish();
+        }else{
+            bottomNavigation.setSelectedItemId(R.id.navigation_favorites);
+        }
+    }
+
+
+
+
+>>>>>>> Stashed changes
 }

@@ -6,8 +6,6 @@
         android:icon="@drawable/ic_favorite_black_24dp"
         android:title="Preferences"
         />
-
-
     <item
         android:id="@+id/navigation_search"
         android:icon="@drawable/ic_search_black_24dp"
