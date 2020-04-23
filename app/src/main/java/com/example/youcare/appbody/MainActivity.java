@@ -15,6 +15,7 @@ import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 public class MainActivity extends AppCompatActivity {
     BottomNavigationView bottomNavigation;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -25,7 +26,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
 
-    public void openFragment(Fragment fragment){
+    public void openFragment(Fragment fragment) {
         FragmentManager fm = getFragmentManager();
         android.app.FragmentTransaction ft = fm.beginTransaction();
         ft.replace(R.id.bodycontainer, fragment);
@@ -36,7 +37,8 @@ public class MainActivity extends AppCompatActivity {
 
     BottomNavigationView.OnNavigationItemSelectedListener navigationItemSelectedListener =
             new BottomNavigationView.OnNavigationItemSelectedListener() {
-                @Override public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+                @Override
+                public boolean onNavigationItemSelected(@NonNull MenuItem item) {
                     switch (item.getItemId()) {
                         case R.id.navigation_favorites:
                             openFragment(new PreferenceFragment());
@@ -55,4 +57,12 @@ public class MainActivity extends AppCompatActivity {
                 }
             };
 
+    @Override
+    public void onBackPressed() {
+        if (bottomNavigation.getSelectedItemId() == R.id.navigation_favorites) {
+            finish();
+        } else {
+            bottomNavigation.setSelectedItemId(R.id.navigation_favorites);
+        }
+    }
 }
