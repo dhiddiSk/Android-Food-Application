@@ -57,7 +57,6 @@ public class DatabaseConnectivity extends SQLiteOpenHelper{
 
            if(result == -1){
                return false;
-
            }
            return true;
         }

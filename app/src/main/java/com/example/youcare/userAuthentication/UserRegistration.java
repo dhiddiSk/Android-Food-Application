@@ -67,13 +67,10 @@ public class UserRegistration extends AppCompatActivity {
                        boolean insertdescision = database.insertvalues(contentValues,usertable);
                           if(insertdescision){
                               Toast.makeText(UserRegistration.this, "User registered!", Toast.LENGTH_SHORT).show();
-                              startActivity(new Intent(UserRegistration.this, UserLogin.class));
-
-                          }
-
-                          else {
+                              startActivity(new Intent(UserRegistration.this, LoginActivity.class));
+                              finish();
+                          } else {
                               Toast.makeText(UserRegistration.this, "User registration failed", Toast.LENGTH_SHORT).show();
-
                           }
                     }
                     else {

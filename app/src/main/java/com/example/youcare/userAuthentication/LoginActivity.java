@@ -3,21 +3,24 @@ package com.example.youcare.userAuthentication;
 import android.content.Intent;
 import android.graphics.Paint;
 import android.os.Bundle;
+import android.text.TextUtils;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.AppCompatEditText;
 
 import com.example.youcare.DatabaseConnectivity;
-import com.example.youcare.EatingPreferences;
 import com.example.youcare.R;
 import com.example.youcare.appBodyNavigation.AppBodyNavigationMainActivity;
+import com.google.android.material.textfield.TextInputLayout;
 
-public class UserLogin extends AppCompatActivity {
+public class LoginActivity extends AppCompatActivity {
 
-    EditText login_Username, login_password;
+    private AppCompatEditText login_Username, login_password;
+    private TextInputLayout txtip_email,txtip_password;
     DatabaseConnectivity database;
     public String login_Username_value;
     public String login_password_value;
@@ -31,6 +34,8 @@ public class UserLogin extends AppCompatActivity {
             setContentView(R.layout.activity_login);
             login_Username = findViewById(R.id.login_username);
             login_password = findViewById(R.id.login_password);
+            txtip_email = findViewById(R.id.txtip_email);
+            txtip_password = findViewById(R.id.txtip_password);
             loginButton= findViewById(R.id.login_button);
             database = new DatabaseConnectivity(this);
 
@@ -38,18 +43,24 @@ public class UserLogin extends AppCompatActivity {
             loginButton.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    String usernameValue = login_Username.getText().toString();
-                    String passwordValue = login_password.getText().toString();
 
+                    if (!TextUtils.isEmpty(login_Username.getText().toString())
+                            && !TextUtils.isEmpty(login_password.getText().toString())) {
 
-                    if (database.isLoginValid(usernameValue, passwordValue)) {
-                        Toast.makeText(UserLogin.this, "Login Successful!", Toast.LENGTH_SHORT).show();
-                        Intent intent = new Intent(UserLogin.this, AppBodyNavigationMainActivity.class);
-                        startActivity(intent);
-                        finish();
+                        String usernameValue = login_Username.getText().toString();
+                        String passwordValue = login_password.getText().toString();
 
-                    } else {
-                        Toast.makeText(UserLogin.this, "Invalid Username or Password!", Toast.LENGTH_SHORT).show();
+                        if (database.isLoginValid(usernameValue, passwordValue)) {
+                            Toast.makeText(LoginActivity.this, "Login Successful!", Toast.LENGTH_SHORT).show();
+                            Intent intent = new Intent(LoginActivity.this, AppBodyNavigationMainActivity.class);
+                            startActivity(intent);
+                            finish();
+
+                        } else {
+                            Toast.makeText(LoginActivity.this, "Invalid Username or Password!", Toast.LENGTH_SHORT).show();
+                        }
+                    }else{
+                        Toast.makeText(LoginActivity.this, "Please give your credentials", Toast.LENGTH_SHORT).show();
                     }
 
 
@@ -64,7 +75,7 @@ public class UserLogin extends AppCompatActivity {
             registerClick.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    Intent intent = new Intent(UserLogin.this, UserRegistration.class);
+                    Intent intent = new Intent(LoginActivity.this, UserRegistration.class);
                     startActivity(intent);
 
 

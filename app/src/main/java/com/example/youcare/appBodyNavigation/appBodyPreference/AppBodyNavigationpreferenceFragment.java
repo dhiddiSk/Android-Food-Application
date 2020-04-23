@@ -54,7 +54,7 @@ public class AppBodyNavigationpreferenceFragment extends Fragment implements Vie
 
             switch (v.getId()){
 
-                case R.id.Vegetarian : vegetarian.setBackgroundColor("@colors/");
+               // case R.id.Vegetarian : vegetarian.setBackgroundColor("@colors/");
 
 
 

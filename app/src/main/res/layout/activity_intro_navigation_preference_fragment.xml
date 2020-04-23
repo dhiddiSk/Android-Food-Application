@@ -6,42 +6,60 @@
     android:layout_height="match_parent"
     tools:context=".appIntroNavigation.IntroNavigationPreferenceFragment">
 
-    <ImageView
-        android:id="@+id/IntroPreference"
-        android:layout_width="wrap_content"
+    <LinearLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="43dp"
-        android:src="@drawable/intropreference" />
+        android:layout_centerInParent="true"
+        android:gravity="center"
+        android:paddingStart="20dp"
+        android:paddingEnd="20dp"
+        android:orientation="vertical">
 
-    <TextView
-        android:id="@+id/IntropreferenceText"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/IntroPreference"
-       android:layout_centerHorizontal="true"
-        android:layout_marginTop="44dp"
-        android:text="@string/introPreference"
-        android:textSize="20sp"
-        />
+        <ImageView
+            android:id="@+id/IntroPreference"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/intropreference"
+            android:layout_margin="10dp"/>
 
-    <Button
-        android:id="@+id/signUpLoginButton"
-        style="@style/Animation.Design.BottomSheetDialog"
-        android:layout_width="150dp"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/IntropreferenceText"
-        android:layout_marginTop="69dp"
-        android:layout_marginLeft="120dp"
-        android:layout_centerHorizontal="true"
-        android:background="@drawable/introbuttonshape"
-        android:clickable="true"
-        android:enabled="true"
-        android:text="@string/signup"
-        android:textColor="#FFFFFF"
-        android:textAllCaps="false"
-        android:textSize="18dp"
-        android:textStyle="bold" />
+        <TextView
+            android:id="@+id/IntropreferenceTextTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/IntroPreference"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="44dp"
+            android:textStyle="bold"
+            android:text="@string/intropreference_head"
+            android:textSize="20sp"
+            />
+
+        <TextView
+            android:id="@+id/IntropreferenceText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/intro_prefernce"
+            android:textSize="20sp"
+            android:gravity="center"
+            />
+
+
+        <Button
+            android:id="@+id/signUpLoginButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/introbuttonshape"
+            android:enabled="true"
+            android:padding="10dp"
+            android:text="@string/signup"
+            android:textColor="#FFFFFF"
+            android:textAllCaps="false"
+            android:textSize="20dp"
+            android:textStyle="bold"
+            android:layout_margin="20dp"/>
+
+    </LinearLayout>
+
 
 
 </RelativeLayout>
