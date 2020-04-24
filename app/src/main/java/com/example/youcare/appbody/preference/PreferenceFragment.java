@@ -1,12 +1,15 @@
 package com.example.youcare.appbody.preference;
 
+import androidx.annotation.DrawableRes;
 import androidx.annotation.Nullable;
 import androidx.core.content.ContextCompat;
 
 import android.app.Fragment;
 import android.content.Intent;
+import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.view.LayoutInflater;
+import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
@@ -47,13 +50,43 @@ public class PreferenceFragment extends Fragment implements View.OnClickListener
         return view;
     }
 
+    private boolean vegTempChecked = false;
+    private boolean veganTempChecked = false;
+    private boolean glutemTempChecked = false;
+    private boolean lacktoTempChecked = false;
+    private boolean norestrictionChecked = false;
 
     @Override
     public void onClick(View v) {
 
-            switch (v.getId()){
 
-              //case R.id.Vegetarian : vegetarian.setBackgroundColor(ContextCompat.getColor(v.getContext());
+          switch (v.getId()){
+
+                   case R.id.Vegetarian : vegTempChecked = (!vegTempChecked);
+                                          int vegResId =  (vegTempChecked ? R.drawable.preference_button_shape_green:R.drawable.preference_body_button_shape);
+                                          vegetarian.setBackgroundResource(vegResId);
+                                          break;
+                        case R.id.Vegan : veganTempChecked = (!veganTempChecked);
+                                          int veganResId =  (veganTempChecked ? R.drawable.preference_button_shape_green:R.drawable.preference_body_button_shape);
+                                          vegan.setBackgroundResource(veganResId);
+                                          break;
+
+                    case R.id.GlutenFree : glutemTempChecked = (!glutemTempChecked);
+                                            int GlutenResId =  (glutemTempChecked ? R.drawable.preference_button_shape_green:R.drawable.preference_body_button_shape);
+                                            glutenfree.setBackgroundResource(GlutenResId);
+                                            break;
+
+                   case R.id.LacktoseFree : lacktoTempChecked = (!lacktoTempChecked);
+                                            int lacktoResId =  (lacktoTempChecked ? R.drawable.preference_button_shape_green:R.drawable.preference_body_button_shape);
+                                            lacktosefree.setBackgroundResource(lacktoResId);
+                                            break;
+
+                   case R.id.Norestrictions: norestrictionChecked = (!norestrictionChecked);
+                                             int restrictionResId =  (norestrictionChecked ? R.drawable.preference_button_shape_green:R.drawable.preference_body_button_shape);
+                                             norestrictions.setBackgroundResource(restrictionResId);
+                                             break;
+
+
                 //
                 // color.colorPrimaryDark));
 

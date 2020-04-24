@@ -30,7 +30,7 @@
         <activity android:name=".appintro.MainActivity" />
         <activity android:name=".UserLocation" />
         <activity android:name=".displayProducts" /> <!-- <activity android:name=".list_view_items" /> -->
-        <activity android:name=".searchproducts" />
+        <activity android:name=".Searchproducts" />
         <activity
             android:name=".UserValues"
             android:label="User values" />

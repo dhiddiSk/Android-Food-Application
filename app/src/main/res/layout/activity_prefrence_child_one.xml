@@ -39,7 +39,7 @@
         android:layout_below="@id/preferenceChildOneText"
         android:layout_marginTop="50dp"
         android:layout_centerInParent="true"
-        android:background="@drawable/preference_button_shape"
+        android:background="@drawable/preference_body_button_shape"
         android:clickable="true"
         android:enabled="true"
         android:padding="10dp"
@@ -57,7 +57,7 @@
         android:layout_centerInParent="true"
         android:layout_centerVertical="true"
         android:layout_marginTop="60dp"
-        android:background="@drawable/preference_button_shape"
+        android:background="@drawable/preference_body_button_shape"
         android:clickable="true"
         android:enabled="true"
         android:padding="5dp"
@@ -76,5 +76,5 @@
         android:layout_alignParentRight="true"
         android:clickable="true"
         android:enabled="true"
-        android:src="@drawable/ic_arrow_forward_black_24dp" />
+        app:srcCompat="@drawable/ic_arrow_forward_black_24dp" />
 </RelativeLayout>
