@@ -51,7 +51,7 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".authentication.UserLogin"
+            android:name=".authentication.LoginActivity"
             android:label="User login" />
     </application>
 

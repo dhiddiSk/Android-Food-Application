@@ -11,7 +11,7 @@ import android.view.ViewGroup;
 import android.widget.Button;
 
 import com.example.youcare.R;
-import com.example.youcare.authentication.UserLogin;
+import com.example.youcare.authentication.LoginActivity;
 
 public class PreferenceFragment extends Fragment {
     public Button signUpOrLogin;
@@ -30,7 +30,7 @@ public class PreferenceFragment extends Fragment {
         signUpOrLogin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent i = new Intent(getActivity(), UserLogin.class);
+                Intent i = new Intent(getActivity(), LoginActivity.class);
                 startActivity(i);
             }
         });

@@ -30,7 +30,7 @@
 //    public void onDonePressed(Fragment currentFragement){
 //        super.onDonePressed(currentFragement);
 //        // @loginScreen intent is created to call the login activtiy page after the done button is pressed
-//        Intent loginScreen = new Intent(this, UserLogin.class);
+//        Intent loginScreen = new Intent(this, LoginActivity.class);
 //        startActivity(loginScreen);
 //        finish();
 //    }
@@ -39,7 +39,7 @@
 //    public void onSkipPressed(Fragment currentFragment){
 //        super.onSkipPressed(currentFragment);
 //        // here if the user wants to skip the introduction page activity then he can skip it and then enter into the login page activity
-//        Intent loginScreen = new Intent(this, UserLogin.class);
+//        Intent loginScreen = new Intent(this, LoginActivity.class);
 //        startActivity(loginScreen);
 //        finish();
 //    }

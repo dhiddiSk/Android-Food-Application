@@ -68,6 +68,12 @@ public class DatabaseConnectivity extends SQLiteOpenHelper{
         return false;
         }
 
+    /***
+     * Login Validation
+     * @param emailID
+     * @param password
+     * @return
+     */
     public boolean isLoginValid(String emailID, String password) {
             String sql = "Select count(*) from user where email='" + emailID + "' and password='" + password + "'";
             SQLiteStatement statement = getReadableDatabase().compileStatement(sql);
@@ -84,6 +90,32 @@ public class DatabaseConnectivity extends SQLiteOpenHelper{
 
         }
 
+    public boolean checkEmailExists(String email) {
+        String query = "Select * from " + usertable + " where email like '" + email + "'";
+
+        SQLiteDatabase db = this.getReadableDatabase();
+        Cursor cursor = db.rawQuery(query,
+                null);
+        if (cursor.getCount() > 0) {
+            cursor.close();
+            return true;
+        } else {
+            cursor.close();
+            return false;
+        }
+    }
+
+    /***
+     * Update User Password
+     * @param updatedPassword
+     * @param email
+     * @return
+     */
+    public boolean update(String updatedPassword, String email) {
+        SQLiteDatabase db = this.getReadableDatabase();
+        db.execSQL("UPDATE "+usertable+" SET password = "+"'"+updatedPassword+"' "+ "WHERE email = "+"'"+email+"'");
+        return true;
+    }
 
     public String query(boolean regionalUserInput, boolean veganUserInput, int environmentUserRating, int healthUserRating, int fairAndSocialUserRating, int animalTreatmentUserRating){
              String regionaltemp, productOutputAfterQuery = null;

@@ -1,14 +1,16 @@
 package com.example.youcare.authentication;
 
+import android.app.Dialog;
 import android.content.Context;
 import android.content.Intent;
 import android.graphics.Paint;
 import android.os.Bundle;
 import android.view.View;
-import android.view.WindowManager;
+import android.view.Window;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import android.widget.Toast;
 
@@ -19,7 +21,7 @@ import com.example.youcare.R;
 import com.example.youcare.appbody.MainActivity;
 import com.google.android.material.textfield.TextInputLayout;
 
-public class UserLogin extends AppCompatActivity implements View.OnClickListener {
+public class LoginActivity extends AppCompatActivity implements View.OnClickListener {
 
     EditText login_Username, login_password;
     DatabaseConnectivity database;
@@ -49,6 +51,8 @@ public class UserLogin extends AppCompatActivity implements View.OnClickListener
         // on clicks
         findViewById(R.id.id_login).setOnClickListener(this);
         findViewById(R.id.id_register).setOnClickListener(this);
+        forgotPassword.setOnClickListener(this);
+
     }
 
     @Override
@@ -74,23 +78,74 @@ public class UserLogin extends AppCompatActivity implements View.OnClickListener
                     InputMethodManager imm = (InputMethodManager) getSystemService(Context.INPUT_METHOD_SERVICE);
                     imm.hideSoftInputFromWindow(rootlayout.getWindowToken(), 0);
                     if (database.isLoginValid(usernameValue, passwordValue)) {
-                        Toast.makeText(UserLogin.this, "Login Successful!", Toast.LENGTH_SHORT).show();
-                        Intent intent = new Intent(UserLogin.this, MainActivity.class);
+                        Toast.makeText(LoginActivity.this, "Login Successful!", Toast.LENGTH_SHORT).show();
+                        Intent intent = new Intent(LoginActivity.this, MainActivity.class);
                         startActivity(intent);
                         finish();
 
                     } else {
-                        Toast.makeText(UserLogin.this, "Invalid Username or Password!", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(LoginActivity.this, "Invalid Username or Password!", Toast.LENGTH_SHORT).show();
                     }
                 }
                 break;
 
                 case R.id.id_register:
-                Intent intent = new Intent(UserLogin.this, UserRegistration.class);
+                Intent intent = new Intent(LoginActivity.this, UserRegistration.class);
                 startActivity(intent);
                 break;
+
+            case R.id.forgotPassword:
+                showPasswordDialog(v.getContext());
         }
 
+    }
+
+    private void showPasswordDialog(Context context) {
+        final Dialog dialog = new Dialog(context);
+        dialog.setContentView(R.layout.layout_forgotpassword);
+        Window window = dialog.getWindow();
+        window.setLayout(LinearLayout.LayoutParams.MATCH_PARENT, LinearLayout.LayoutParams.WRAP_CONTENT);
+        final TextInputLayout txtip_forgotPasssword = dialog.findViewById(R.id.txtip_forgotpasssword);
+        final EditText et_forgotPassword = dialog.findViewById(R.id.et_forgotpassword);
+        final TextInputLayout txtip_newPassword = dialog.findViewById(R.id.txtip_newpassword);
+        final EditText et_newPassword = dialog.findViewById(R.id.et_newpassword);
+
+        LinearLayout send_forgotPasssword = dialog.findViewById(R.id.id_forgotpassword);
+        send_forgotPasssword.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (et_forgotPassword.getText() != null && et_forgotPassword.getText().toString() != null
+                && !et_forgotPassword.getText().toString().isEmpty()){
+                    txtip_forgotPasssword.setErrorEnabled(false);
+                    if (!isValidEmailAddress(et_forgotPassword.getText().toString().trim())) {
+                        txtip_forgotPasssword.setError("Invalid Email");
+                    }else if (!database.checkEmailExists(et_forgotPassword.getText().toString().trim())){
+                        txtip_forgotPasssword.setError("Email not registered");
+                    } else {
+                        // Making New Password Validation Here
+                        if (et_newPassword.getText()!= null && et_newPassword.getText().toString() != null
+                        && !et_newPassword.getText().toString().trim().isEmpty()){
+
+                            txtip_forgotPasssword.setErrorEnabled(false);
+                            txtip_newPassword.setErrorEnabled(false);
+                            txtip_forgotPasssword.clearFocus();
+                            txtip_newPassword.clearFocus();
+
+                            // Updating Record with New Password
+                            database.update(et_newPassword.getText().toString().trim(),et_forgotPassword.getText().toString().trim());
+                            if (dialog != null && dialog.isShowing()) dialog.dismiss();
+                            Toast.makeText(getApplicationContext(), "Password Updated, Please Login with New Password Now", Toast.LENGTH_SHORT).show();
+                        }else{
+                            txtip_newPassword.setError("Invalid New Password");
+                        }
+                    }
+                }else{
+                    txtip_forgotPasssword.setError("This field is mandatory");
+                }
+            }
+        });
+
+        dialog.show();
     }
 
     /***

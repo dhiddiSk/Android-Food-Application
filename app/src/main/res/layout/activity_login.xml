@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:id="@+id/rootlayout"
     app:layout_constraintTop_toBottomOf="parent"
-    tools:context=".authentication.UserLogin">
+    tools:context=".authentication.LoginActivity">
 
     <ScrollView
         android:layout_width="match_parent"
@@ -28,11 +28,6 @@
                 android:layout_margin="20dp"
                 android:src="@drawable/yourchoicelogo" />
 
-            <com.google.android.material.textfield.TextInputLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:minHeight="?android:listPreferredItemHeightSmall">
-
                 <com.google.android.material.textfield.TextInputLayout
                     android:id="@+id/txtip_email"
                     android:layout_width="match_parent"
@@ -50,8 +45,6 @@
                         android:minHeight="?android:listPreferredItemHeightSmall" />
 
                 </com.google.android.material.textfield.TextInputLayout>
-
-            </com.google.android.material.textfield.TextInputLayout>
 
 
             <com.google.android.material.textfield.TextInputLayout

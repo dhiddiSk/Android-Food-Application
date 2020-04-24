@@ -11,7 +11,7 @@ import android.view.ViewGroup;
 import android.widget.Button;
 
 import com.example.youcare.R;
-import com.example.youcare.authentication.UserLogin;
+import com.example.youcare.authentication.LoginActivity;
 
 public class ShopFragment extends Fragment {
 
@@ -43,7 +43,7 @@ public class ShopFragment extends Fragment {
             @Override
             public void onClick(View v) {
 
-                Intent i = new Intent(getActivity(), UserLogin.class);
+                Intent i = new Intent(getActivity(), LoginActivity.class);
                 startActivity(i);
             }
         });
