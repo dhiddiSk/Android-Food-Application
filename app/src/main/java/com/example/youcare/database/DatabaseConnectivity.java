@@ -157,6 +157,7 @@ public class DatabaseConnectivity extends SQLiteOpenHelper{
          try {
               CSVReader csvParser = new CSVReader(new FileReader(fileLocation));
 
+              //list of products with all the details
               List<String[]> listofproducts = csvParser.readAll();
 
 

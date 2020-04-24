@@ -146,7 +146,7 @@ public class UserRegistration extends AppCompatActivity implements View.OnClickL
 
                         if(insertdescision){
                             Toast.makeText(UserRegistration.this, "User registered!", Toast.LENGTH_SHORT).show();
-                            startActivity(new Intent(UserRegistration.this, UserLogin.class));
+                            startActivity(new Intent(UserRegistration.this, LoginActivity.class));
                             finish();
                         } else {
                             Toast.makeText(UserRegistration.this, "User registration failed", Toast.LENGTH_SHORT).show();
