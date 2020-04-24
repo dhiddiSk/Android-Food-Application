@@ -28,23 +28,23 @@
                 android:layout_margin="20dp"
                 android:src="@drawable/yourchoicelogo" />
 
-                <com.google.android.material.textfield.TextInputLayout
-                    android:id="@+id/txtip_email"
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/txtip_email"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:minHeight="?android:listPreferredItemHeightSmall">
+
+                <androidx.appcompat.widget.AppCompatEditText
+                    android:id="@+id/login_username"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:minHeight="?android:listPreferredItemHeightSmall">
+                    android:layout_centerHorizontal="true"
+                    android:hint="Email"
+                    android:inputType="textEmailAddress"
+                    android:maxLines="1"
+                    android:minHeight="?android:listPreferredItemHeightSmall" />
 
-                    <androidx.appcompat.widget.AppCompatEditText
-                        android:id="@+id/login_username"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_centerHorizontal="true"
-                        android:hint="Email"
-                        android:inputType="textEmailAddress"
-                        android:maxLines="1"
-                        android:minHeight="?android:listPreferredItemHeightSmall" />
-
-                </com.google.android.material.textfield.TextInputLayout>
+            </com.google.android.material.textfield.TextInputLayout>
 
 
             <com.google.android.material.textfield.TextInputLayout

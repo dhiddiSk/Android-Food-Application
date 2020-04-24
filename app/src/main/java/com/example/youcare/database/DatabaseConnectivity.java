@@ -116,6 +116,39 @@ public class DatabaseConnectivity extends SQLiteOpenHelper{
 
         }
 
+
+    /***
+     * To Check User entered Email in our DB or not
+     * @param email
+     * @return
+     */
+    public boolean checkEmailExists(String email) {
+        String query = "Select * from " + usertable + " where email like '" + email + "'";
+
+        SQLiteDatabase db = this.getReadableDatabase();
+        Cursor cursor = db.rawQuery(query,
+                null);
+        if (cursor.getCount() > 0) {
+            cursor.close();
+            return true;
+        } else {
+            cursor.close();
+            return false;
+        }
+    }
+
+    /***
+     * Update User Password
+     * @param updatedPassword
+     * @param email
+     * @return
+     */
+    public boolean update(String updatedPassword, String email) {
+        SQLiteDatabase db = this.getReadableDatabase();
+        db.execSQL("UPDATE "+usertable+" SET password = "+"'"+updatedPassword+"' "+ "WHERE email = "+"'"+email+"'");
+        return true;
+    }
+
     final String fileLocation = "/home/saikrishna/Futury/PrototypeFinalData.csv";
 
     //@insertProducts method is called only once to insert the static data of the products into sqlite database.

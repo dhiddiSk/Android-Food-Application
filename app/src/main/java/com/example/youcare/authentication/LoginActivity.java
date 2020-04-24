@@ -89,7 +89,7 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
                 }
                 break;
 
-                case R.id.id_register:
+            case R.id.id_register:
                 Intent intent = new Intent(LoginActivity.this, UserRegistration.class);
                 startActivity(intent);
                 break;
@@ -115,7 +115,7 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
             @Override
             public void onClick(View v) {
                 if (et_forgotPassword.getText() != null && et_forgotPassword.getText().toString() != null
-                && !et_forgotPassword.getText().toString().isEmpty()){
+                        && !et_forgotPassword.getText().toString().isEmpty()){
                     txtip_forgotPasssword.setErrorEnabled(false);
                     if (!isValidEmailAddress(et_forgotPassword.getText().toString().trim())) {
                         txtip_forgotPasssword.setError("Invalid Email");
@@ -124,7 +124,7 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
                     } else {
                         // Making New Password Validation Here
                         if (et_newPassword.getText()!= null && et_newPassword.getText().toString() != null
-                        && !et_newPassword.getText().toString().trim().isEmpty()){
+                                && !et_newPassword.getText().toString().trim().isEmpty()){
 
                             txtip_forgotPasssword.setErrorEnabled(false);
                             txtip_newPassword.setErrorEnabled(false);
@@ -159,5 +159,4 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
         java.util.regex.Matcher m = p.matcher(email);
         return m.matches();
     }
-
 }
