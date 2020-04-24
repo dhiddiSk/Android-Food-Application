@@ -18,7 +18,7 @@ public class UserValues extends AppCompatActivity {
 
 //@parameter userPriceInput refers to the input from the user and @parameter priceOfpurchase to show the price on display
     public int userPriceInput=0;  public TextView priceOfpurchase;
-    searchproducts Obj2 = new searchproducts();
+    Searchproducts Obj2 = new Searchproducts();
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -87,9 +87,9 @@ public class UserValues extends AppCompatActivity {
             public void onClick(View v) {
                // Intent searchbar = new Intent(UserValues.this, ShoppingSearchBar.class);
                // startActivity(searchbar);
-                //searchproducts ApiObj2 = new searchproducts(environmentUserRating,healthUserRating,fairAndSocialUserRating,animalTreatmentUserRating);
+                //Searchproducts ApiObj2 = new Searchproducts(environmentUserRating,healthUserRating,fairAndSocialUserRating,animalTreatmentUserRating);
                 Obj2.setUserValues(environmentUserRating,healthUserRating,fairAndSocialUserRating,animalTreatmentUserRating);
-                Intent searchbar = new Intent(UserValues.this, searchproducts.class);
+                Intent searchbar = new Intent(UserValues.this, Searchproducts.class);
                 startActivity(searchbar);
             }
         });

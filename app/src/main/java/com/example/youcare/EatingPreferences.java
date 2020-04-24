@@ -34,7 +34,7 @@ public class EatingPreferences extends AppCompatActivity {
 
     DatabaseConnectivity database;
 
-    searchproducts searchObj = new searchproducts();
+    Searchproducts searchObj = new Searchproducts();
     String milktable = "milk";
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -226,7 +226,7 @@ public class EatingPreferences extends AppCompatActivity {
                     Toast.makeText(EatingPreferences.this, "Please match your preferences!", Toast.LENGTH_SHORT).show();
                 }
                 else{
-                    //new searchproducts(regionalUserInput,seasonalUserInput, veganUserInput);
+                    //new Searchproducts(regionalUserInput,seasonalUserInput, veganUserInput);
                     searchObj.setEatingHabits(regionalUserInput, veganUserInput);
                     startActivity(intent);
                 }

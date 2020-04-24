@@ -159,4 +159,5 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
         java.util.regex.Matcher m = p.matcher(email);
         return m.matches();
     }
+
 }

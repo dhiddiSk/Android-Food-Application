@@ -9,7 +9,7 @@ import android.widget.SearchView;
 
 import java.util.ArrayList;
 
-public class searchproducts extends AppCompatActivity implements SearchView.OnQueryTextListener{
+public class Searchproducts extends AppCompatActivity implements SearchView.OnQueryTextListener{
     // Here different variables are declared. such as list, adapater, editsearch...
 
     displayProducts dp;
@@ -44,7 +44,7 @@ public class searchproducts extends AppCompatActivity implements SearchView.OnQu
         }
 
         // ListViewAdapter is used to pass the strings to the listView, which is realted to the front end work.
-        adapter = new ListViewAdapter(searchproducts.this, arraylist);
+        adapter = new ListViewAdapter(Searchproducts.this, arraylist);
 
         // Binds the Adapter to the ListView
         list.setAdapter(adapter);

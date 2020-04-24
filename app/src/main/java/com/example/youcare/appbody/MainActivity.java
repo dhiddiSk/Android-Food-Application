@@ -5,10 +5,13 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.app.Fragment;
 import android.app.FragmentManager;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.MenuItem;
 
 import com.example.youcare.R;
+import com.example.youcare.Searchproducts;
+import com.example.youcare.appbody.preference.FragmentChildActivityTwo;
 import com.example.youcare.appbody.preference.PreferenceFragment;
 import com.example.youcare.appbody.search.SearchFragment;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
@@ -44,7 +47,8 @@ public class MainActivity extends AppCompatActivity {
                             openFragment(new PreferenceFragment());
                             return true;
                         case R.id.navigation_search:
-                            openFragment(new SearchFragment());
+                            Intent i = new Intent(MainActivity.this, Searchproducts.class);
+                            startActivity(i);
                             return true;
                         case R.id.navigation_deal:
                             openFragment(new DealFragment());
@@ -59,10 +63,11 @@ public class MainActivity extends AppCompatActivity {
 
     @Override
     public void onBackPressed() {
-        if (bottomNavigation.getSelectedItemId() == R.id.navigation_favorites) {
+        if(bottomNavigation.getSelectedItemId() == R.id.navigation_favorites){
             finish();
-        } else {
+        }else{
             bottomNavigation.setSelectedItemId(R.id.navigation_favorites);
         }
     }
+
 }

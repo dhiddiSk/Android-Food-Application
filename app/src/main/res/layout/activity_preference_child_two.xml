@@ -40,6 +40,7 @@
         android:layout_below="@id/preferenceText"
         android:background="@drawable/preference_button_shape"
         android:padding="10dp"
+        android:clickable="false"
         android:layout_margin="10dp"
         android:text="Environement"
         android:textAllCaps="false"
@@ -84,6 +85,7 @@
         android:layout_margin="10dp"
         android:text="Fair and Social"
         android:textAllCaps="false"
+        android:clickable="false"
         android:textColor="#000000"
         android:textSize="18dp"
         android:textStyle="bold" />

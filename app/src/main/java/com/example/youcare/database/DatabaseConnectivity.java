@@ -7,25 +7,48 @@ import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 import android.database.sqlite.SQLiteStatement;
 
+import com.example.youcare.R;
 import com.example.youcare.authentication.UserRegistration;
+import com.opencsv.CSVParser;
+import com.opencsv.CSVReader;
+import com.opencsv.exceptions.CsvException;
+
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.FileReader;
+import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Scanner;
 
 public class DatabaseConnectivity extends SQLiteOpenHelper{
+        public static final String name = "database";
+        static int version = 4;
 
-    UserRegistration ur = new UserRegistration();
-
-        static String name = "database";
-        static int version = 2;
-
-        public String firstName = "userFirstName", lastName = "userLastName", pwd = "password", email = "email";
-
-        public String prod = "producer", reg = "regional", logo = "logo";
-        String milktable = "milkproduct";
-        String usertable = "user";
+        public static final String firstName = "userFirstName";
+        public static final String lastName = "userLastName";
+        public static final String pwd = "password";
+        public static final String email = "email";
+        public static final String env = "Enivironment";
+        public static final String cost = "Price";
+        public static final String manufacturer = "Producers";
+        public static final String foodproduct = "Product";
+        public static final String vegan = "Vegan";
+        public static final String vegetarian ="Vegetarian";
+        public static final String gluten = "Glutenfree";
+        public static final String lakto = "Laktofree";
+        public static final String fair = "FairSocial";
+        public static final String productstable = "shopProducts";
+        public static final String usertable = "user";
+        public static final String phone = "MobileNumber";
                 // @tables user and milk are to table created to store the content values in the SQLdatabase
 
-    String crateTableMilk = "CREATE TABLE "+milktable+" ( id INTEGER PRIMARY KEY AUTOINCREMENT, "+prod+" TEXT, "+reg+" TEXT, vegan INTEGER, envi INTEGER, animal_welfare INTEGER, health INTEGER, fair_social INTEGER, "+logo+" TEXT)";
 
-    String crateTableUser= "CREATE TABLE "+usertable+" ( id INTEGER PRIMARY KEY AUTOINCREMENT, "+firstName+" TEXT, "+lastName+" TEXT, "+email+" TEXT, "+pwd+" TEXT, MobileNumber INTEGER)";
+
+  static final String crateproductstable = "CREATE TABLE "+productstable+" ( id INTEGER PRIMARY KEY AUTOINCREMENT, "+foodproduct+" TEXT, "+manufacturer+" TEXT, "+vegan+" TEXT, "+vegetarian+" TEXT, "+gluten+" TEXT, "+lakto+" TEXT, "+env+" INTEGER, "+fair+" INTEGER, "+cost+" INTEGER)";
+
+  static final String crateTableUser= "CREATE TABLE "+usertable+" ( id INTEGER PRIMARY KEY AUTOINCREMENT, "+firstName+" TEXT, "+lastName+" TEXT, "+email+" TEXT, "+pwd+" TEXT, "+phone+" INTEGER)";
 
     public DatabaseConnectivity(Context context) {
         super(context, name, null, version);
@@ -33,9 +56,17 @@ public class DatabaseConnectivity extends SQLiteOpenHelper{
 
     @Override
     public void onCreate(SQLiteDatabase db) {
-        db.execSQL(crateTableMilk);
+        db.execSQL(crateproductstable);
         db.execSQL(crateTableUser);
 
+        //insertProducts method was called only once to insert the static data into the sqlite database
+//        try {
+//            insertProducts();
+//        } catch (IOException e) {
+//            e.printStackTrace();
+//        } catch (CsvException e) {
+//            e.printStackTrace();
+//        }
     }
 
 
@@ -43,7 +74,8 @@ public class DatabaseConnectivity extends SQLiteOpenHelper{
     public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
 
         db.execSQL("DROP TABLE IF EXISTS "+usertable);
-        db.execSQL("DROP TABLE IF EXISTS "+milktable);
+        db.execSQL("DROP TABLE IF EXISTS "+productstable);
+
         onCreate(db);
 
     }
@@ -68,12 +100,6 @@ public class DatabaseConnectivity extends SQLiteOpenHelper{
         return false;
         }
 
-    /***
-     * Login Validation
-     * @param emailID
-     * @param password
-     * @return
-     */
     public boolean isLoginValid(String emailID, String password) {
             String sql = "Select count(*) from user where email='" + emailID + "' and password='" + password + "'";
             SQLiteStatement statement = getReadableDatabase().compileStatement(sql);
@@ -90,106 +116,43 @@ public class DatabaseConnectivity extends SQLiteOpenHelper{
 
         }
 
-    public boolean checkEmailExists(String email) {
-        String query = "Select * from " + usertable + " where email like '" + email + "'";
+    final String fileLocation = "/home/saikrishna/Futury/PrototypeFinalData.csv";
 
-        SQLiteDatabase db = this.getReadableDatabase();
-        Cursor cursor = db.rawQuery(query,
-                null);
-        if (cursor.getCount() > 0) {
-            cursor.close();
-            return true;
-        } else {
-            cursor.close();
-            return false;
-        }
-    }
+    //@insertProducts method is called only once to insert the static data of the products into sqlite database.
+      public void insertProducts() throws IOException, CsvException {
 
-    /***
-     * Update User Password
-     * @param updatedPassword
-     * @param email
-     * @return
-     */
-    public boolean update(String updatedPassword, String email) {
-        SQLiteDatabase db = this.getReadableDatabase();
-        db.execSQL("UPDATE "+usertable+" SET password = "+"'"+updatedPassword+"' "+ "WHERE email = "+"'"+email+"'");
-        return true;
-    }
+         try {
+              CSVReader csvParser = new CSVReader(new FileReader(fileLocation));
 
-    public String query(boolean regionalUserInput, boolean veganUserInput, int environmentUserRating, int healthUserRating, int fairAndSocialUserRating, int animalTreatmentUserRating){
-             String regionaltemp, productOutputAfterQuery = null;
-
-             int temp =2;
-             environmentUserRating = temp;
+              List<String[]> listofproducts = csvParser.readAll();
 
 
-             int vegantemp;
+             SQLiteDatabase dbproductswriter =this.getWritableDatabase();
 
-             SQLiteDatabase db = this.getReadableDatabase();
+             ContentValues contentValues = new ContentValues();
 
+             for(int i=1;i<listofproducts.size();i++){
+                 String[] temp = listofproducts.get(i);
+                contentValues.put("Product", temp[0]);
+                 contentValues.put("Producers", temp[1]);
+                 contentValues.put("Vegan", temp[2]);
+                 contentValues.put("Vegetarian", temp[3]);
+                 contentValues.put("Glutenfree", temp[4]);
+                 contentValues.put("Laktofree", temp[5]);
+                 contentValues.put("Enivironment",temp[6]);
+                 contentValues.put("FairSocial",temp[7]);
+                 contentValues.put("Price",temp[8]);
 
-             if(!regionalUserInput){
-
-                regionaltemp = "Germany";
-
-              }
-             else{
-                regionaltemp = "london";
              }
 
+           long result =   dbproductswriter.insert(productstable,null,contentValues);
 
-             if(veganUserInput){
-                 vegantemp = 3;
-             }
-             else {
-                 vegantemp = 0;
-             }
-            // String sqlQuerySearchProduct = "SELECT Producer FROM  milk WHERE Environment " + "=" + 'environmentUserRating';
+          } catch (FileNotFoundException e) {
+              e.printStackTrace();
+          }
 
 
-         //String sqlQuery = "SELECT "+prod+" FROM "+milktable+" WHERE "+env+" =?";
-              Cursor cursor = db.rawQuery("SELECT "+prod+" FROM "+milktable+" WHERE envi = ?", new String[]{"2"});
-
-
-
-//         Cursor cursor = db.query(milktable, new String[] {prod},
-//                 "Environment = ?",
-//                 new String[] {"1"},
-//                 null,
-//                 null,
-//                 null);
-
-                    while(cursor.moveToNext()) {
-                        int index;
-
-                        index = cursor.getColumnIndexOrThrow("producer");
-
-
-                        productOutputAfterQuery = cursor.getString(index);
-                        cursor.close();
-                    }
-
-
-              //SQLiteStatement stmt = getReadableDatabase().compileStatement(sqlQuerySearchProduct);
-              //productOutputAfterQuery = stmt.toString();
-
-               //Cursor cr  =  getWritableDatabase().execSQL(sql);
-//            while(cursor.moveToNext()) {
-//             int index;
-//
-//             index = cursor.getColumnIndexOrThrow("Producers");
-
-
-
-         return productOutputAfterQuery;
-
-             //... do something with data
-         }
-
-
-
-
-     }
+      }
+}
 
 
