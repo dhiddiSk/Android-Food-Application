@@ -16,6 +16,7 @@ import android.widget.Button;
 import android.widget.ImageButton;
 
 import com.example.youcare.R;
+import com.example.youcare.appbody.search.Searchproducts;
 
 public class PreferenceFragment extends Fragment implements View.OnClickListener {
 
@@ -25,6 +26,11 @@ public class PreferenceFragment extends Fragment implements View.OnClickListener
     Button glutenfree;
     Button lacktosefree;
     Button norestrictions;
+    public String vegUserInput=null;
+    public String veganUserInput=null;
+    public String glutenUserInput=null;
+    public String lacktoUserInput=null;
+    public String applyRestrictionsOnUserRecommendations=null;
 
 
 
@@ -52,7 +58,7 @@ public class PreferenceFragment extends Fragment implements View.OnClickListener
 
     private boolean vegTempChecked = false;
     private boolean veganTempChecked = false;
-    private boolean glutemTempChecked = false;
+    private boolean glutenTempChecked = false;
     private boolean lacktoTempChecked = false;
     private boolean norestrictionChecked = false;
 
@@ -65,39 +71,77 @@ public class PreferenceFragment extends Fragment implements View.OnClickListener
                    case R.id.Vegetarian : vegTempChecked = (!vegTempChecked);
                                           int vegResId =  (vegTempChecked ? R.drawable.preference_button_shape_green:R.drawable.preference_body_button_shape);
                                           vegetarian.setBackgroundResource(vegResId);
+                                          if(!vegTempChecked){
+                                              vegUserInput = "no";
+                                          }else {vegUserInput = "yes";
+                                              applyRestrictionsOnUserRecommendations = "yes";
+                                              norestrictions.setBackgroundResource(R.drawable.preference_body_button_shape);
+                                          }
                                           break;
                         case R.id.Vegan : veganTempChecked = (!veganTempChecked);
                                           int veganResId =  (veganTempChecked ? R.drawable.preference_button_shape_green:R.drawable.preference_body_button_shape);
                                           vegan.setBackgroundResource(veganResId);
-                                          break;
+                                            if(!veganTempChecked){
+                                                veganUserInput = "no";
+                                            }else {veganUserInput = "yes";
+                                                applyRestrictionsOnUserRecommendations = "yes";
+                                                norestrictions.setBackgroundResource(R.drawable.preference_body_button_shape);}
+                                            break;
 
-                    case R.id.GlutenFree : glutemTempChecked = (!glutemTempChecked);
-                                            int GlutenResId =  (glutemTempChecked ? R.drawable.preference_button_shape_green:R.drawable.preference_body_button_shape);
+                    case R.id.GlutenFree : glutenTempChecked = (!glutenTempChecked);
+                                            int GlutenResId =  (glutenTempChecked ? R.drawable.preference_button_shape_green:R.drawable.preference_body_button_shape);
                                             glutenfree.setBackgroundResource(GlutenResId);
+                                            if(!glutenTempChecked){
+                                                glutenUserInput = "no";
+                                            }else {glutenUserInput = "yes";
+                                                applyRestrictionsOnUserRecommendations = "yes";
+                                                norestrictions.setBackgroundResource(R.drawable.preference_body_button_shape);}
                                             break;
 
                    case R.id.LacktoseFree : lacktoTempChecked = (!lacktoTempChecked);
                                             int lacktoResId =  (lacktoTempChecked ? R.drawable.preference_button_shape_green:R.drawable.preference_body_button_shape);
                                             lacktosefree.setBackgroundResource(lacktoResId);
+                                           if(!lacktoTempChecked){
+                                               lacktoUserInput = "no";
+                                           }else {lacktoUserInput = "yes";
+                                               applyRestrictionsOnUserRecommendations = "yes";
+                                               norestrictions.setBackgroundResource(R.drawable.preference_body_button_shape);}
                                             break;
 
                    case R.id.Norestrictions: norestrictionChecked = (!norestrictionChecked);
-                                             int restrictionResId =  (norestrictionChecked ? R.drawable.preference_button_shape_green:R.drawable.preference_body_button_shape);
-                                             norestrictions.setBackgroundResource(restrictionResId);
-                                             break;
+                                             //int restrictionResId =  (norestrictionChecked ? R.drawable.preference_button_shape_green:R.drawable.preference_body_button_shape);
+                                             //norestrictions.setBackgroundResource(restrictionResId);
+
+                                               if(norestrictionChecked){
+                                                   applyRestrictionsOnUserRecommendations = "no";
+                                                   norestrictions.setBackgroundResource(R.drawable.preference_button_shape_green);
+                                                   vegetarian.setBackgroundResource(R.drawable.preference_body_button_shape);
+                                                   vegan.setBackgroundResource(R.drawable.preference_body_button_shape);
+                                                   lacktosefree.setBackgroundResource(R.drawable.preference_body_button_shape);
+                                                   glutenfree.setBackgroundResource(R.drawable.preference_body_button_shape);
 
 
-                //
-                // color.colorPrimaryDark));
+                                               }
+                                               if((!norestrictionChecked)&&(lacktoTempChecked)&&(glutenTempChecked)&&(veganTempChecked)&&(vegTempChecked)){
 
-                //case R.id.Vegetarian : vegetarian.setBackground();
+                                                   applyRestrictionsOnUserRecommendations = "yes";
+                                                   norestrictions.setBackgroundResource(R.drawable.preference_body_button_shape);
+
+                                               }
+
+                                               if((!norestrictionChecked)&&((lacktoTempChecked)||(glutenTempChecked)||(veganTempChecked)||(vegTempChecked))){
+                                                   applyRestrictionsOnUserRecommendations = "yes";
+                                                   norestrictions.setBackgroundResource(R.drawable.preference_body_button_shape);
+
+                                               }
+                                               break;
+
 
             }
 
 
 
     }
-
 
 
 
@@ -117,12 +161,13 @@ public class PreferenceFragment extends Fragment implements View.OnClickListener
     public void onResume() {
         super.onResume();
 
-
+        Searchproducts searchobj = new Searchproducts();
         nextpage.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                searchobj.userEatingHabits(vegUserInput, veganUserInput, glutenUserInput, lacktoUserInput, applyRestrictionsOnUserRecommendations);
 
-                Intent it = new Intent(getActivity(), FragmentChildActivityOne.class);
+               Intent it = new Intent(getActivity(), FragmentChildActivityOne.class);
                   startActivity(it);
 
 //                FragmentManager fm = getChildFragmentManager();

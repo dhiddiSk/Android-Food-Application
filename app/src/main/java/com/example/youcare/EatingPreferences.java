@@ -10,6 +10,7 @@ import android.widget.CompoundButton;
 import android.widget.Switch;
 import android.widget.Toast;
 
+import com.example.youcare.appbody.search.Searchproducts;
 import com.example.youcare.database.DatabaseConnectivity;
 
 /*
@@ -227,7 +228,7 @@ public class EatingPreferences extends AppCompatActivity {
                 }
                 else{
                     //new Searchproducts(regionalUserInput,seasonalUserInput, veganUserInput);
-                    searchObj.setEatingHabits(regionalUserInput, veganUserInput);
+                  //  searchObj.setEatingHabits(regionalUserInput, veganUserInput);
                     startActivity(intent);
                 }
 

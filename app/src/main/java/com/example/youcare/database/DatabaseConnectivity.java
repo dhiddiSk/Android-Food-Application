@@ -187,6 +187,18 @@ public class DatabaseConnectivity extends SQLiteOpenHelper{
 
 
       }
+
+
+      public Cursor queryDbForProducts(String productSearchQuery){
+          SQLiteDatabase db = this.getReadableDatabase();
+          Cursor cursor = db.rawQuery(productSearchQuery,null);
+
+           return cursor;
+
+      }
+
+
+
 }
 
 

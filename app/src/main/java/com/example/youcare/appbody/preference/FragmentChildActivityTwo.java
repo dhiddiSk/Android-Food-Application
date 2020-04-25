@@ -10,14 +10,13 @@ import android.widget.Button;
 import android.widget.RatingBar;
 
 import com.example.youcare.R;
-import com.example.youcare.Searchproducts;
-import com.example.youcare.appbody.MainActivity;
+import com.example.youcare.appbody.search.Searchproducts;
 
 public class FragmentChildActivityTwo extends AppCompatActivity {
 
     private RatingBar environement, fairAndSocial;
     private Button Save, envdetail, fsdetail;
-    public int environmentUserRating, fairAndSocialUserRating;
+    private int environmentUserRating=0, fairAndSocialUserRating=0;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -33,6 +32,10 @@ public class FragmentChildActivityTwo extends AppCompatActivity {
         Save.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                Searchproducts objsearachproducts = new Searchproducts();
+                objsearachproducts.userValues(environmentUserRating,fairAndSocialUserRating);
+
+
                 Intent i = new Intent(FragmentChildActivityTwo.this, Searchproducts.class);
                 startActivity(i);
             }

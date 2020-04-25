@@ -8,6 +8,8 @@ import android.widget.Button;
 import android.widget.RatingBar;
 import android.widget.TextView;
 
+import com.example.youcare.appbody.search.Searchproducts;
+
 public class UserValues extends AppCompatActivity {
 
     public RatingBar environement, animalTreatment, health, fairAndSocial;
@@ -88,7 +90,7 @@ public class UserValues extends AppCompatActivity {
                // Intent searchbar = new Intent(UserValues.this, ShoppingSearchBar.class);
                // startActivity(searchbar);
                 //Searchproducts ApiObj2 = new Searchproducts(environmentUserRating,healthUserRating,fairAndSocialUserRating,animalTreatmentUserRating);
-                Obj2.setUserValues(environmentUserRating,healthUserRating,fairAndSocialUserRating,animalTreatmentUserRating);
+              //  Obj2.setUserValues(environmentUserRating,healthUserRating,fairAndSocialUserRating,animalTreatmentUserRating);
                 Intent searchbar = new Intent(UserValues.this, Searchproducts.class);
                 startActivity(searchbar);
             }

@@ -10,10 +10,8 @@ import android.os.Bundle;
 import android.view.MenuItem;
 
 import com.example.youcare.R;
-import com.example.youcare.Searchproducts;
-import com.example.youcare.appbody.preference.FragmentChildActivityTwo;
+import com.example.youcare.appbody.search.Searchproducts;
 import com.example.youcare.appbody.preference.PreferenceFragment;
-import com.example.youcare.appbody.search.SearchFragment;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 public class MainActivity extends AppCompatActivity {
