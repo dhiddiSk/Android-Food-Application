@@ -43,7 +43,7 @@ public class Searchproducts extends AppCompatActivity implements SearchView.OnQu
     String applyRestrictionsOnUserRecommendations=null;
     int environmentUserRating, fairAndSocialUserRating;
 
-    ArrayList<String> results;
+    ArrayList<String> results = new ArrayList<String>();
 
 
     @Override
@@ -117,7 +117,7 @@ public class Searchproducts extends AppCompatActivity implements SearchView.OnQu
 
         String notfound = "Sorry no products found matching your preferences and values";
         Cursor cursor;
-        results = new ArrayList<String>();
+
 
         try {
 
@@ -131,12 +131,14 @@ public class Searchproducts extends AppCompatActivity implements SearchView.OnQu
              // move cursor to first row
              if (cursor.moveToFirst()) {
                  do {
+                     int temp =0;
                      // Get version from Cursor
                      String producername = cursor.getString(cursor.getColumnIndex("Producers"));
 
                      // add the bookName into the bookTitles ArrayList
-                     results.add(producername);
+                     results.add(temp,producername);
                      // move to next row
+                     temp = temp+1;
                  } while (cursor.moveToNext());
              }
 
@@ -155,12 +157,14 @@ public class Searchproducts extends AppCompatActivity implements SearchView.OnQu
              // move cursor to first row
              if (cursor.moveToFirst()) {
                  do {
+                     int temp =0;
                      // Get version from Cursor
                      String producername = cursor.getString(cursor.getColumnIndex("Producers"));
 
                      // add the bookName into the bookTitles ArrayList
-                     results.add(producername);
+                     results.add(temp,producername);
                      // move to next row
+                     temp =temp+1;
                  } while (cursor.moveToNext());
              }
 
@@ -176,16 +180,17 @@ public class Searchproducts extends AppCompatActivity implements SearchView.OnQu
         }
 
     }
+String productName = null;
 
     @Override
     protected void onResume() {
         super.onResume();
         try {
-            String temp = results.get(0);
+            productName = results.get(0);
 
-            if(temp!=null) {
+            if(productName!=null) {
                 TextView resutltext = findViewById(R.id.resulttextview);
-                resutltext.setText(temp);
+                resutltext.setText(productName);
             }
 
         }catch (NullPointerException e){
