@@ -123,7 +123,7 @@
         android:clickable="true"
         android:layout_below="@+id/FairAndSocialDetailedDescription"
         android:enabled="true"
-        android:gravity="start"
+        android:gravity="center|end"
         android:paddingLeft="3dp"
         android:paddingTop="3dp"
         android:layout_margin="20dp"

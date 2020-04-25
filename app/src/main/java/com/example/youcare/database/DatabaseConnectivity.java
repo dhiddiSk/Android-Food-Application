@@ -6,6 +6,7 @@ import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 import android.database.sqlite.SQLiteStatement;
+import android.util.Log;
 
 import com.example.youcare.R;
 import com.example.youcare.authentication.UserRegistration;
@@ -24,7 +25,8 @@ import java.util.Scanner;
 
 public class DatabaseConnectivity extends SQLiteOpenHelper{
         public static final String name = "database";
-        static int version = 4;
+    private static final String TAG = DatabaseConnectivity.class.getSimpleName();
+    static int version = 4;
 
         public static final String firstName = "userFirstName";
         public static final String lastName = "userLastName";
@@ -180,11 +182,12 @@ public class DatabaseConnectivity extends SQLiteOpenHelper{
              }
 
            long result =   dbproductswriter.insert(productstable,null,contentValues);
+             Log.v(TAG,"-----> result in products db "+result);
 
           } catch (FileNotFoundException e) {
               e.printStackTrace();
+             Log.e(TAG,"-----> error result in products db "+e.getMessage());
           }
-
 
       }
 

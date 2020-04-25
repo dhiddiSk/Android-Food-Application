@@ -29,7 +29,7 @@
             android:label="Preference"/>
         <activity android:name=".appintro.MainActivity" />
         <activity android:name=".UserLocation" />
-        <activity android:name=".displayProducts" /> <!-- <activity android:name=".list_view_items" /> -->
+        <activity android:name=".DisplayProductsActivity" /> <!-- <activity android:name=".list_view_items" /> -->
         <activity android:name=".appbody.search.Searchproducts" />
         <activity
             android:name=".UserValues"

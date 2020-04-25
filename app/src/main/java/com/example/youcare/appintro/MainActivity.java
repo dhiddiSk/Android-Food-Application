@@ -5,10 +5,13 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.app.Fragment;
 import android.app.FragmentManager;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.MenuItem;
 
+import com.example.youcare.DisplayProductsActivity;
 import com.example.youcare.R;
+import com.example.youcare.appbody.preference.FragmentChildActivityTwo;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 import java.util.ArrayList;
@@ -47,7 +50,8 @@ public class MainActivity extends AppCompatActivity {
                             openFragment(new DealFragment());
                             return true;
                         case R.id.navigation_nav_shop:
-                            openFragment(new ShopFragment());
+                            Intent i = new Intent(MainActivity.this, DisplayProductsActivity.class);
+                            startActivity(i);
                              return true;
                     }
                     return false;

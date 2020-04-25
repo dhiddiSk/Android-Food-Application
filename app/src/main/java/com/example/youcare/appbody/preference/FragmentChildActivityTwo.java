@@ -9,6 +9,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.RatingBar;
 
+import com.example.youcare.DisplayProductsActivity;
 import com.example.youcare.R;
 import com.example.youcare.appbody.search.Searchproducts;
 
@@ -27,27 +28,6 @@ public class FragmentChildActivityTwo extends AppCompatActivity {
         envdetail = findViewById(R.id.EnvironementDetailedDescription);
         fsdetail = findViewById(R.id.FairAndSocialDetailedDescription);
         Save = findViewById(R.id.SaveButton);
-
-
-        Save.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Searchproducts objsearachproducts = new Searchproducts();
-                objsearachproducts.userValues(environmentUserRating,fairAndSocialUserRating);
-
-
-                Intent i = new Intent(FragmentChildActivityTwo.this, Searchproducts.class);
-                startActivity(i);
-            }
-        });
-
-
-    }
-
-    @Override
-    protected void onResume() {
-        super.onResume();
-
         environement.setOnRatingBarChangeListener(new RatingBar.OnRatingBarChangeListener() {
             @Override
             public void onRatingChanged(RatingBar ratingBar, float rating, boolean fromUser) {
@@ -61,6 +41,23 @@ public class FragmentChildActivityTwo extends AppCompatActivity {
                 fairAndSocialUserRating = Math.round(rating);
             }
         });
+
+        Save.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+//                Searchproducts objsearachproducts = new Searchproducts();
+//                objsearachproducts.userValues(environmentUserRating,fairAndSocialUserRating);
+                Intent i = new Intent(FragmentChildActivityTwo.this, DisplayProductsActivity.class);
+                startActivity(i);
+            }
+        });
+
+
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
     }
 }
 

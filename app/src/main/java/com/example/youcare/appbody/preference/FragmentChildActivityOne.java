@@ -11,12 +11,15 @@ import android.widget.Button;
 import android.widget.ImageButton;
 
 import com.example.youcare.R;
+import com.example.youcare.appbody.search.Searchproducts;
 
-public class FragmentChildActivityOne extends AppCompatActivity implements View.OnClickListener{
+public class FragmentChildActivityOne extends AppCompatActivity implements View.OnClickListener {
 
-    ImageButton nextpage;
-    Button market;
-    Button store;
+    private ImageButton nextpage;
+    private Button market;
+    private Button store;
+    private boolean supermarketChecked = false;
+    private boolean onlinestoresChecked = false;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -28,39 +31,45 @@ public class FragmentChildActivityOne extends AppCompatActivity implements View.
         market.setOnClickListener(this);
         store.setOnClickListener(this);
         nextpage.setOnClickListener(this);
-
     }
-
-
-   private boolean supermarketChecked = false;
-    private boolean onlinestoresChecked = false;
 
 
     @Override
     public void onClick(View v) {
 
-        switch (v.getId()){
+        switch (v.getId()) {
 
-            case R.id.supermarket : supermarketChecked = (!supermarketChecked);
-                                    int marketResId =  (supermarketChecked ? R.drawable.preference_button_shape_green:R.drawable.preference_body_button_shape);
-                                    market.setBackgroundResource(marketResId);
-                                    break;
+            case R.id.supermarket:
+                supermarketChecked = true;
+                supermarketChecked = (!supermarketChecked);
+                int marketResId = (supermarketChecked ? R.drawable.preference_button_shape_green : R.drawable.preference_body_button_shape);
+                market.setBackgroundResource(marketResId);
+                break;
 
-            case R.id.onlineStore : onlinestoresChecked = (!onlinestoresChecked);
-                                     int onlineResId = (onlinestoresChecked ? R.drawable.preference_button_shape_green:R.drawable.preference_body_button_shape);
-                                     store.setBackgroundResource(onlineResId);
-                                     break;
+            case R.id.onlineStore:
+                onlinestoresChecked = true;
+                onlinestoresChecked = (!onlinestoresChecked);
+                int onlineResId = (onlinestoresChecked ? R.drawable.preference_button_shape_green : R.drawable.preference_body_button_shape);
+                store.setBackgroundResource(onlineResId);
+                break;
 
 
-             case R.id.nextPage :   Intent it = new Intent(FragmentChildActivityOne.this, FragmentChildActivityTwo.class);
-                                    startActivity(it);
-                                    break;
+            case R.id.nextPage:
+//                Searchproducts sp = new Searchproducts();
+//                if (supermarketChecked) {
+//                    sp.userShoppingValues(true, false);
+//                } else if (onlinestoresChecked) {
+//                    sp.userShoppingValues(false, true);
+//                } else if (supermarketChecked && onlinestoresChecked) {
+//                    sp.userShoppingValues(true, true);
+//                } else {
+//                    sp.userShoppingValues(false, false);
+//                }
+
+                Intent it = new Intent(FragmentChildActivityOne.this, FragmentChildActivityTwo.class);
+                startActivity(it);
+                break;
         }
-
-
-
-
-
 
 
     }
