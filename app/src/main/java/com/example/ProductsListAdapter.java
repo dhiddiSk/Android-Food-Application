@@ -50,7 +50,7 @@ public class ProductsListAdapter extends RecyclerView.Adapter<ProductsListAdapte
         holder.productName.setText("Product: "+products.get(position).getProductName());
         holder.producerName.setText("Manufacturer: "+products.get(position).getProducerName());
         holder.tv_env.setText("Environment Count: "+products.get(position).getEnvironment());
-        Picasso.get().load("http://i.imgur.com/DvpvklR.png").into(holder.imageView);
+   //     Picasso.get().load("http://i.imgur.com/DvpvklR.png").into(holder.imageView);
     }
 
     //Set the products Count
