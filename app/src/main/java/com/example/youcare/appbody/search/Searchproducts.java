@@ -123,7 +123,7 @@ public class Searchproducts extends AppCompatActivity implements SearchView.OnQu
 
 
 
-     if(applyRestrictionsOnUserRecommendations.equals("yes")) {
+     if((applyRestrictionsOnUserRecommendations!=null)&&(applyRestrictionsOnUserRecommendations.equals("yes"))) {
          String productSearchQuery = "Select * from '" + productstable + "' where Vegetarian = '" + veganUserInput + "' AND Vegan = '" + veganUserInput + "' AND Glutenfree = '" + glutenUserInput + "' AND Laktofree = '" + lacktoUserInput + "' AND FairSocial = '" + fairAndSocialUserRating + "' AND Enivironment = '"+environmentUserRating+"' AND Product = '"+UserchosenProduct+"'";
        cursor = dbconnect.queryDbForProducts(productSearchQuery);
 
@@ -148,8 +148,8 @@ public class Searchproducts extends AppCompatActivity implements SearchView.OnQu
          }
 
      }
-     else if(applyRestrictionsOnUserRecommendations.equals("no")){
-         String restrictedproductSearchQuery = "Select Producers from '" + productstable + "' where FairSocial = '" + fairAndSocialUserRating + "' AND Enivironment = '"+environmentUserRating+"' AND Product = '"+UserchosenProduct+"'";
+     else if((applyRestrictionsOnUserRecommendations!=null)&&(applyRestrictionsOnUserRecommendations.equals("no"))){
+         String restrictedproductSearchQuery = "Select * from '" + productstable + "' where FairSocial = '" + fairAndSocialUserRating + "' AND Enivironment = '"+environmentUserRating+"' AND Product = '"+UserchosenProduct+"'";
          cursor = dbconnect.queryDbForProducts(restrictedproductSearchQuery);
          if (cursor != null) {
              // move cursor to first row
@@ -181,9 +181,12 @@ public class Searchproducts extends AppCompatActivity implements SearchView.OnQu
     protected void onResume() {
         super.onResume();
         try {
-            String temp = results.get(1);
-            TextView resutltext= findViewById(R.id.resulttextview);
-            resutltext.setText(temp);
+            String temp = results.get(0);
+
+            if(temp!=null) {
+                TextView resutltext = findViewById(R.id.resulttextview);
+                resutltext.setText(temp);
+            }
 
         }catch (NullPointerException e){
 

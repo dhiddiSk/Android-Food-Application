@@ -59,14 +59,14 @@ public class DatabaseConnectivity extends SQLiteOpenHelper{
         db.execSQL(crateproductstable);
         db.execSQL(crateTableUser);
 
-        //insertProducts method was called only once to insert the static data into the sqlite database
-//        try {
-//            insertProducts();
-//        } catch (IOException e) {
-//            e.printStackTrace();
-//        } catch (CsvException e) {
-//            e.printStackTrace();
-//        }
+      //  insertProducts method was called only once to insert the static data into the sqlite database
+        try {
+            insertProducts();
+        } catch (IOException e) {
+            e.printStackTrace();
+        } catch (CsvException e) {
+            e.printStackTrace();
+        }
     }
 
 
