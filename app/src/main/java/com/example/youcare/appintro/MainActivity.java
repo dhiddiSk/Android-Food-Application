@@ -50,8 +50,9 @@ public class MainActivity extends AppCompatActivity {
                             openFragment(new DealFragment());
                             return true;
                         case R.id.navigation_nav_shop:
-                            Intent i = new Intent(MainActivity.this, DisplayProductsActivity.class);
-                            startActivity(i);
+//                            Intent i = new Intent(MainActivity.this, DisplayProductsActivity.class);
+//                            startActivity(i);
+                            openFragment(new ShopFragment());
                              return true;
                     }
                     return false;

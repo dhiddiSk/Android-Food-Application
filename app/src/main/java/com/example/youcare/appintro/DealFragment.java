@@ -9,12 +9,13 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.LinearLayout;
 
 import com.example.youcare.R;
 import com.example.youcare.authentication.LoginActivity;
 
 public class DealFragment extends Fragment {
-    Button signUpOrLogin;
+    LinearLayout verifyNow;
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, Bundle savedInstanceState) {
@@ -26,7 +27,7 @@ public class DealFragment extends Fragment {
     public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
-        signUpOrLogin = view.findViewById(R.id.signUpLoginButton);
+        verifyNow = view.findViewById(R.id.dealverifynow);
     }
 
     @Override
@@ -34,7 +35,7 @@ public class DealFragment extends Fragment {
         super.onResume();
 
 
-        signUpOrLogin.setOnClickListener(new View.OnClickListener() {
+        verifyNow.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 

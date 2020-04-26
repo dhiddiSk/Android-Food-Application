@@ -9,12 +9,13 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.LinearLayout;
 
 import com.example.youcare.R;
 import com.example.youcare.authentication.LoginActivity;
 
 public class PreferenceFragment extends Fragment {
-    public Button signUpOrLogin;
+    public LinearLayout verifynow;
 
     @Nullable
     @Override
@@ -26,8 +27,8 @@ public class PreferenceFragment extends Fragment {
     @Override
     public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
-        signUpOrLogin = view.findViewById(R.id.signUpLoginButton);
-        signUpOrLogin.setOnClickListener(new View.OnClickListener() {
+        verifynow = view.findViewById(R.id.preferenceverifynow);
+        verifynow.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent i = new Intent(getActivity(), LoginActivity.class);

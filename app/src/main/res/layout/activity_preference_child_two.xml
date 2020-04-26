@@ -42,7 +42,7 @@
         android:padding="10dp"
         android:clickable="false"
         android:layout_margin="10dp"
-        android:text="Environement"
+        android:text="Environment"
         android:textAllCaps="false"
         android:textColor="#000000"
         android:textSize="18dp"
