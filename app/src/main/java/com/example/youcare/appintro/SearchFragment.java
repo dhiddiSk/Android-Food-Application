@@ -9,12 +9,13 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.LinearLayout;
 
 import com.example.youcare.R;
 import com.example.youcare.authentication.LoginActivity;
 
 public class SearchFragment extends Fragment {
-   Button signUpOrLogin;
+   LinearLayout verifynow;
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, Bundle savedInstanceState) {
@@ -27,7 +28,7 @@ public class SearchFragment extends Fragment {
     public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
-        signUpOrLogin = view.findViewById(R.id.signUpLoginButton);
+        verifynow = view.findViewById(R.id.searchverifynow);
     }
 
     @Override
@@ -35,7 +36,7 @@ public class SearchFragment extends Fragment {
         super.onResume();
 
 
-        signUpOrLogin.setOnClickListener(new View.OnClickListener() {
+        verifynow.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
