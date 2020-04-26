@@ -19,6 +19,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import com.example.youcare.database.DatabaseConnectivity;
 import com.example.youcare.R;
 import com.example.youcare.appbody.MainActivity;
+import com.example.youcare.utils.LocalStorage;
 import com.google.android.material.textfield.TextInputLayout;
 
 public class LoginActivity extends AppCompatActivity implements View.OnClickListener {
@@ -38,6 +39,14 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
+        // Retriving from session
+        if ((LocalStorage.getLocallyStoredValue(this,"username") != null )&& !(LocalStorage.getLocallyStoredValue(this,"username").isEmpty())
+        && (LocalStorage.getLocallyStoredValue(this,"password") != null )&& !(LocalStorage.getLocallyStoredValue(this,"password").isEmpty())){
+            Intent intent = new Intent(LoginActivity.this, MainActivity.class);
+            startActivity(intent);
+            finish();
+        }
+
         login_Username = findViewById(R.id.login_username);
         login_password = findViewById(R.id.login_password);
         loginButton = findViewById(R.id.login_button);
@@ -78,7 +87,12 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
                     InputMethodManager imm = (InputMethodManager) getSystemService(Context.INPUT_METHOD_SERVICE);
                     imm.hideSoftInputFromWindow(rootlayout.getWindowToken(), 0);
                     if (database.isLoginValid(usernameValue, passwordValue)) {
-                        Toast.makeText(LoginActivity.this, "Login Successful!", Toast.LENGTH_SHORT).show();
+
+                        //save credentials to local storage for maintaining user login session
+                        LocalStorage.saveToLocalStorage(this,"username",usernameValue);
+                        LocalStorage.saveToLocalStorage(this,"password",passwordValue);
+
+                        Toast.makeText(LoginActivity.this, "Welcome to "+getResources().getString(R.string.app_name), Toast.LENGTH_SHORT).show();
                         Intent intent = new Intent(LoginActivity.this, MainActivity.class);
                         startActivity(intent);
                         finish();
@@ -130,7 +144,7 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
                             txtip_newPassword.setErrorEnabled(false);
                             txtip_forgotPasssword.clearFocus();
                             txtip_newPassword.clearFocus();
-
+                            LocalStorage.clearPreferences(context); //clearing preferences
                             // Updating Record with New Password
                             database.update(et_newPassword.getText().toString().trim(),et_forgotPassword.getText().toString().trim());
                             if (dialog != null && dialog.isShowing()) dialog.dismiss();
