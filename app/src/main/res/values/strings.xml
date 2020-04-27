@@ -186,6 +186,15 @@
         <item>Choclate cream</item>
     </string-array>
 
+    <string-array name="array_productstypes">
+        <item>Milk</item>
+        <item>Milk Chocolate</item>
+        <item>Banana</item>
+        <item>Wine</item>
+        <item>Chocolate</item>
+    </string-array>
+
+
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="yourchoice">Welcome to your Choice</string>

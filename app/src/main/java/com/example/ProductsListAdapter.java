@@ -59,6 +59,11 @@ public class ProductsListAdapter extends RecyclerView.Adapter<ProductsListAdapte
         return products.size();
     }
 
+    public void filterProducts(List<Product> filteredProducts) {
+        products = filteredProducts;
+        notifyDataSetChanged();
+    }
+
     //Setting the IDs
     public class ViewHolder extends RecyclerView.ViewHolder {
         public AppCompatImageView imageView;

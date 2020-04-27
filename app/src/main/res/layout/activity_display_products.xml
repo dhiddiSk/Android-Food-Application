@@ -1,20 +1,24 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
+<RelativeLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".DisplayProductsActivity"
     android:orientation="vertical">
 
-    <androidx.appcompat.widget.AppCompatEditText
+    <androidx.appcompat.widget.AppCompatAutoCompleteTextView
         android:id="@+id/et_searchproducts"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:singleLine="true"
+        android:maxLines="1"
+        android:layout_alignParentTop="true"
+        android:maxLength="50"
+        android:background="@drawable/rectangle_shape"
         android:minHeight="?android:listPreferredItemHeight"
         android:drawableLeft="@drawable/ic_search_black_24dp"
         android:padding="4dp"
+        android:ems="10"
         android:textColor="@android:color/black"
         android:hint="Search Products"/>
 
@@ -22,9 +26,18 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:id="@+id/recyclerview_products"
+        android:layout_below="@+id/et_searchproducts"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintTop_toTopOf="parent"
+        android:elevation="4dp"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"/>
 
-</LinearLayout>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Products Not Available"
+        android:layout_centerInParent="true"
+        />
+
+</RelativeLayout>
