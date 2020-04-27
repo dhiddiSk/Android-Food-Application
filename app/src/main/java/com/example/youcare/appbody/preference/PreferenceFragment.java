@@ -6,6 +6,8 @@ import androidx.appcompat.app.AlertDialog;
 import androidx.core.content.ContextCompat;
 
 import android.app.Fragment;
+import android.app.FragmentManager;
+import android.app.FragmentTransaction;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
@@ -16,6 +18,7 @@ import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.FrameLayout;
 import android.widget.ImageButton;
 import android.widget.Toast;
 
@@ -23,20 +26,22 @@ import com.example.youcare.R;
 import com.example.youcare.appbody.search.Searchproducts;
 import com.example.youcare.authentication.LoginActivity;
 import com.example.youcare.utils.LocalStorage;
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 public class PreferenceFragment extends Fragment implements View.OnClickListener {
 
-    ImageButton nextpage;
-    Button vegetarian;
-    Button vegan;
-    Button glutenfree;
-    Button lacktosefree;
-    Button norestrictions;
+    private Button button_continuepreference;
+    private Button vegetarian;
+    private Button vegan;
+    private Button glutenfree;
+    private Button lacktosefree;
+    private Button norestrictions;
     public String vegUserInput = null;
     public String veganUserInput = null;
     public String glutenUserInput = null;
     public String lacktoUserInput = null;
     public String applyRestrictionsOnUserRecommendations = null;
+    private FrameLayout framelayout_prefernce;
 
 
     @Nullable
@@ -44,7 +49,7 @@ public class PreferenceFragment extends Fragment implements View.OnClickListener
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.activity_app_body_navigation_preference_fragment, container, false);
 
-
+        framelayout_prefernce = view.findViewById(R.id.framelayout_prefernce);
         vegetarian = view.findViewById(R.id.Vegetarian);
         vegan = view.findViewById(R.id.Vegan);
         glutenfree = view.findViewById(R.id.GlutenFree);
@@ -56,7 +61,8 @@ public class PreferenceFragment extends Fragment implements View.OnClickListener
         glutenfree.setOnClickListener(this);
         lacktosefree.setOnClickListener(this);
         norestrictions.setOnClickListener(this);
-        nextpage = view.findViewById(R.id.nextPage);
+        button_continuepreference = view.findViewById(R.id.button_continuepreference);
+        button_continuepreference.setOnClickListener(this::onClick);
 
         return view;
     }
@@ -152,6 +158,17 @@ public class PreferenceFragment extends Fragment implements View.OnClickListener
 
                 }
                 break;
+
+            case R.id.button_continuepreference:
+                Searchproducts searchobj = new Searchproducts();
+                searchobj.userEatingHabits(vegUserInput, veganUserInput, glutenUserInput, lacktoUserInput, applyRestrictionsOnUserRecommendations);
+                Intent it = new Intent(getActivity(), FragmentChildActivityOne.class);
+                getActivity().startActivity(it);
+//                FragmentManager fm = getActivity().getFragmentManager();
+//                FragmentTransaction ft = fm.beginTransaction();
+//                ft.replace(R.id.framelayout_prefernce, new StoresOnlineFragment());
+//                ft.commit();
+                break;
         }
 
 
@@ -169,24 +186,6 @@ public class PreferenceFragment extends Fragment implements View.OnClickListener
     @Override
     public void onResume() {
         super.onResume();
-
-        Searchproducts searchobj = new Searchproducts();
-        nextpage.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                searchobj.userEatingHabits(vegUserInput, veganUserInput, glutenUserInput, lacktoUserInput, applyRestrictionsOnUserRecommendations);
-
-                Intent it = new Intent(getActivity(), FragmentChildActivityOne.class);
-                startActivity(it);
-
-//                FragmentManager fm = getChildFragmentManager();
-//                FragmentTransaction ft = fm.beginTransaction();
-//                ft.replace(R.id.preferenceSubfragmentOneContainer, new FragmentChildActivityOne());
-//                ft.commit();
-
-            }
-        });
-
     }
 
 }

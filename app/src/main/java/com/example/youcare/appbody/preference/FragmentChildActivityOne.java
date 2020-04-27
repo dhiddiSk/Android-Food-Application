@@ -1,11 +1,15 @@
 package com.example.youcare.appbody.preference;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
 
 import android.app.FragmentManager;
 import android.app.FragmentTransaction;
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageButton;
@@ -15,7 +19,6 @@ import com.example.youcare.appbody.search.Searchproducts;
 
 public class FragmentChildActivityOne extends AppCompatActivity implements View.OnClickListener {
 
-    private ImageButton nextpage;
     private Button market;
     private Button store;
     private boolean supermarketChecked = false;
@@ -25,12 +28,14 @@ public class FragmentChildActivityOne extends AppCompatActivity implements View.
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_prefrence_child_one);
+        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar_store);
+//        //placing toolbar in place of actionbar
+        setSupportActionBar(toolbar);
         market = findViewById(R.id.supermarket);
         store = findViewById(R.id.onlineStore);
-        nextpage = findViewById(R.id.nextPage);
         market.setOnClickListener(this);
         store.setOnClickListener(this);
-        nextpage.setOnClickListener(this);
+        findViewById(R.id.button_continueshop).setOnClickListener(this);
     }
 
 
@@ -54,7 +59,7 @@ public class FragmentChildActivityOne extends AppCompatActivity implements View.
                 break;
 
 
-            case R.id.nextPage:
+            case R.id.button_continueshop:
 //                Searchproducts sp = new Searchproducts();
 //                if (supermarketChecked) {
 //                    sp.userShoppingValues(true, false);
@@ -83,5 +88,15 @@ public class FragmentChildActivityOne extends AppCompatActivity implements View.
 //
 //
 //
-//    }
+
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        return super.onCreateOptionsMenu(menu);
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
+        return super.onOptionsItemSelected(item);
+    }
 }

@@ -6,10 +6,10 @@
 
     <application
         android:allowBackup="true"
-        android:icon="@mipmap/yourchoice"
+        android:icon="@mipmap/ic_yourchoice_launcher"
         android:label="Your Choice"
 
-        android:roundIcon="@mipmap/ic_launcher_round"
+        android:roundIcon="@mipmap/ic_yourchoice_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity android:name=".appbody.preference.FragmentChildActivityTwo" />

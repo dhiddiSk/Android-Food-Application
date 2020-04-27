@@ -1,10 +1,14 @@
 package com.example.youcare.appbody.preference;
 
+import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.RatingBar;
@@ -23,6 +27,9 @@ public class FragmentChildActivityTwo extends AppCompatActivity {
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_preference_child_two);
+        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar_envfair);
+//        //placing toolbar in place of actionbar
+        setSupportActionBar(toolbar);
         environement = (RatingBar) findViewById(R.id.environmentRatingbar);
         fairAndSocial = findViewById(R.id.FairSocialRatingbar);
         envdetail = findViewById(R.id.EnvironementDetailedDescription);
@@ -58,6 +65,16 @@ public class FragmentChildActivityTwo extends AppCompatActivity {
     @Override
     protected void onResume() {
         super.onResume();
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        return super.onCreateOptionsMenu(menu);
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
+        return super.onOptionsItemSelected(item);
     }
 }
 

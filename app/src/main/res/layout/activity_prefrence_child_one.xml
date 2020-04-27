@@ -8,6 +8,15 @@
     android:paddingRight="20dp"
     tools:context=".appbody.preference.FragmentChildActivityOne">
 
+    <androidx.appcompat.widget.Toolbar
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:id="@+id/toolbar_store"
+        android:background="@color/colorPrimary">
+    </androidx.appcompat.widget.Toolbar>
+
+
     <ImageButton
         android:id="@+id/userProfile"
         android:layout_width="wrap_content"
@@ -16,6 +25,7 @@
         android:background="@android:color/transparent"
         android:paddingTop="10dp"
         android:clickable="true"
+        android:visibility="gone"
         android:enabled="true"
         android:gravity="start"
         android:src="@drawable/user" />
@@ -25,6 +35,7 @@
         android:layout_height="wrap_content"
         android:layout_below="@id/userProfile"
         android:gravity="center"
+        android:paddingTop="30dp"
         android:layout_margin="20dp"
         android:text="@string/wheretoShop"
         android:textAllCaps="false"
@@ -67,14 +78,26 @@
         android:textSize="18sp"
         android:textStyle="bold" />
 
-    <ImageButton
-        android:id="@+id/nextPage"
+    <Button
+        android:id="@+id/button_continueshop"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@id/onlineStore"
-        android:layout_marginTop="20dp"
-        android:layout_alignParentRight="true"
+        android:layout_marginTop="40dp"
+        android:layout_marginEnd="20dp"
+        android:layout_marginRight="20dp"
+        android:layout_marginBottom="20dp"
+        android:background="@drawable/preference_button_shape"
         android:clickable="true"
         android:enabled="true"
-        app:srcCompat="@drawable/ic_arrow_forward_black_24dp" />
+        android:gravity="center|end"
+        android:padding="15dp"
+        android:text="Continue"
+        android:textAllCaps="false"
+        android:textColor="#808080"
+        android:textSize="14sp"
+        android:textStyle="normal"
+        android:layout_toRightOf="@+id/onlineStore"
+        android:layout_below="@+id/onlineStore" />
+
+
 </RelativeLayout>
