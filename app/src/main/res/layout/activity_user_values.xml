@@ -38,7 +38,6 @@
             android:layout_below="@id/textViewHeadingw2"
             android:layout_marginLeft="20dp"
             android:layout_marginTop="42dp"
-            android:drawableTop="@drawable/co2"
             android:text="@string/env"
             android:textAllCaps="false"
             android:textColor="#ACF41B"
@@ -67,7 +66,6 @@
             android:layout_below="@+id/category1textAndImage"
             android:layout_marginLeft="20dp"
             android:layout_marginTop="21dp"
-            android:drawableTop="@drawable/cow2"
             android:singleLine="false"
             android:text="@string/animal"
             android:textAllCaps="false"
@@ -96,7 +94,6 @@
             android:layout_below="@+id/category2textAndImage"
             android:layout_marginLeft="33dp"
             android:layout_marginTop="28dp"
-            android:drawableTop="@drawable/fruit"
             android:text="@string/health"
             android:textAllCaps="false"
             android:textColor="#8B4513"
@@ -123,7 +120,6 @@
             android:layout_below="@+id/category3textAndImage"
             android:layout_marginLeft="24dp"
             android:layout_marginTop="24dp"
-            android:drawableTop="@drawable/agreement"
             android:text="@string/tractor"
             android:textAllCaps="false"
             android:textColor="#6f4e37"
@@ -245,8 +241,7 @@
             android:layout_height="wrap_content"
             android:layout_marginLeft="13dp"
             android:layout_toRightOf="@id/shoppingButton"
-            android:layout_marginTop="659dp"
-            android:src="@drawable/supermarket" />
+            android:layout_marginTop="659dp" />
 
 
     </RelativeLayout>

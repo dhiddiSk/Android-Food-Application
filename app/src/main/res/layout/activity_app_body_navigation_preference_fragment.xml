@@ -20,42 +20,18 @@
         android:gravity="end"
         >
 
-        <ImageButton
-            android:id="@+id/userProfile"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:background="@android:color/transparent"
-            android:clickable="true"
-            android:enabled="true"
-            android:padding="5dp"
-            android:gravity="center|end"
-            android:layout_gravity="center|end"
-            android:src="@drawable/user" />
-
-        <ImageButton
-            android:id="@+id/userLogout"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:background="@android:color/transparent"
-            android:clickable="true"
-            android:enabled="true"
-            android:padding="5dp"
-            android:gravity="center|end"
-            android:layout_gravity="center|end"
-            app:srcCompat="@drawable/ic_power_settings_new_black_24dp" />
-
     </LinearLayout>
 
     <TextView
         android:id="@+id/preferenceText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@id/userProfile"
         android:text="@string/eatingHabits"
         android:textColor="#808080"
         android:gravity="center"
         android:layout_margin="20dp"
         android:textStyle="bold"
+        android:paddingTop="20dp"
         android:textAllCaps="false"
         android:textSize="30sp"
         />

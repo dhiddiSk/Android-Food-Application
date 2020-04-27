@@ -243,8 +243,7 @@
         android:clickable="true"
         android:scaleType="fitCenter"
         android:background="@android:color/transparent"
-        android:focusable="true"
-        android:src="@drawable/circle_cropped_user_image" />
+        android:focusable="true" />
 
 
     <ImageButton
@@ -254,8 +253,7 @@
         android:background="@android:color/transparent"
         android:clickable="true"
         android:focusable="true"
-        android:padding="10dp"
-        android:src="@drawable/footprint" />
+        android:padding="10dp" />
     <!--    android:layout_gravity="bottom"-->
 
 <!--    <Button-->

@@ -57,8 +57,6 @@ public class PreferenceFragment extends Fragment implements View.OnClickListener
         lacktosefree.setOnClickListener(this);
         norestrictions.setOnClickListener(this);
         nextpage = view.findViewById(R.id.nextPage);
-        view.findViewById(R.id.userProfile).setOnClickListener(this);
-        view.findViewById(R.id.userLogout).setOnClickListener(this);
 
         return view;
     }
@@ -154,17 +152,6 @@ public class PreferenceFragment extends Fragment implements View.OnClickListener
 
                 }
                 break;
-            case R.id.userProfile:
-                // Retriving from session
-
-                    showDialog(1, v.getContext(), LocalStorage.getLocallyStoredValue(v.getContext(), "username"), LocalStorage.getLocallyStoredValue(v.getContext(), "password"), "Cancel", "Dismiss");
-                break;
-
-            case R.id.userLogout:
-                showDialog(2, getActivity(), LocalStorage.getLocallyStoredValue(getActivity(), "username"), LocalStorage.getLocallyStoredValue(getActivity(), "password"), "Cancel", "Logout");
-                break;
-
-
         }
 
 
@@ -200,51 +187,6 @@ public class PreferenceFragment extends Fragment implements View.OnClickListener
             }
         });
 
-
     }
-
-    private void showDialog(int type, Context context, String username, String password, String leftOption, String rightOption) {
-        AlertDialog.Builder builder = new AlertDialog.Builder(context);
-        if (type == 1) {
-            // user profile
-            builder.setTitle("User Profile");
-            //TODO : Save all user info here and show to user profile from preferences
-            builder.setMessage("Name: " + username + "\n" + "Password: " + password);
-
-        } else if (type == 2) {
-            builder.setTitle("Logout");
-            //TODO : Save all user info here and show to user profile from preferences
-            builder.setMessage("Are you sure, You want to Logout");
-        }
-
-        //Setting message manually and performing action on button click
-        builder.setMessage("")
-                .setCancelable(false)
-                .setPositiveButton(rightOption, new DialogInterface.OnClickListener() {
-                    public void onClick(DialogInterface dialog, int id) {
-                        if (type == 2) {
-                            LocalStorage.clearPreferences(context.getApplicationContext()); //clearing preferences
-                            context.startActivity(new Intent(getActivity(), LoginActivity.class));
-                            getActivity().finish();
-                            Toast.makeText(context.getApplicationContext(), "Logged out!", Toast.LENGTH_SHORT).show();
-                        } else {
-                            if (dialog != null) dialog.dismiss();
-                        }
-                    }
-                })
-                .setNegativeButton(leftOption, new DialogInterface.OnClickListener() {
-                    public void onClick(DialogInterface dialog, int id) {
-                        //  Action for 'NO' Button
-                        dialog.cancel();
-                    }
-                });
-        //Creating dialog box
-        AlertDialog alert = builder.create();
-        //Setting the title manually
-        alert.setTitle(getResources().getText(R.string.app_name));
-        alert.show();
-
-    }
-
 
 }
