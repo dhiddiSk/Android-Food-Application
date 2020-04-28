@@ -8,13 +8,13 @@ public class Product {
     private String vegetarian;
     private String glutenfree;
     private String laktofree;
-    private String environment;
-    private String	fairSocialPrice;
+    private int environment;
+    private int	fairSocialPrice;
     private String price;
     private String productImageUrl;
 
     public Product(String productName, String producerName, String vegan, String vegetarian,
-                   String glutenfree, String laktofree, String environment, String fairSocial,String price,String productImageUrl) {
+                   String glutenfree, String laktofree, int environment, int fairSocial,String price,String productImageUrl) {
         this.productName = productName;
         this.producerName = producerName;
         this.vegan = vegan;
@@ -76,19 +76,19 @@ public class Product {
         this.laktofree = laktofree;
     }
 
-    public String getEnvironment() {
+    public int getEnvironment() {
         return environment;
     }
 
-    public void setEnvironment(String environment) {
+    public void setEnvironment(int environment) {
         this.environment = environment;
     }
 
-    public String getFairSocialPrice() {
+    public int getFairSocialPrice() {
         return fairSocialPrice;
     }
 
-    public void setFairSocialPrice(String fairSocialPrice) {
+    public void setFairSocialPrice(int fairSocialPrice) {
         this.fairSocialPrice = fairSocialPrice;
     }
 

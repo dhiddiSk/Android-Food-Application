@@ -29,7 +29,7 @@ import com.example.youcare.authentication.LoginActivity;
 import com.example.youcare.utils.LocalStorage;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
-public class PreferenceFragment extends Fragment implements View.OnClickListener {
+public class FirstPreferenceFragment extends Fragment implements View.OnClickListener {
 
     private Button button_continuepreference;
     private Button vegetarian;
@@ -138,7 +138,12 @@ public class PreferenceFragment extends Fragment implements View.OnClickListener
                 //norestrictions.setBackgroundResource(restrictionResId);
 
                 if (norestrictionChecked) {
-                    applyRestrictionsOnUserRecommendations = "no";
+                    applyRestrictionsOnUserRecommendations = "yes";
+                    veganUserInput = "yes";
+                    veganUserInput="yes";
+                    glutenUserInput="yes";
+                    lacktoUserInput="yes";
+
                     norestrictions.setBackgroundResource(R.drawable.preference_button_shape_green);
                     vegetarian.setBackgroundResource(R.drawable.preference_body_button_shape);
                     vegan.setBackgroundResource(R.drawable.preference_body_button_shape);
@@ -166,11 +171,11 @@ public class PreferenceFragment extends Fragment implements View.OnClickListener
                 System.out.println(" --- >> userid "+userId);
                 LocalStorage.storeUserPrefernces(getActivity(),userId, veganUserInput, vegUserInput, glutenUserInput, lacktoUserInput, applyRestrictionsOnUserRecommendations);
 
-                System.out.println(" ---> values " + veganUserInput + vegUserInput + glutenUserInput + lacktoUserInput +  applyRestrictionsOnUserRecommendations);
+                System.out.println(" ---> values " + vegUserInput + veganUserInput + glutenUserInput + lacktoUserInput +  applyRestrictionsOnUserRecommendations);
 
 //                Searchproducts searchobj = new Searchproducts();
 //                searchobj.userEatingHabits(vegUserInput, veganUserInput, glutenUserInput, lacktoUserInput, applyRestrictionsOnUserRecommendations);
-                Intent it = new Intent(getActivity(), FragmentChildActivityOne.class);
+                Intent it = new Intent(getActivity(), SecondPreferencesActivity.class);
                 getActivity().startActivity(it);
 //                FragmentManager fm = getActivity().getFragmentManager();
 //                FragmentTransaction ft = fm.beginTransaction();

@@ -12,12 +12,12 @@
         android:roundIcon="@mipmap/ic_yourchoice_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".appbody.preference.FragmentChildActivityTwo" />
-        <activity android:name=".appbody.preference.FragmentChildActivityOne" />
+        <activity android:name=".appbody.preference.ThirdPreferencesActivity" />
+        <activity android:name=".appbody.preference.SecondPreferencesActivity" />
         <activity android:name=".appbody.DealFragment" />
         <activity android:name=".appbody.ShopFragment" />
         <activity android:name=".appbody.search.SearchFragment" />
-        <activity android:name=".appbody.preference.PreferenceFragment" />
+        <activity android:name=".appbody.preference.FirstPreferenceFragment" />
         <activity android:name=".appbody.MainActivity" />
         <activity android:name=".appintro.ShopFragment"
             android:label="Shopping basket"/>

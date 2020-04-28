@@ -5,6 +5,7 @@ import android.net.Uri;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.RatingBar;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
@@ -50,6 +51,7 @@ public class ProductsListAdapter extends RecyclerView.Adapter<ProductsListAdapte
         holder.productName.setText("Product: "+products.get(position).getProductName());
         holder.producerName.setText("Manufacturer: "+products.get(position).getProducerName());
         holder.tv_env.setText("Environment Count: "+products.get(position).getEnvironment());
+        holder.id_rating.setNumStars(products.get(position).getEnvironment());
    //     Picasso.get().load("http://i.imgur.com/DvpvklR.png").into(holder.imageView);
     }
 
@@ -70,8 +72,10 @@ public class ProductsListAdapter extends RecyclerView.Adapter<ProductsListAdapte
         public TextView productName,producerName,tv_env;
         public RelativeLayout relativeLayout;
         public CardView root_childview;
+        private RatingBar id_rating;
         public ViewHolder(View listItem) {
             super(listItem);
+            this.id_rating = (RatingBar) listItem.findViewById(R.id.id_rating);
             this.imageView = (AppCompatImageView) listItem.findViewById(R.id.image_product);
             this.productName = (TextView) listItem.findViewById(R.id.tv_productname);
             this.producerName = (TextView) listItem.findViewById(R.id.tv_producername);
