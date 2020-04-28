@@ -160,8 +160,14 @@ public class PreferenceFragment extends Fragment implements View.OnClickListener
                 break;
 
             case R.id.button_continuepreference:
-                Searchproducts searchobj = new Searchproducts();
-                searchobj.userEatingHabits(vegUserInput, veganUserInput, glutenUserInput, lacktoUserInput, applyRestrictionsOnUserRecommendations);
+                String userId = LocalStorage.getLocallyStoredValue(getActivity(),"email");
+                System.out.println(" --- >> userid "+userId);
+                LocalStorage.storeUserPrefernces(getActivity(),userId, veganUserInput, vegUserInput, glutenUserInput, lacktoUserInput, applyRestrictionsOnUserRecommendations);
+
+                System.out.println(" ---> values " + veganUserInput + vegUserInput + glutenUserInput + lacktoUserInput +  applyRestrictionsOnUserRecommendations);
+
+//                Searchproducts searchobj = new Searchproducts();
+//                searchobj.userEatingHabits(vegUserInput, veganUserInput, glutenUserInput, lacktoUserInput, applyRestrictionsOnUserRecommendations);
                 Intent it = new Intent(getActivity(), FragmentChildActivityOne.class);
                 getActivity().startActivity(it);
 //                FragmentManager fm = getActivity().getFragmentManager();
