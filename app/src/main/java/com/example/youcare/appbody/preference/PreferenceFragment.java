@@ -138,7 +138,12 @@ public class PreferenceFragment extends Fragment implements View.OnClickListener
                 //norestrictions.setBackgroundResource(restrictionResId);
 
                 if (norestrictionChecked) {
-                    applyRestrictionsOnUserRecommendations = "no";
+                    applyRestrictionsOnUserRecommendations = "yes";
+                    veganUserInput = "yes";
+                    veganUserInput="yes";
+                    glutenUserInput="yes";
+                    lacktoUserInput="yes";
+
                     norestrictions.setBackgroundResource(R.drawable.preference_button_shape_green);
                     vegetarian.setBackgroundResource(R.drawable.preference_body_button_shape);
                     vegan.setBackgroundResource(R.drawable.preference_body_button_shape);
@@ -149,7 +154,7 @@ public class PreferenceFragment extends Fragment implements View.OnClickListener
                 }
                 if ((!norestrictionChecked) && (lacktoTempChecked) && (glutenTempChecked) && (veganTempChecked) && (vegTempChecked)) {
 
-                    applyRestrictionsOnUserRecommendations = "yes";
+                    applyRestrictionsOnUserRecommendations = "no";
                     norestrictions.setBackgroundResource(R.drawable.preference_body_button_shape);
 
                 }
