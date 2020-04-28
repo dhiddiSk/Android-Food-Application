@@ -98,4 +98,19 @@ public class LocalStorage {
         editor.commit();
     }
 
+
+    public static void removeUserPreferences(Context context){
+        SharedPreferences mySharedPreferences = context.getSharedPreferences(sharedName, context.MODE_PRIVATE);
+        SharedPreferences.Editor editor = mySharedPreferences.edit();
+        editor.remove(Constants.isVegan);
+        editor.remove(Constants.isVegetarian);
+        editor.remove(Constants.isgluten);
+        editor.remove(Constants.isLakto);
+        editor.remove(Constants.noRestriction);
+
+        editor.remove(Constants.environmentrating);
+        editor.remove(Constants.fairsocialrating);
+        editor.commit();
+    }
+
 }

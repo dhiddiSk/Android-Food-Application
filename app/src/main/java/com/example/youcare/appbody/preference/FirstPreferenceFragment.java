@@ -167,20 +167,15 @@ public class FirstPreferenceFragment extends Fragment implements View.OnClickLis
                 break;
 
             case R.id.button_continuepreference:
+                //Clearing Previously Selected Preferences
+                LocalStorage.removeUserPreferences(v.getContext()); // clear
+
+                //saving to local preferences
                 String userId = LocalStorage.getLocallyStoredValue(getActivity(),"email");
-                System.out.println(" --- >> userid "+userId);
                 LocalStorage.storeUserPrefernces(getActivity(),userId, veganUserInput, vegUserInput, glutenUserInput, lacktoUserInput, applyRestrictionsOnUserRecommendations);
 
-                System.out.println(" ---> values " + vegUserInput + veganUserInput + glutenUserInput + lacktoUserInput +  applyRestrictionsOnUserRecommendations);
-
-//                Searchproducts searchobj = new Searchproducts();
-//                searchobj.userEatingHabits(vegUserInput, veganUserInput, glutenUserInput, lacktoUserInput, applyRestrictionsOnUserRecommendations);
                 Intent it = new Intent(getActivity(), SecondPreferencesActivity.class);
                 getActivity().startActivity(it);
-//                FragmentManager fm = getActivity().getFragmentManager();
-//                FragmentTransaction ft = fm.beginTransaction();
-//                ft.replace(R.id.framelayout_prefernce, new StoresOnlineFragment());
-//                ft.commit();
                 break;
         }
 
