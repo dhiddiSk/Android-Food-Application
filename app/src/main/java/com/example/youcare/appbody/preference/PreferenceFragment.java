@@ -13,6 +13,7 @@ import android.content.DialogInterface;
 import android.content.Intent;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.MotionEvent;
 import android.view.View;
@@ -36,14 +37,13 @@ public class PreferenceFragment extends Fragment implements View.OnClickListener
     private Button glutenfree;
     private Button lacktosefree;
     private Button norestrictions;
-    public String vegUserInput = null;
-    public String veganUserInput = null;
-    public String glutenUserInput = null;
-    public String lacktoUserInput = null;
-    public String applyRestrictionsOnUserRecommendations = null;
+    public String vegUserInput = "no";
+    public String veganUserInput = "no";
+    public String glutenUserInput = "no";
+    public String lacktoUserInput = "no";
+    public String applyRestrictionsOnUserRecommendations = "yes";
     private FrameLayout framelayout_prefernce;
-
-
+    private String TAG = "ButtonWorking";
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, Bundle savedInstanceState) {
@@ -85,8 +85,10 @@ public class PreferenceFragment extends Fragment implements View.OnClickListener
                 vegetarian.setBackgroundResource(vegResId);
                 if (!vegTempChecked) {
                     vegUserInput = "no";
+
                 } else {
                     vegUserInput = "yes";
+
                     applyRestrictionsOnUserRecommendations = "yes";
                     norestrictions.setBackgroundResource(R.drawable.preference_body_button_shape);
                 }
