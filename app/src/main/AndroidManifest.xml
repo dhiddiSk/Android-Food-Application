@@ -18,7 +18,8 @@
         <activity android:name=".appbody.ShopFragment" />
         <activity android:name=".appbody.search.SearchFragment" />
         <activity android:name=".appbody.preference.FirstPreferenceFragment" />
-        <activity android:name=".appbody.MainActivity" />
+        <activity android:name=".appbody.MainActivity"
+            android:screenOrientation="fullSensor"/>
         <activity android:name=".appintro.ShopFragment"
             android:label="Shopping basket"/>
         <activity android:name=".appintro.DealFragment"

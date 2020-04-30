@@ -34,10 +34,10 @@
         app:layout_constraintRight_toRightOf="parent"/>
 
     <TextView
+        android:id="@+id/tv_no_products"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Products Not Available"
         android:layout_centerInParent="true"
-        />
+        android:text="Products Not Available" />
 
 </RelativeLayout>

@@ -1,7 +1,6 @@
 package com.example;
 
 import android.content.Context;
-import android.net.Uri;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -14,25 +13,26 @@ import androidx.appcompat.widget.AppCompatImageView;
 import androidx.cardview.widget.CardView;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.example.youcare.DisplayProductsActivity;
 import com.example.youcare.R;
 import com.example.youcare.appbody.Product;
-import com.squareup.picasso.Picasso;
 
 import java.util.List;
 
 public class ProductsListAdapter extends RecyclerView.Adapter<ProductsListAdapter.ViewHolder> {
     private List<Product> products;
     private Context context;
+    private TextView textViewNoProducts;
 
     /***
      * Setting the Adapter with Context Reference and Products Objects.
      * @param context
      * @param productsList
+     * @param tv_noProducts
      */
-    public ProductsListAdapter(Context context, List<Product> productsList) {
+    public ProductsListAdapter(Context context, List<Product> productsList, TextView tv_noProducts) {
         this.context = context;
         this.products = productsList;
+        this.textViewNoProducts = tv_noProducts;
     }
 
     //setting the child view
@@ -58,6 +58,11 @@ public class ProductsListAdapter extends RecyclerView.Adapter<ProductsListAdapte
     //Set the products Count
     @Override
     public int getItemCount() {
+        if (products.size() == 0){
+            textViewNoProducts.setVisibility(View.VISIBLE);
+        } else {
+            textViewNoProducts.setVisibility(View.GONE);
+        }
         return products.size();
     }
 
