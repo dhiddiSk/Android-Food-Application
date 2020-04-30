@@ -5,18 +5,11 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.app.Fragment;
 import android.app.FragmentManager;
-import android.content.Intent;
 import android.os.Bundle;
 import android.view.MenuItem;
 
-import com.example.youcare.DisplayProductsActivity;
 import com.example.youcare.R;
-import com.example.youcare.appbody.preference.FragmentChildActivityTwo;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
-
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
     BottomNavigationView bottomNavigation;

@@ -5,29 +5,20 @@ import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 
-import android.app.Dialog;
 import android.app.Fragment;
 import android.app.FragmentManager;
 import android.content.Context;
 import android.content.DialogInterface;
-import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.view.Window;
-import android.widget.EditText;
-import android.widget.LinearLayout;
-import android.widget.Toast;
 
-import com.example.youcare.DisplayProductsActivity;
 import com.example.youcare.R;
 import com.example.youcare.appbody.search.DisplayProductsFragment;
-import com.example.youcare.appbody.search.Searchproducts;
-import com.example.youcare.appbody.preference.PreferenceFragment;
-import com.example.youcare.authentication.LoginActivity;
+import com.example.youcare.appbody.preference.FirstPreferenceFragment;
+import com.example.youcare.appintro.SearchFragment;
 import com.example.youcare.utils.LocalStorage;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
-import com.google.android.material.textfield.TextInputLayout;
 
 public class MainActivity extends AppCompatActivity {
     BottomNavigationView bottomNavigation;
@@ -43,7 +34,18 @@ public class MainActivity extends AppCompatActivity {
 
         bottomNavigation = findViewById(R.id.body_bottom_navigation);
         bottomNavigation.setOnNavigationItemSelectedListener(navigationItemSelectedListener);
-        openFragment(new PreferenceFragment());
+
+        Bundle bundle = getIntent().getExtras();
+        if (bundle != null){
+            boolean isPreferencesSelected = bundle.getBoolean("isPreferenceSelected");
+            if (isPreferencesSelected){
+                openFragment(new DisplayProductsFragment());
+            }else{
+                openFragment(new FirstPreferenceFragment());
+            }
+        }else{
+            openFragment(new FirstPreferenceFragment());
+        }
     }
 
 
@@ -62,7 +64,7 @@ public class MainActivity extends AppCompatActivity {
                 public boolean onNavigationItemSelected(@NonNull MenuItem item) {
                     switch (item.getItemId()) {
                         case R.id.navigation_favorites:
-                            openFragment(new PreferenceFragment());
+                            openFragment(new FirstPreferenceFragment());
                             return true;
                         case R.id.navigation_search:
                             openFragment(new DisplayProductsFragment());

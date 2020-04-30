@@ -15,26 +15,30 @@ import android.widget.RatingBar;
 
 import com.example.youcare.DisplayProductsActivity;
 import com.example.youcare.R;
-import com.example.youcare.appbody.search.Searchproducts;
+import com.example.youcare.appbody.MainActivity;
+import com.example.youcare.authentication.LoginActivity;
+import com.example.youcare.utils.LocalStorage;
 
-public class FragmentChildActivityTwo extends AppCompatActivity {
+public class ThirdPreferencesActivity extends AppCompatActivity {
 
     private RatingBar environement, fairAndSocial;
-    private Button Save, envdetail, fsdetail;
-    private int environmentUserRating=0, fairAndSocialUserRating=0;
+    private Button button_save, envdetail, fsdetail;
+    private int environmentUserRating = 0, fairAndSocialUserRating = 0;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_preference_child_two);
+
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar_envfair);
-//        //placing toolbar in place of actionbar
         setSupportActionBar(toolbar);
-        environement = (RatingBar) findViewById(R.id.environmentRatingbar);
+
+        environement = findViewById(R.id.environmentRatingbar);
         fairAndSocial = findViewById(R.id.FairSocialRatingbar);
         envdetail = findViewById(R.id.EnvironementDetailedDescription);
         fsdetail = findViewById(R.id.FairAndSocialDetailedDescription);
-        Save = findViewById(R.id.SaveButton);
+        button_save = findViewById(R.id.SaveButton);
+
         environement.setOnRatingBarChangeListener(new RatingBar.OnRatingBarChangeListener() {
             @Override
             public void onRatingChanged(RatingBar ratingBar, float rating, boolean fromUser) {
@@ -49,13 +53,14 @@ public class FragmentChildActivityTwo extends AppCompatActivity {
             }
         });
 
-        Save.setOnClickListener(new View.OnClickListener() {
+        button_save.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-//                Searchproducts objsearachproducts = new Searchproducts();
-//                objsearachproducts.userValues(environmentUserRating,fairAndSocialUserRating);
-                Intent i = new Intent(FragmentChildActivityTwo.this, DisplayProductsActivity.class);
-                startActivity(i);
+                String userId = LocalStorage.getLocallyStoredValue(v.getContext(),"email");
+                LocalStorage.storeUserRatings(v.getContext(),userId,environmentUserRating,fairAndSocialUserRating);
+
+                Intent intent = new Intent(ThirdPreferencesActivity.this, DisplayProductsActivity.class);
+                startActivity(intent);
             }
         });
 

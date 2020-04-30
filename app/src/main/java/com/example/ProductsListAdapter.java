@@ -1,10 +1,10 @@
 package com.example;
 
 import android.content.Context;
-import android.net.Uri;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.RatingBar;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
@@ -13,25 +13,26 @@ import androidx.appcompat.widget.AppCompatImageView;
 import androidx.cardview.widget.CardView;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.example.youcare.DisplayProductsActivity;
 import com.example.youcare.R;
 import com.example.youcare.appbody.Product;
-import com.squareup.picasso.Picasso;
 
 import java.util.List;
 
 public class ProductsListAdapter extends RecyclerView.Adapter<ProductsListAdapter.ViewHolder> {
     private List<Product> products;
     private Context context;
+    private TextView textViewNoProducts;
 
     /***
      * Setting the Adapter with Context Reference and Products Objects.
      * @param context
      * @param productsList
+     * @param tv_noProducts
      */
-    public ProductsListAdapter(Context context, List<Product> productsList) {
+    public ProductsListAdapter(Context context, List<Product> productsList, TextView tv_noProducts) {
         this.context = context;
         this.products = productsList;
+        this.textViewNoProducts = tv_noProducts;
     }
 
     //setting the child view
@@ -50,12 +51,18 @@ public class ProductsListAdapter extends RecyclerView.Adapter<ProductsListAdapte
         holder.productName.setText("Product: "+products.get(position).getProductName());
         holder.producerName.setText("Manufacturer: "+products.get(position).getProducerName());
         holder.tv_env.setText("Environment Count: "+products.get(position).getEnvironment());
+        holder.id_rating.setNumStars(products.get(position).getEnvironment());
    //     Picasso.get().load("http://i.imgur.com/DvpvklR.png").into(holder.imageView);
     }
 
     //Set the products Count
     @Override
     public int getItemCount() {
+        if (products.size() == 0){
+            textViewNoProducts.setVisibility(View.VISIBLE);
+        } else {
+            textViewNoProducts.setVisibility(View.GONE);
+        }
         return products.size();
     }
 
@@ -70,8 +77,10 @@ public class ProductsListAdapter extends RecyclerView.Adapter<ProductsListAdapte
         public TextView productName,producerName,tv_env;
         public RelativeLayout relativeLayout;
         public CardView root_childview;
+        private RatingBar id_rating;
         public ViewHolder(View listItem) {
             super(listItem);
+            this.id_rating = (RatingBar) listItem.findViewById(R.id.id_rating);
             this.imageView = (AppCompatImageView) listItem.findViewById(R.id.image_product);
             this.productName = (TextView) listItem.findViewById(R.id.tv_productname);
             this.producerName = (TextView) listItem.findViewById(R.id.tv_producername);
