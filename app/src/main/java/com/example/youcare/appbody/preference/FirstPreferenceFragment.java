@@ -65,18 +65,21 @@ public class FirstPreferenceFragment extends Fragment implements View.OnClickLis
         glutenfree = view.findViewById(R.id.GlutenFree);
         lacktosefree = view.findViewById(R.id.LacktoseFree);
         norestrictions = view.findViewById(R.id.Norestrictions);
-        // nextpage.setOnClickListener(this);
-        vegetarian.setOnClickListener(this);
-        vegan.setOnClickListener(this);
-        glutenfree.setOnClickListener(this);
-        lacktosefree.setOnClickListener(this);
-        norestrictions.setOnClickListener(this);
-        button_continuepreference = view.findViewById(R.id.button_continuepreference);
-        button_continuepreference.setOnClickListener(this::onClick);
 
         return view;
     }
 
+    @Override
+    public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
+        super.onViewCreated(view, savedInstanceState);
+        vegetarian.setOnClickListener(this::onClick);
+        vegan.setOnClickListener(this::onClick);
+        glutenfree.setOnClickListener(this::onClick);
+        lacktosefree.setOnClickListener(this::onClick);
+        norestrictions.setOnClickListener(this::onClick);
+        button_continuepreference = view.findViewById(R.id.button_continuepreference);
+        button_continuepreference.setOnClickListener(this::onClick);
+    }
 
 
     @Override
@@ -109,6 +112,7 @@ public class FirstPreferenceFragment extends Fragment implements View.OnClickLis
                     norestrictions.setBackgroundResource(R.drawable.preference_body_button_shape);
                     applyRestrictionsOnUserRecommendations = "yes";
                 }
+
 
                 break;
 
@@ -251,7 +255,9 @@ public class FirstPreferenceFragment extends Fragment implements View.OnClickLis
     public void onStart() {
         super.onStart();
         if (view != null){
+            view.setWillNotDraw(false);
             view.invalidate();
+            System.out.println("---> invalidate in fragment");
         }
     }
 
@@ -273,9 +279,6 @@ public class FirstPreferenceFragment extends Fragment implements View.OnClickLis
         System.out.println("---> resume in fragment");
     }
 
-    @Override
-    public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
-        super.onViewCreated(view, savedInstanceState);
-    }
+
 
 }

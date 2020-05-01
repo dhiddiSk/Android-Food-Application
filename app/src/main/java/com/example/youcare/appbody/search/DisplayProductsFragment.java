@@ -104,31 +104,26 @@ public class DisplayProductsFragment extends Fragment {
                 }
             }
         });
-
     }
 
     @Override
     public void onStart() {
         super.onStart();
-        System.out.println("---> start in fragment");
-    }
-
-    @Override
-    public void onPause() {
-        super.onPause();
-        System.out.println("---> pause in fragment");
-    }
-
-    @Override
-    public void onStop() {
-        super.onStop();
-        System.out.println("---> stop in fragment");
     }
 
     @Override
     public void onResume() {
         super.onResume();
-        System.out.println("---> resume in fragment");
+    }
+
+    @Override
+    public void onPause() {
+        super.onPause();
+    }
+
+    @Override
+    public void onStop() {
+        super.onStop();
     }
 
     private void filterProducts(String searchWord) {

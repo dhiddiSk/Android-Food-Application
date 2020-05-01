@@ -1,12 +1,16 @@
 package com.example.youcare;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.AppCompatAutoCompleteTextView;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 
 import android.content.Context;
 import android.os.Bundle;
+import android.text.Editable;
+import android.text.TextWatcher;
+import android.widget.ArrayAdapter;
 import android.widget.TextView;
 
 import com.example.ProductsListAdapter;
@@ -23,7 +27,7 @@ public class DisplayProductsActivity extends AppCompatActivity {
     private List<Product> productsList;
     private ProductsListAdapter productsListAdapter;
     private TextView tv_noProducts;
-
+    private AppCompatAutoCompleteTextView actv_searchproducts;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -31,6 +35,7 @@ public class DisplayProductsActivity extends AppCompatActivity {
         setContentView(R.layout.activity_display_products);
         recyclerViewProducts = findViewById(R.id.recyclerview_products);
         tv_noProducts = findViewById(R.id.tv_no_products);
+        actv_searchproducts = findViewById(R.id.et_searchproducts);
 
         LinearLayoutManager linearLayoutManager = new LinearLayoutManager(getApplicationContext());
         recyclerViewProducts.setLayoutManager(linearLayoutManager);
@@ -61,6 +66,14 @@ public class DisplayProductsActivity extends AppCompatActivity {
         productsList.add(new Product("banana", "Bananen kg", "no", "yes", "yes", "yes", 2, 3, "1.89", ""));
         productsList.add(new Product("banana", "Bananen Demeter kg", "no", "yes", "yes", "yes", 2, 2, "1.99", ""));
 
+        //search products
+        // search products
+
+        ArrayAdapter<String> adapter = new ArrayAdapter<String>
+                (this, android.R.layout.select_dialog_item, getResources().getStringArray(R.array.array_productstypes));
+
+        actv_searchproducts.setThreshold(2);
+        actv_searchproducts.setAdapter(adapter);
 
         recyclerViewProducts.setAdapter(productsListAdapter);
         showUserPreferredProducts(this, productsList);
@@ -102,9 +115,40 @@ public class DisplayProductsActivity extends AppCompatActivity {
             }
     }
         System.out.println("current products list count > "+products.size());
-        productsListAdapter.filterProducts(filteredProducts);
+        productsListAdapter.filterProducts(filteredProducts); // 1st filter wit preferences
+
+        actv_searchproducts.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+            }
+
+            @Override
+            public void onTextChanged(CharSequence s, int start, int before, int count) {
+            }
+
+            @Override
+            public void afterTextChanged(Editable s) {
+                if ((filteredProducts.size() > 0 ) && (s.length() > 1 || actv_searchproducts.getText().toString().length() > 1)) {
+                    filterProducts(actv_searchproducts.getText().toString(), filteredProducts);
+                }else{
+                    productsListAdapter.filterProducts(filteredProducts); // showing filtered list
+                }
+            }
+        });
 
 }
+
+    private void filterProducts(String searchWord, List<Product> filteredProducts) {
+        List<Product> filteredBySearchProducts = new ArrayList<>(); //2nd filter by keyword
+        for (Product product : filteredProducts){
+            if (product.getProductName().toLowerCase().matches(searchWord.toLowerCase())){
+                filteredBySearchProducts.add(product);
+            }
+        }
+        System.out.println("current products list count > "+productsList.size());
+        productsListAdapter.filterProducts(filteredBySearchProducts);
+
+    }
 
     private int getRatingPreference(Context context, String ratingPreference) {
         return LocalStorage.getLocallyStoredRating(context, ratingPreference);
