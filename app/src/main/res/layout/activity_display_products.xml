@@ -4,7 +4,17 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/background_gradient"
     android:orientation="vertical">
+
+    <androidx.appcompat.widget.Toolbar
+        android:layout_width="match_parent"
+        android:visibility="gone"
+        android:layout_alignParentTop="true"
+        android:layout_height="wrap_content"
+        android:id="@+id/toolbar_productsview"
+        android:minHeight="?android:actionBarSize"
+        android:background="@color/colorPrimary"/>
 
     <androidx.appcompat.widget.AppCompatAutoCompleteTextView
         android:id="@+id/et_searchproducts"
@@ -12,21 +22,28 @@
         android:layout_height="wrap_content"
         android:singleLine="true"
         android:maxLines="1"
-        android:layout_alignParentTop="true"
+        android:layout_below="@+id/toolbar_productsview"
         android:maxLength="50"
         android:background="@drawable/rectangle_shape"
         android:minHeight="?android:listPreferredItemHeight"
         android:drawableLeft="@drawable/ic_search_black_24dp"
-        android:padding="4dp"
+        android:padding="5dp"
         android:ems="10"
         android:textColor="@android:color/black"
         android:hint="Search Products"/>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="0.5dp"
+        android:id="@+id/viewline"
+        android:layout_below="@+id/et_searchproducts"
+        android:background="@color/colorPrimary" />
 
     <androidx.recyclerview.widget.RecyclerView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:id="@+id/recyclerview_products"
-        android:layout_below="@+id/et_searchproducts"
+        android:layout_below="@+id/viewline"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         android:elevation="4dp"
@@ -38,6 +55,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerInParent="true"
+        android:textColor="@android:color/black"
         android:text="Products Not Available" />
 
 </RelativeLayout>

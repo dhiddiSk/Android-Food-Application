@@ -52,29 +52,13 @@ public class SecondPreferencesActivity extends AppCompatActivity implements View
                 store.setBackgroundResource(onlineResId);
                 break;
 
-
             case R.id.button_continueshop:
-
-
-
                 Intent it = new Intent(SecondPreferencesActivity.this, ThirdPreferencesActivity.class);
                 startActivity(it);
                 break;
         }
 
-
     }
-
-//    @Override
-//    protected void onStop() {
-//        super.onStop();
-//        FragmentManager fm = getFragmentManager();
-//        FragmentTransaction ft = fm.beginTransaction();
-//        ft.replace()
-//
-//
-//
-
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {

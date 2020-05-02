@@ -1,9 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
     tools:context=".appbody.preference.ThirdPreferencesActivity">
 
     <androidx.appcompat.widget.Toolbar
@@ -15,48 +16,51 @@
     </androidx.appcompat.widget.Toolbar>
 
 
-    <ImageButton
-        android:id="@+id/userProfile"
-        android:layout_below="@+id/toolbar_envfair"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentRight="true"
-        android:background="@android:color/transparent"
-        android:paddingTop="10dp"
-        android:clickable="true"
-        android:visibility="gone"
-        android:enabled="true"
-        android:gravity="start"
-        android:src="@drawable/user" />
-
     <TextView
         android:id="@+id/preferenceText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@id/userProfile"
+        android:layout_below="@id/toolbar_envfair"
         android:gravity="center"
-        android:paddingTop="20dp"
-        android:layout_margin="20dp"
+        android:layout_marginTop="50dp"
         android:text="@string/valueImportance"
         android:textAllCaps="false"
         android:textColor="#808080"
         android:textStyle="bold"
+        android:padding="15dp"
         android:textSize="30sp" />
 
-    <Button
-        android:id="@+id/Environment"
-        android:layout_width="wrap_content"
+    <LinearLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@id/preferenceText"
-        android:background="@drawable/preference_button_shape"
+        android:layout_gravity="center"
         android:padding="10dp"
-        android:clickable="false"
-        android:layout_margin="10dp"
-        android:text="Environment"
-        android:textAllCaps="false"
-        android:textColor="#000000"
-        android:textSize="18dp"
-        android:textStyle="bold" />
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/Environment"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/preference_button_shape"
+            android:padding="16dp"
+            android:clickable="false"
+            android:layout_margin="10dp"
+            android:text="Environment"
+            android:textAllCaps="false"
+            android:textColor="#000000"
+            android:textSize="18dp"
+            android:textStyle="bold" />
+
+        <RatingBar
+            android:id="@+id/environmentRatingbar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:numStars="3"
+            android:progressTint="@color/colorPrimary"
+            android:stepSize="1" />
+
+    </LinearLayout>
 
     <Button
         android:id="@+id/EnvironementDetailedDescription"
@@ -71,34 +75,43 @@
         android:text="Detailed description"
         android:textAllCaps="false"
         android:textColor="#808080"
+        android:visibility="gone"
         android:textSize="14dp"
         android:textStyle="normal" />
 
-    <RatingBar
-        android:id="@+id/environmentRatingbar"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/preferenceText"
-        android:layout_margin="11dp"
-        android:layout_toRightOf="@+id/Environment"
-        android:numStars="5"
-        android:progressTint="@color/colorPrimary"
-        android:stepSize="1" />
 
-    <Button
-        android:id="@+id/FairSocial"
-        android:layout_width="wrap_content"
+
+    <LinearLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@id/EnvironementDetailedDescription"
-        android:background="@drawable/preference_button_shape"
+        android:layout_gravity="center"
         android:padding="10dp"
-        android:layout_margin="10dp"
-        android:text="Fair and Social"
-        android:textAllCaps="false"
-        android:clickable="false"
-        android:textColor="#000000"
-        android:textSize="18dp"
-        android:textStyle="bold" />
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/FairSocial"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/preference_button_shape"
+            android:text="Fair and Social"
+            android:textAllCaps="false"
+            android:padding="15dp"
+            android:layout_margin="10dp"
+            android:clickable="false"
+            android:textColor="#000000"
+            android:textSize="16dp"
+            android:textStyle="bold" />
+
+        <RatingBar
+            android:id="@+id/FairSocialRatingbar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:numStars="3"
+            android:progressTint="@color/colorPrimary"
+            android:stepSize="1" />
+
+    </LinearLayout>
     <Button
         android:id="@+id/FairAndSocialDetailedDescription"
         android:layout_width="wrap_content"
@@ -112,26 +125,15 @@
         android:text="Detailed description"
         android:textAllCaps="false"
         android:textColor="#808080"
+        android:visibility="gone"
         android:textSize="14sp"
         android:textStyle="normal" />
 
-    <RatingBar
-        android:id="@+id/FairSocialRatingbar"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/EnvironementDetailedDescription"
-        android:layout_margin="11dp"
-        android:layout_toRightOf="@+id/FairSocial"
-        android:numStars="5"
-        android:progressTint="@color/colorPrimary"
-        android:stepSize="1" />
 
     <Button
         android:id="@+id/SaveButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/FairAndSocialDetailedDescription"
-        android:layout_alignParentRight="true"
         android:layout_marginTop="20dp"
         android:layout_marginEnd="20dp"
         android:layout_marginRight="20dp"
@@ -139,7 +141,7 @@
         android:background="@drawable/preference_button_shape"
         android:clickable="true"
         android:enabled="true"
-        android:gravity="center|end"
+        android:layout_gravity="end"
         android:padding="15dp"
         android:text="@string/saveandcontinue"
         android:textAllCaps="false"
@@ -147,15 +149,4 @@
         android:textSize="14sp"
         android:textStyle="normal" />
 
-<!--    <ImageButton-->
-<!--        android:id="@+id/nextPage"-->
-<!--        android:layout_width="wrap_content"-->
-<!--        android:layout_height="wrap_content"-->
-<!--        android:layout_below="@id/FairSocial"-->
-<!--        android:layout_marginLeft="300dp"-->
-<!--        android:layout_marginTop="83dp"-->
-<!--        android:clickable="true"-->
-<!--        android:enabled="true"-->
-<!--        android:padding="5dp"-->
-<!--        android:src="@drawable/ic_arrow_forward_black_24dp" />-->
-</RelativeLayout>
+</LinearLayout>

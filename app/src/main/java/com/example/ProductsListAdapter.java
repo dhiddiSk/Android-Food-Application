@@ -16,12 +16,16 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.example.youcare.R;
 import com.example.youcare.appbody.Product;
 
+import java.util.Currency;
 import java.util.List;
+import java.util.Locale;
 
 public class ProductsListAdapter extends RecyclerView.Adapter<ProductsListAdapter.ViewHolder> {
     private List<Product> products;
     private Context context;
     private TextView textViewNoProducts;
+    private static final String SYMBOL_EURO = "\u20ac";
+
 
     /***
      * Setting the Adapter with Context Reference and Products Objects.
@@ -50,9 +54,9 @@ public class ProductsListAdapter extends RecyclerView.Adapter<ProductsListAdapte
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
         holder.productName.setText("Product: "+products.get(position).getProductName());
         holder.producerName.setText("Manufacturer: "+products.get(position).getProducerName());
-        holder.tv_env.setText("Environment Count: "+products.get(position).getEnvironment());
-        holder.id_rating.setNumStars(products.get(position).getEnvironment());
-   //     Picasso.get().load("http://i.imgur.com/DvpvklR.png").into(holder.imageView);
+        holder.tv_env.setText("Price: "+products.get(position).getPrice()+SYMBOL_EURO);
+        holder.id_rating.setRating(products.get(position).getEnvironment());
+   //   Picasso.get().load("http://i.imgur.com/DvpvklR.png").into(holder.imageView);
     }
 
     //Set the products Count
@@ -72,13 +76,13 @@ public class ProductsListAdapter extends RecyclerView.Adapter<ProductsListAdapte
     }
 
     //Setting the IDs
-    public class ViewHolder extends RecyclerView.ViewHolder {
-        public AppCompatImageView imageView;
-        public TextView productName,producerName,tv_env;
-        public RelativeLayout relativeLayout;
-        public CardView root_childview;
+    static class ViewHolder extends RecyclerView.ViewHolder {
+        private AppCompatImageView imageView;
+        private TextView productName,producerName,tv_env;
+        private RelativeLayout relativeLayout;
+        private CardView root_childview;
         private RatingBar id_rating;
-        public ViewHolder(View listItem) {
+        private ViewHolder(View listItem) {
             super(listItem);
             this.id_rating = (RatingBar) listItem.findViewById(R.id.id_rating);
             this.imageView = (AppCompatImageView) listItem.findViewById(R.id.image_product);
