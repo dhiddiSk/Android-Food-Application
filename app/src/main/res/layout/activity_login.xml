@@ -5,6 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:id="@+id/rootlayout"
+    android:background="@android:color/white"
     app:layout_constraintTop_toBottomOf="parent"
     tools:context=".authentication.LoginActivity">
 
@@ -23,11 +24,24 @@
 
             <ImageView
                 android:id="@+id/basketOnLoginScreen"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:layout_margin="20dp"
+                android:background="@android:color/transparent"
+                android:src="@drawable/yourchoice_basket" />
+
+            <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_margin="20dp"
-                android:src="@drawable/yourchoicelogo" />
-
+                android:text="@string/logintoyourchoice"
+                android:textColor="@color/colorPrimary"
+                android:textStyle="bold"
+                android:gravity="center"
+                android:textSize="20sp"
+                android:padding="10dp"
+                android:textAllCaps="true"
+                android:fontFamily="sans-serif-light"
+                />
             <com.google.android.material.textfield.TextInputLayout
                 android:id="@+id/txtip_email"
                 android:layout_width="match_parent"

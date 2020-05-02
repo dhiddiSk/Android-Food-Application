@@ -15,6 +15,7 @@ import android.widget.RelativeLayout;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
 
 import com.example.youcare.database.DatabaseConnectivity;
 import com.example.youcare.R;
@@ -40,6 +41,7 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
         // Retriving from session
+
         if ((LocalStorage.getLocallyStoredValue(this,"username") != null )&& !(LocalStorage.getLocallyStoredValue(this,"username").isEmpty())
         && (LocalStorage.getLocallyStoredValue(this,"password") != null )&& !(LocalStorage.getLocallyStoredValue(this,"password").isEmpty())){
             Intent intent = new Intent(LoginActivity.this, MainActivity.class);

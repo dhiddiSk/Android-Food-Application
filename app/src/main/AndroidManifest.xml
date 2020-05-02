@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     package="com.example.youcare">
 
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
@@ -8,18 +9,18 @@
         android:allowBackup="true"
         android:icon="@mipmap/ic_yourchoice_launcher"
         android:label="Your Choice"
+        tools:ignore="LockedOrientationActivity"
 
         android:roundIcon="@mipmap/ic_yourchoice_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".appbody.preference.ThirdPreferencesActivity" />
-        <activity android:name=".appbody.preference.SecondPreferencesActivity" />
-        <activity android:name=".appbody.DealFragment" />
-        <activity android:name=".appbody.ShopFragment" />
-        <activity android:name=".appbody.search.SearchFragment" />
+        <activity android:name=".appbody.preference.ThirdPreferencesActivity"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".appbody.preference.SecondPreferencesActivity"
+            android:screenOrientation="portrait"/>
         <activity android:name=".appbody.preference.FirstPreferenceFragment" />
         <activity android:name=".appbody.MainActivity"
-            android:screenOrientation="fullSensor"/>
+            android:screenOrientation="portrait"/>
         <activity android:name=".appintro.ShopFragment"
             android:label="Shopping basket"/>
         <activity android:name=".appintro.DealFragment"
@@ -28,9 +29,11 @@
             android:label="Product selection"/>
         <activity android:name=".appintro.PreferenceFragment"
             android:label="Preference"/>
-        <activity android:name=".appintro.MainActivity" />
+        <activity android:name=".appintro.MainActivity"
+            android:screenOrientation="portrait"/>
         <activity android:name=".UserLocation" />
-        <activity android:name=".DisplayProductsActivity" /> <!-- <activity android:name=".list_view_items" /> -->
+        <activity android:name=".DisplayProductsActivity"
+            android:screenOrientation="portrait"/> <!-- <activity android:name=".list_view_items" /> -->
         <activity android:name=".appbody.search.Searchproducts" />
         <activity
             android:name=".UserValues"
@@ -40,11 +43,13 @@
             android:label="Preferences" />
         <activity
             android:name=".authentication.UserRegistration"
-            android:label="New registration" />
+            android:label="New registration"
+            android:screenOrientation="portrait"/>
 <!--        <activity-->
 <!--            android:name=".AppInfo"-->
 <!--            android:label="App Info" />-->
-        <activity android:name=".MainActivity">
+        <activity android:name=".MainActivity"
+            android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -53,7 +58,8 @@
         </activity>
         <activity
             android:name=".authentication.LoginActivity"
-            android:label="User login" />
+            android:label="User login"
+            android:screenOrientation="portrait"/>
     </application>
 
 </manifest>

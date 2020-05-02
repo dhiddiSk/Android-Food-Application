@@ -9,6 +9,7 @@ import android.app.Fragment;
 import android.app.FragmentManager;
 import android.content.Context;
 import android.content.DialogInterface;
+import android.content.pm.ActivityInfo;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -27,9 +28,7 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_app_body_navigation_main);
-//        //getting the toolbar
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar_body);
-//        //placing toolbar in place of actionbar
         setSupportActionBar(toolbar);
 
         bottomNavigation = findViewById(R.id.body_bottom_navigation);

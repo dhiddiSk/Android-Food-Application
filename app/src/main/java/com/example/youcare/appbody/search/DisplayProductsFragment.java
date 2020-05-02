@@ -1,12 +1,15 @@
 package com.example.youcare.appbody.search;
 
+import android.app.Activity;
 import android.app.Fragment;
+import android.content.Context;
 import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextWatcher;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.inputmethod.InputMethodManager;
 import android.widget.ArrayAdapter;
 import android.widget.TextView;
 
@@ -98,7 +101,7 @@ public class DisplayProductsFragment extends Fragment {
             @Override
             public void afterTextChanged(Editable s) {
                 if (s.length() > 1 || actv_searchproducts.getText().toString().length() > 1) {
-                    filterProducts(actv_searchproducts.getText().toString());
+                    filterProducts(actv_searchproducts.getText().toString(),getActivity());
                 }else{
                     productsListAdapter.filterProducts(productsList); // showing previous list
                 }
@@ -126,7 +129,7 @@ public class DisplayProductsFragment extends Fragment {
         super.onStop();
     }
 
-    private void filterProducts(String searchWord) {
+    private void filterProducts(String searchWord, Activity activity) {
         List<Product> filteredProducts = new ArrayList<>();
 
         for (Product product : productsList){
@@ -137,7 +140,21 @@ public class DisplayProductsFragment extends Fragment {
         System.out.println("current products list count > "+productsList.size());
         productsListAdapter.filterProducts(filteredProducts);
 
+        if (productsList.size() > 0 || filteredProducts.size() > 0){
+           // hideKeyBoard(activity);
+        }
+
     }
 
-
+    /***
+     * Hiding Keyboard after getting Products
+     * @param activity
+     */
+    private void hideKeyBoard(Activity activity) {
+        View view1 = activity.getCurrentFocus();
+        if(view1 != null){
+            InputMethodManager imm = (InputMethodManager) activity.getSystemService(Context.INPUT_METHOD_SERVICE);
+            imm.hideSoftInputFromWindow(view1.getApplicationWindowToken(), 0);
+        }
+    }
 }

@@ -192,12 +192,15 @@
         <item>Banana</item>
         <item>Wine</item>
         <item>Chocolate</item>
+        <item>Chocolate Cream</item>
     </string-array>
 
 
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="yourchoice">Welcome to your Choice</string>
+    <string name="preffered_products">Preferred Products</string>
+    <string name="logintoyourchoice">Login Into Your Choice</string>
 
 
 </resources>
