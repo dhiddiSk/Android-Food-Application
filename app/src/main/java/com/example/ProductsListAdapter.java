@@ -52,10 +52,11 @@ public class ProductsListAdapter extends RecyclerView.Adapter<ProductsListAdapte
     //binding the products to child items
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
-        holder.productName.setText("Product: "+products.get(position).getProductName());
-        holder.producerName.setText("Manufacturer: "+products.get(position).getProducerName());
-        holder.tv_env.setText("Price: "+products.get(position).getPrice()+SYMBOL_EURO);
-        holder.id_rating.setRating(products.get(position).getEnvironment());
+        holder.producerName.setText(products.get(position).getProducerName());
+        holder.productName.setText("Product: "+products.get(position).getProductName().toUpperCase());
+        holder.tv_eco.setText("EcoScore: "+products.get(position).getEcoScore());
+        holder.tv_price.setText("Price: "+products.get(position).getPrice()+SYMBOL_EURO);
+        holder.imageView.setImageResource(products.get(position).getIconId());
    //   Picasso.get().load("http://i.imgur.com/DvpvklR.png").into(holder.imageView);
     }
 
@@ -78,17 +79,17 @@ public class ProductsListAdapter extends RecyclerView.Adapter<ProductsListAdapte
     //Setting the IDs
     static class ViewHolder extends RecyclerView.ViewHolder {
         private AppCompatImageView imageView;
-        private TextView productName,producerName,tv_env;
+        private TextView productName,producerName,tv_price;
         private RelativeLayout relativeLayout;
         private CardView root_childview;
-        private RatingBar id_rating;
+        private TextView tv_eco;
         private ViewHolder(View listItem) {
             super(listItem);
-            this.id_rating = (RatingBar) listItem.findViewById(R.id.id_rating);
+            this.tv_eco = (TextView) listItem.findViewById(R.id.tv_eco);
             this.imageView = (AppCompatImageView) listItem.findViewById(R.id.image_product);
             this.productName = (TextView) listItem.findViewById(R.id.tv_productname);
             this.producerName = (TextView) listItem.findViewById(R.id.tv_producername);
-            this.tv_env = (TextView) listItem.findViewById(R.id.tv_env);
+            this.tv_price = (TextView) listItem.findViewById(R.id.tv_price);
             this.root_childview = (CardView) listItem.findViewById(R.id.root_childview);
         }
     }

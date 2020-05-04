@@ -11,10 +11,11 @@ public class Product {
     private int environment;
     private int	fairSocialPrice;
     private String price;
-    private String productImageUrl;
+    private String ecoScore;
+    private int iconId;
 
     public Product(String productName, String producerName, String vegan, String vegetarian,
-                   String glutenfree, String laktofree, int environment, int fairSocial,String price,String productImageUrl) {
+                   String glutenfree, String laktofree, int environment, int fairSocial,String price,String ecoScore,int productIcon) {
         this.productName = productName;
         this.producerName = producerName;
         this.vegan = vegan;
@@ -24,7 +25,8 @@ public class Product {
         this.environment = environment;
         this.fairSocialPrice = fairSocial;
         this.price = price;
-        this.productImageUrl = productImageUrl;
+        this.ecoScore = ecoScore;
+        this.iconId = productIcon;
     }
 
 
@@ -100,11 +102,19 @@ public class Product {
         this.price = price;
     }
 
-    public String getProductImageUrl() {
-        return productImageUrl;
+    public String getEcoScore() {
+        return ecoScore;
     }
 
-    public void setProductImageUrl(String productImageUrl) {
-        this.productImageUrl = productImageUrl;
+    public void setEcoScore(String ecoScore) {
+        this.ecoScore = ecoScore;
+    }
+
+    public int getIconId() {
+        return iconId;
+    }
+
+    public void setIconId(int iconId) {
+        this.iconId = iconId;
     }
 }
