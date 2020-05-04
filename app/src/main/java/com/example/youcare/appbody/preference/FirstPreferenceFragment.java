@@ -22,6 +22,7 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.FrameLayout;
 import android.widget.ImageButton;
+import android.widget.LinearLayout;
 import android.widget.Toast;
 
 import com.example.youcare.R;
@@ -33,7 +34,7 @@ import com.google.android.material.floatingactionbutton.FloatingActionButton;
 public class FirstPreferenceFragment extends Fragment implements View.OnClickListener {
 
     //@button_continuepreference is to continue to the next screen
-    private Button button_continuepreference;
+   // private Button button_continuepreference;
     //@vegetarian, @vegan, @glutenfree, @lacktosefree, @norestrictions refers to one of the user preference.
     private Button vegetarian;
     private Button vegan;
@@ -52,6 +53,7 @@ public class FirstPreferenceFragment extends Fragment implements View.OnClickLis
     private FrameLayout framelayout_prefernce;
     private String TAG = "ButtonWorking";
     private View view;
+    LinearLayout button_continuepreference;
 
 
     @Nullable

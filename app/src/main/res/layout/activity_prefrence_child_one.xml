@@ -21,10 +21,7 @@
         android:layout_height="wrap_content"
         android:layout_below="@id/toolbar_store"
         android:gravity="center"
-        android:paddingTop="30dp"
-        android:layout_marginStart="20dp"
-        android:layout_marginLeft="20dp"
-        android:layout_marginTop="40dp"
+        android:layout_margin="20dp"
         android:text="@string/wheretoShop"
         android:textAllCaps="false"
         android:textStyle="bold"
@@ -32,60 +29,143 @@
         android:textSize="30sp" />
 
     <Button
-        android:id="@+id/supermarket"
+        android:id="@+id/kauflandsupermarket"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@id/preferenceChildOneText"
-        android:layout_marginTop="50dp"
         android:layout_centerInParent="true"
         android:background="@drawable/preference_body_button_shape"
         android:clickable="true"
         android:enabled="true"
         android:padding="10dp"
-        android:text="Super markets"
+        android:text="Kaufland"
+        android:textAllCaps="false"
+        android:textColor="#000000"
+        android:textSize="18dp"
+        android:textStyle="bold" />
+    <Button
+        android:id="@+id/lidlsupermarket"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/kauflandsupermarket"
+        android:layout_margin="10dp"
+        android:layout_centerInParent="true"
+        android:background="@drawable/preference_body_button_shape"
+        android:clickable="true"
+        android:enabled="true"
+        android:padding="10dp"
+        android:text="Lidl"
+        android:textAllCaps="false"
+        android:textColor="#000000"
+        android:textSize="18dp"
+        android:textStyle="bold" />
+    <Button
+        android:id="@+id/rewesupermarket"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/lidlsupermarket"
+        android:layout_margin="10dp"
+        android:layout_centerInParent="true"
+        android:background="@drawable/preference_body_button_shape"
+        android:clickable="true"
+        android:enabled="true"
+        android:padding="10dp"
+        android:text="Rewe"
+        android:textAllCaps="false"
+        android:textColor="#000000"
+        android:textSize="18dp"
+        android:textStyle="bold" />
+    <Button
+        android:id="@+id/pennysupermarket"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/rewesupermarket"
+        android:layout_margin="10dp"
+        android:layout_centerInParent="true"
+        android:background="@drawable/preference_body_button_shape"
+        android:clickable="true"
+        android:enabled="true"
+        android:padding="10dp"
+        android:text="Penny"
+        android:textAllCaps="false"
+        android:textColor="#000000"
+        android:textSize="18dp"
+        android:textStyle="bold" />
+    <Button
+        android:id="@+id/edekasupermarket"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/pennysupermarket"
+        android:layout_margin="10dp"
+        android:layout_centerInParent="true"
+        android:background="@drawable/preference_body_button_shape"
+        android:clickable="true"
+        android:enabled="true"
+        android:padding="10dp"
+        android:text="Edeka"
+        android:textAllCaps="false"
+        android:textColor="#000000"
+        android:textSize="18dp"
+        android:textStyle="bold" />
+    <Button
+        android:id="@+id/nettosupermarket"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/edekasupermarket"
+        android:layout_margin="10dp"
+        android:layout_centerInParent="true"
+        android:background="@drawable/preference_body_button_shape"
+        android:clickable="true"
+        android:enabled="true"
+        android:padding="10dp"
+        android:text="Netto-discount"
         android:textAllCaps="false"
         android:textColor="#000000"
         android:textSize="18dp"
         android:textStyle="bold" />
 
-    <Button
-        android:id="@+id/onlineStore"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/supermarket"
-        android:layout_centerInParent="true"
-        android:layout_centerVertical="true"
-        android:layout_marginTop="60dp"
-        android:background="@drawable/preference_body_button_shape"
-        android:clickable="true"
-        android:enabled="true"
-        android:padding="5dp"
-        android:text="Online stores"
-        android:textAllCaps="false"
-        android:textColor="#000000"
-        android:textSize="18sp"
-        android:textStyle="bold" />
 
-    <Button
+<!--    <Button-->
+<!--        android:id="@+id/button_continueshop"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:layout_marginTop="40dp"-->
+<!--        android:layout_marginEnd="20dp"-->
+<!--        android:layout_marginRight="20dp"-->
+<!--        android:layout_marginBottom="20dp"-->
+<!--        android:background="@drawable/preference_button_shape"-->
+<!--        android:clickable="true"-->
+<!--        android:enabled="true"-->
+<!--        android:gravity="center|end"-->
+<!--        android:padding="15dp"-->
+<!--        android:text="Continue"-->
+<!--        android:textAllCaps="false"-->
+<!--        android:textColor="#808080"-->
+<!--        android:textSize="14sp"-->
+<!--        android:textStyle="normal"-->
+<!--        android:layout_toRightOf="@+id/onlineStore"-->
+<!--        android:layout_below="@+id/onlineStore" />-->
+    <LinearLayout
         android:id="@+id/button_continueshop"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="40dp"
-        android:layout_marginEnd="20dp"
-        android:layout_marginRight="20dp"
-        android:layout_marginBottom="20dp"
-        android:background="@drawable/preference_button_shape"
-        android:clickable="true"
-        android:enabled="true"
-        android:gravity="center|end"
-        android:padding="15dp"
-        android:text="Continue"
-        android:textAllCaps="false"
-        android:textColor="#808080"
-        android:textSize="14sp"
-        android:textStyle="normal"
-        android:layout_toRightOf="@+id/onlineStore"
-        android:layout_below="@+id/onlineStore" />
+        android:layout_alignParentRight="true"
+        android:layout_below="@id/nettosupermarket"
+        android:background="@drawable/shape_rectangle"
+        android:orientation="horizontal"
+        android:padding="10dp"
+        >
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="Continue"
+            android:textColor="@color/colorPrimary"
+            android:textSize="16sp"
+            android:textStyle="bold" />
+    </LinearLayout>
 
 
 </RelativeLayout>

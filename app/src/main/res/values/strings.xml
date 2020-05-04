@@ -136,13 +136,13 @@
         "What are your eating habits?"
     </string>
     <string name="wheretoShop">
-        "Where do you want to shop?"
+        "Where do you usually go shopping?"
     </string>
     <string name="valueImportance">
         "How important are these categories for you?"
     </string>
 
-    <string name="signup">"Verify Now"</string>
+    <string name="signup">"Sign-Up/Login"</string>
     <string name="introsearchheading">
         "Easy and fast shopping experience"
     </string>
@@ -153,17 +153,17 @@
 
     </string>
     <string name="introshopheading">
-        "Fill your sustainable baseket."</string>
+        "Fill your sustainable basket."</string>
     <string name="introshoptext">
         "We provide you the most sustainable, healthiest and best priced alternative while guaranteeing you complpete transparency."
 
 
     </string>
     <string name="introdealheading">
-        "Enjoy personal benefits"
+        "Earn Eco-Social Points"
     </string>
     <string name="introdeal">
-        "Here you find all Eco-Social coupons simply activate and redeem in the cooperating markets and online shops."
+        "Collect Eco-Social Points with every purchase and benefit from coupons and special offers in our Loyalty Program."
 
     </string>
 
@@ -198,7 +198,7 @@
 
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
-    <string name="yourchoice">Welcome to your Choice</string>
+    <string name="yourchoice">Your Choice</string>
     <string name="preffered_products">Preferred Products</string>
     <string name="logintoyourchoice">Login Into Your Choice</string>
 

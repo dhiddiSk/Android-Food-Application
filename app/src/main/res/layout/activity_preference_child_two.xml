@@ -130,23 +130,45 @@
         android:textStyle="normal" />
 
 
-    <Button
+<!--    <Button-->
+<!--        android:id="@+id/SaveButton"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:layout_marginTop="20dp"-->
+<!--        android:layout_marginEnd="20dp"-->
+<!--        android:layout_marginRight="20dp"-->
+<!--        android:layout_marginBottom="20dp"-->
+<!--        android:background="@drawable/preference_button_shape"-->
+<!--        android:clickable="true"-->
+<!--        android:enabled="true"-->
+<!--        android:layout_gravity="end"-->
+<!--        android:padding="15dp"-->
+<!--        android:text="@string/saveandcontinue"-->
+<!--        android:textAllCaps="false"-->
+<!--        android:textColor="#808080"-->
+<!--        android:textSize="14sp"-->
+<!--        android:textStyle="normal" />-->
+    <LinearLayout
         android:id="@+id/SaveButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
-        android:layout_marginEnd="20dp"
-        android:layout_marginRight="20dp"
-        android:layout_marginBottom="20dp"
-        android:background="@drawable/preference_button_shape"
-        android:clickable="true"
-        android:enabled="true"
+        android:layout_alignParentEnd="true"
         android:layout_gravity="end"
-        android:padding="15dp"
-        android:text="@string/saveandcontinue"
-        android:textAllCaps="false"
-        android:textColor="#808080"
-        android:textSize="14sp"
-        android:textStyle="normal" />
+        android:layout_below="@id/FairAndSocialDetailedDescription"
+        android:background="@drawable/shape_rectangle"
+        android:orientation="horizontal"
+        android:padding="10dp"
+        android:layout_alignParentRight="true">
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="@string/saveandcontinue"
+            android:textColor="@color/colorPrimary"
+            android:textSize="16sp"
+            android:textStyle="bold" />
+    </LinearLayout>
 
 </LinearLayout>

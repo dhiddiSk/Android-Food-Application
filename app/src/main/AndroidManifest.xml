@@ -31,16 +31,16 @@
             android:label="Preference"/>
         <activity android:name=".appintro.MainActivity"
             android:screenOrientation="portrait"/>
-        <activity android:name=".UserLocation" />
+<!--        <activity android:name=".UserLocation" />-->
         <activity android:name=".DisplayProductsActivity"
             android:screenOrientation="portrait"/> <!-- <activity android:name=".list_view_items" /> -->
         <activity android:name=".appbody.search.Searchproducts" />
-        <activity
-            android:name=".UserValues"
-            android:label="User values" />
-        <activity
-            android:name=".EatingPreferences"
-            android:label="Preferences" />
+<!--        <activity-->
+<!--            android:name=".UserValues"-->
+<!--            android:label="User values" />-->
+<!--        <activity-->
+<!--            android:name=".EatingPreferences"-->
+<!--            android:label="Preferences" />-->
         <activity
             android:name=".authentication.UserRegistration"
             android:label="New registration"
