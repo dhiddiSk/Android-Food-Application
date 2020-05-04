@@ -47,8 +47,8 @@ public class ThirdPreferencesActivity extends AppCompatActivity{
             @Override
             public void onClick(View v) {
 
-                Intent i = new Intent(ThirdPreferencesActivity.this, DetailedDescriptionEnvironemt.class);
-                startActivity(i);
+//                Intent i = new Intent(ThirdPreferencesActivity.this, DetailedDescriptionEnvironemt.class);
+//                startActivity(i);
 
             }
         });
