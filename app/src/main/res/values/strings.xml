@@ -188,11 +188,11 @@
 
     <string-array name="array_productstypes">
         <item>Milk</item>
-        <item>Milk Chocolate</item>
+        <item>Milk Choclate</item>
         <item>Banana</item>
         <item>Wine</item>
-        <item>Chocolate</item>
-        <item>Chocolate Cream</item>
+        <item>Choclate</item>
+        <item>Choclate Cream</item>
     </string-array>
 
 
