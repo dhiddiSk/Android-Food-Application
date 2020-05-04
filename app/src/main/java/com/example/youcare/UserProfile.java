@@ -33,7 +33,7 @@ public class UserProfile extends AppCompatActivity {
 //
 //        textView1.setText(userFullName);
 
-        imagebutton =  findViewById(R.id.userImageView);
+        //imagebutton =  findViewById(R.id.userImageView);
         imagebutton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

@@ -21,7 +21,6 @@
         android:layout_height="wrap_content"
         android:layout_margin="20dp"
         android:gravity="center"
-        android:paddingTop="20dp"
         android:text="@string/eatingHabits"
         android:textAllCaps="false"
         android:textColor="#808080"
@@ -88,7 +87,7 @@
         android:clickable="true"
         android:enabled="true"
         android:padding="10dp"
-        android:text="Lakto-free"
+        android:text="Lacto-free"
         android:textAllCaps="false"
         android:textColor="#000000"
         android:textSize="18dp"
@@ -111,24 +110,42 @@
         android:textSize="18dp"
         android:textStyle="bold" />
 
-    <Button
+<!--    <Button-->
+<!--        android:id="@+id/button_continuepreference"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:layout_below="@+id/Norestrictions"-->
+<!--        android:background="@drawable/preference_button_shape"-->
+<!--        android:clickable="true"-->
+<!--        android:enabled="true"-->
+<!--        android:padding="5dp"-->
+<!--        android:text="Continue"-->
+<!--        android:textAllCaps="false"-->
+<!--        android:textColor="#808080"-->
+<!--        android:textSize="14sp"-->
+<!--        android:textStyle="normal"-->
+<!--        android:layout_margin="5dp"-->
+<!--        android:layout_alignParentRight="true"-->
+<!--         />-->
+    <LinearLayout
         android:id="@+id/button_continuepreference"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
-        android:layout_marginEnd="20dp"
-        android:layout_marginRight="20dp"
-        android:layout_marginBottom="20dp"
-        android:background="@drawable/preference_button_shape"
-        android:clickable="true"
-        android:enabled="true"
-        android:gravity="center|end"
-        android:padding="15dp"
-        android:text="Continue"
-        android:textAllCaps="false"
-        android:textColor="#808080"
-        android:textSize="14sp"
-        android:textStyle="normal"
-        android:layout_toRightOf="@+id/Norestrictions"
-        android:layout_below="@+id/Norestrictions" />
+        android:layout_alignParentEnd="true"
+        android:layout_below="@id/Norestrictions"
+        android:background="@drawable/shape_rectangle"
+        android:orientation="horizontal"
+        android:padding="10dp"
+        android:layout_alignParentRight="true">
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="Continue"
+            android:textColor="@color/colorPrimary"
+            android:textSize="16sp"
+            android:textStyle="bold" />
+    </LinearLayout>
 </RelativeLayout>

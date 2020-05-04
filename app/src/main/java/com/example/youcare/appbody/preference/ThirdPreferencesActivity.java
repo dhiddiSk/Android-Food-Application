@@ -6,11 +6,13 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 
 import android.content.Intent;
+import android.graphics.Paint;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
+import android.widget.LinearLayout;
 import android.widget.RatingBar;
 
 import com.example.youcare.DisplayProductsActivity;
@@ -19,10 +21,11 @@ import com.example.youcare.appbody.MainActivity;
 import com.example.youcare.authentication.LoginActivity;
 import com.example.youcare.utils.LocalStorage;
 
-public class ThirdPreferencesActivity extends AppCompatActivity {
+public class ThirdPreferencesActivity extends AppCompatActivity{
 
     private RatingBar environement, fairAndSocial;
-    private Button button_save, envdetail, fsdetail;
+    private Button envdetail, fsdetail;
+    LinearLayout button_save;
     private int environmentUserRating = 0, fairAndSocialUserRating = 0;
 
     @Override
@@ -36,8 +39,19 @@ public class ThirdPreferencesActivity extends AppCompatActivity {
         environement = findViewById(R.id.environmentRatingbar);
         fairAndSocial = findViewById(R.id.FairSocialRatingbar);
         envdetail = findViewById(R.id.EnvironementDetailedDescription);
+        envdetail.setPaintFlags(envdetail.getPaintFlags() | Paint.UNDERLINE_TEXT_FLAG);
         fsdetail = findViewById(R.id.FairAndSocialDetailedDescription);
+        fsdetail.setPaintFlags(fsdetail.getPaintFlags() | Paint.UNDERLINE_TEXT_FLAG);
         button_save = findViewById(R.id.SaveButton);
+        envdetail.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                Intent i = new Intent(ThirdPreferencesActivity.this, DetailedDescriptionEnvironemt.class);
+                startActivity(i);
+
+            }
+        });
 
         environement.setOnRatingBarChangeListener(new RatingBar.OnRatingBarChangeListener() {
             @Override
@@ -52,6 +66,7 @@ public class ThirdPreferencesActivity extends AppCompatActivity {
                 fairAndSocialUserRating = Math.round(rating);
             }
         });
+
 
         button_save.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -81,5 +96,6 @@ public class ThirdPreferencesActivity extends AppCompatActivity {
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
         return super.onOptionsItemSelected(item);
     }
+
 }
 
