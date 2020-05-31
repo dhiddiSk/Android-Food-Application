@@ -21,6 +21,7 @@ import com.example.youcare.database.DatabaseConnectivity;
 import com.example.youcare.R;
 import com.example.youcare.appbody.MainActivity;
 import com.example.youcare.utils.LocalStorage;
+import com.example.youcare.webservice.EmployeeActivity;
 import com.google.android.material.textfield.TextInputLayout;
 
 public class LoginActivity extends AppCompatActivity implements View.OnClickListener {
@@ -112,6 +113,9 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
 
             case R.id.forgotPassword:
                 showPasswordDialog(v.getContext());
+                // TODO : Remove below code as this is for webservice testing
+//                Intent it = new Intent(LoginActivity.this, EmployeeActivity.class);
+//                startActivity(it);
         }
 
     }
