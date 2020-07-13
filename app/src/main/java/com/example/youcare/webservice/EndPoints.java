@@ -19,5 +19,4 @@ public interface EndPoints {
     Call<StatusModel> updateEmployeeDetail();
 
 
-
 }
